@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		A66C12CB1E51AD5F00C1DB4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C12CA1E51AD5F00C1DB4B /* AppDelegate.swift */; };
 		A66C12CD1E51AD5F00C1DB4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C12CC1E51AD5F00C1DB4B /* ViewController.swift */; };
-		A66C12D01E51AD5F00C1DB4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66C12CE1E51AD5F00C1DB4B /* Main.storyboard */; };
 		A66C12D31E51AD5F00C1DB4B /* ProjetiOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A66C12D11E51AD5F00C1DB4B /* ProjetiOS.xcdatamodeld */; };
 		A66C12D51E51AD5F00C1DB4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A66C12D41E51AD5F00C1DB4B /* Assets.xcassets */; };
 		A66C12D81E51AD5F00C1DB4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66C12D61E51AD5F00C1DB4B /* LaunchScreen.storyboard */; };
 		A66C12E31E51AD5F00C1DB4B /* ProjetiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C12E21E51AD5F00C1DB4B /* ProjetiOSTests.swift */; };
 		A66C12EE1E51AD5F00C1DB4B /* ProjetiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C12ED1E51AD5F00C1DB4B /* ProjetiOSUITests.swift */; };
 		A66C12FC1E51B7E400C1DB4B /* MSBlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = A66C12FB1E51B7E400C1DB4B /* MSBlogo.png */; };
+		A66C12FF1E51BED400C1DB4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66C12FD1E51BED400C1DB4B /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,6 @@
 		A66C12C71E51AD5F00C1DB4B /* ProjetiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A66C12CA1E51AD5F00C1DB4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A66C12CC1E51AD5F00C1DB4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A66C12CF1E51AD5F00C1DB4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A66C12D21E51AD5F00C1DB4B /* ProjetiOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProjetiOS.xcdatamodel; sourceTree = "<group>"; };
 		A66C12D41E51AD5F00C1DB4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A66C12D71E51AD5F00C1DB4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +50,7 @@
 		A66C12ED1E51AD5F00C1DB4B /* ProjetiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjetiOSUITests.swift; sourceTree = "<group>"; };
 		A66C12EF1E51AD5F00C1DB4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A66C12FB1E51B7E400C1DB4B /* MSBlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MSBlogo.png; path = Assets.xcassets/MSBlogo.png; sourceTree = "<group>"; };
+		A66C12FE1E51BED400C1DB4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +103,8 @@
 			children = (
 				A66C12FB1E51B7E400C1DB4B /* MSBlogo.png */,
 				A66C12CA1E51AD5F00C1DB4B /* AppDelegate.swift */,
+				A66C12FD1E51BED400C1DB4B /* Main.storyboard */,
 				A66C12CC1E51AD5F00C1DB4B /* ViewController.swift */,
-				A66C12CE1E51AD5F00C1DB4B /* Main.storyboard */,
 				A66C12D41E51AD5F00C1DB4B /* Assets.xcassets */,
 				A66C12D61E51AD5F00C1DB4B /* LaunchScreen.storyboard */,
 				A66C12D91E51AD5F00C1DB4B /* Info.plist */,
@@ -241,7 +241,7 @@
 				A66C12D81E51AD5F00C1DB4B /* LaunchScreen.storyboard in Resources */,
 				A66C12FC1E51B7E400C1DB4B /* MSBlogo.png in Resources */,
 				A66C12D51E51AD5F00C1DB4B /* Assets.xcassets in Resources */,
-				A66C12D01E51AD5F00C1DB4B /* Main.storyboard in Resources */,
+				A66C12FF1E51BED400C1DB4B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,20 +304,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A66C12CE1E51AD5F00C1DB4B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A66C12CF1E51AD5F00C1DB4B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A66C12D61E51AD5F00C1DB4B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A66C12D71E51AD5F00C1DB4B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A66C12FD1E51BED400C1DB4B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A66C12FE1E51BED400C1DB4B /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
