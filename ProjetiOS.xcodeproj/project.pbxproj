@@ -15,6 +15,7 @@
 		A66C12D81E51AD5F00C1DB4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66C12D61E51AD5F00C1DB4B /* LaunchScreen.storyboard */; };
 		A66C12E31E51AD5F00C1DB4B /* ProjetiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C12E21E51AD5F00C1DB4B /* ProjetiOSTests.swift */; };
 		A66C12EE1E51AD5F00C1DB4B /* ProjetiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C12ED1E51AD5F00C1DB4B /* ProjetiOSUITests.swift */; };
+		A66C12FC1E51B7E400C1DB4B /* MSBlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = A66C12FB1E51B7E400C1DB4B /* MSBlogo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		A66C12E91E51AD5F00C1DB4B /* ProjetiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjetiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A66C12ED1E51AD5F00C1DB4B /* ProjetiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjetiOSUITests.swift; sourceTree = "<group>"; };
 		A66C12EF1E51AD5F00C1DB4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A66C12FB1E51B7E400C1DB4B /* MSBlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MSBlogo.png; path = Assets.xcassets/MSBlogo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		A66C12C91E51AD5F00C1DB4B /* ProjetiOS */ = {
 			isa = PBXGroup;
 			children = (
+				A66C12FB1E51B7E400C1DB4B /* MSBlogo.png */,
 				A66C12CA1E51AD5F00C1DB4B /* AppDelegate.swift */,
 				A66C12CC1E51AD5F00C1DB4B /* ViewController.swift */,
 				A66C12CE1E51AD5F00C1DB4B /* Main.storyboard */,
@@ -236,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A66C12D81E51AD5F00C1DB4B /* LaunchScreen.storyboard in Resources */,
+				A66C12FC1E51B7E400C1DB4B /* MSBlogo.png in Resources */,
 				A66C12D51E51AD5F00C1DB4B /* Assets.xcassets in Resources */,
 				A66C12D01E51AD5F00C1DB4B /* Main.storyboard in Resources */,
 			);
