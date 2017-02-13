@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A640F5E81E51D457007571D4 /* personal.png in Resources */ = {isa = PBXBuildFile; fileRef = A640F5E71E51D457007571D4 /* personal.png */; };
 		A66C12CB1E51AD5F00C1DB4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C12CA1E51AD5F00C1DB4B /* AppDelegate.swift */; };
 		A66C12CD1E51AD5F00C1DB4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C12CC1E51AD5F00C1DB4B /* ViewController.swift */; };
 		A66C12D31E51AD5F00C1DB4B /* ProjetiOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A66C12D11E51AD5F00C1DB4B /* ProjetiOS.xcdatamodeld */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A640F5E71E51D457007571D4 /* personal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = personal.png; path = ../../../Desktop/personal.png; sourceTree = "<group>"; };
 		A66C12C71E51AD5F00C1DB4B /* ProjetiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A66C12CA1E51AD5F00C1DB4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A66C12CC1E51AD5F00C1DB4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		A66C12C91E51AD5F00C1DB4B /* ProjetiOS */ = {
 			isa = PBXGroup;
 			children = (
+				A640F5E71E51D457007571D4 /* personal.png */,
 				A66C12FB1E51B7E400C1DB4B /* MSBlogo.png */,
 				A66C12CA1E51AD5F00C1DB4B /* AppDelegate.swift */,
 				A66C12FD1E51BED400C1DB4B /* Main.storyboard */,
@@ -238,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A640F5E81E51D457007571D4 /* personal.png in Resources */,
 				A66C12D81E51AD5F00C1DB4B /* LaunchScreen.storyboard in Resources */,
 				A66C12FC1E51B7E400C1DB4B /* MSBlogo.png in Resources */,
 				A66C12D51E51AD5F00C1DB4B /* Assets.xcassets in Resources */,
@@ -513,6 +517,7 @@
 				A66C12F41E51AD5F00C1DB4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A66C12F51E51AD5F00C1DB4B /* Build configuration list for PBXNativeTarget "ProjetiOSTests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +526,7 @@
 				A66C12F71E51AD5F00C1DB4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A66C12F81E51AD5F00C1DB4B /* Build configuration list for PBXNativeTarget "ProjetiOSUITests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +535,7 @@
 				A66C12FA1E51AD5F00C1DB4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
