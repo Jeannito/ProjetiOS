@@ -91,7 +91,7 @@
             </objects>
             <point key="canvasLocation" x="1216" y="68"/>
         </scene>
-        <!--View Controller-->
+        <!--My School Book-->
         <scene sceneID="m61-cR-Ioy">
             <objects>
                 <viewController id="qNJ-41-8pa" sceneMemberID="viewController">
@@ -124,13 +124,13 @@
                                             <segue destination="xAI-DN-aay" kind="show" id="hZt-3d-MAY"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Profil" id="fAH-Xp-s07"/>
+                                    <barButtonItem title="Profil" id="fAH-Xp-s07">
+                                        <connections>
+                                            <segue destination="Spn-nE-2Db" kind="show" id="3kq-8F-Qsr"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vMQ-5E-x5d">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </navigationBar>
                             <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cpK-l1-rk0">
                                 <rect key="frame" x="0.0" y="108" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -139,6 +139,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="My School Book" id="7HU-VU-t0b"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="XyU-fy-HY6" id="KvG-zG-tDa"/>
                     </connections>
@@ -155,15 +156,15 @@
             </objects>
             <point key="canvasLocation" x="1216" y="1460"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="xVK-FR-Mdg">
+        <!--My School Book-->
+        <scene sceneID="L8c-UT-Kph">
             <objects>
-                <viewController id="f9a-tY-eON" sceneMemberID="viewController">
+                <viewController id="Spn-nE-2Db" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="52k-IG-SLm"/>
-                        <viewControllerLayoutGuide type="bottom" id="YhZ-ZG-pJh"/>
+                        <viewControllerLayoutGuide type="top" id="eZh-oU-QDk"/>
+                        <viewControllerLayoutGuide type="bottom" id="cq3-ni-5Zd"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="RFM-Bh-w6E">
+                    <view key="view" contentMode="scaleToFill" id="6jl-fv-A8N">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -174,10 +175,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="My School Book" id="jO5-dA-8kT"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xXD-ka-E5h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ee-zs-Roh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="220" y="1460"/>
+            <point key="canvasLocation" x="210.9375" y="1514.6484375"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="BGi-Av-0hJ">
