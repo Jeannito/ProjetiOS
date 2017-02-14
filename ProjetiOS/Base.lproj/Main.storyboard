@@ -140,7 +140,6 @@
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" red="0.29005257415179914" green="0.38655387514899947" blue="0.72336632013320923" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="My School Book" id="7HU-VU-t0b"/>
                     <connections>
@@ -735,7 +734,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bRo-PH-CVr">
-                                <rect key="frame" x="430" y="414" width="105" height="30"/>
+                                <rect key="frame" x="430" y="414" width="168" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                         </subviews>
