@@ -124,11 +124,7 @@
                                             <segue destination="xAI-DN-aay" kind="show" id="hZt-3d-MAY"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Profil" id="fAH-Xp-s07">
-                                        <connections>
-                                            <segue destination="dPz-9D-gNq" kind="show" id="xCC-y3-ypZ"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem title="Profil" id="fAH-Xp-s07"/>
                                 </items>
                             </toolbar>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vMQ-5E-x5d">
@@ -160,14 +156,14 @@
             <point key="canvasLocation" x="229.6875" y="785.7421875"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="CdM-qf-bca">
+        <scene sceneID="xVK-FR-Mdg">
             <objects>
-                <viewController id="dPz-9D-gNq" sceneMemberID="viewController">
+                <viewController id="f9a-tY-eON" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hYX-ge-3uc"/>
-                        <viewControllerLayoutGuide type="bottom" id="ywa-Qj-Lc3"/>
+                        <viewControllerLayoutGuide type="top" id="52k-IG-SLm"/>
+                        <viewControllerLayoutGuide type="bottom" id="YhZ-ZG-pJh"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="sZy-eG-6sg">
+                    <view key="view" contentMode="scaleToFill" id="RFM-Bh-w6E">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -179,9 +175,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pcj-iT-dpY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xXD-ka-E5h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="230.46875" y="1469.53125"/>
+            <point key="canvasLocation" x="220" y="1460"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="BGi-Av-0hJ">
@@ -299,6 +295,5 @@
     </scenes>
     <resources>
         <image name="MSBlogo.png" width="269" height="152"/>
-        <image name="personal.png" width="256" height="256"/>
     </resources>
 </document>
