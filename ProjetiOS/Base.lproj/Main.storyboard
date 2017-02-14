@@ -22,13 +22,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFQ-tD-3RB">
-                                <rect key="frame" x="365" y="542" width="38" height="30"/>
-                                <state key="normal" title="Login"/>
-                                <connections>
-                                    <segue destination="qNJ-41-8pa" kind="show" id="CZV-JN-Lkh"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eY9-2b-jjM">
                                 <rect key="frame" x="358" y="580" width="52" height="30"/>
                                 <state key="normal" title="Sign up"/>
@@ -42,11 +35,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ltl-Xg-lTX">
-                                <rect key="frame" x="329" y="504" width="111" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <state key="normal" title="forgot your password ?"/>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BMS-X9-olb">
                                 <rect key="frame" x="143" y="432" width="482" height="30"/>
                                 <nil key="textColor"/>
@@ -57,39 +45,54 @@
                                 <rect key="frame" x="180" y="135" width="408" height="245"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2fZ-Eg-Gea">
+                                <rect key="frame" x="294" y="500" width="111" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ltl-Xg-lTX">
+                                <rect key="frame" x="143" y="500" width="482" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <state key="normal" title="forgot your password ?"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFQ-tD-3RB">
+                                <rect key="frame" x="365" y="542" width="38" height="30"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <segue destination="qNJ-41-8pa" kind="show" id="CZV-JN-Lkh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="aFQ-tD-3RB" firstAttribute="top" secondItem="Ltl-Xg-lTX" secondAttribute="bottom" constant="14" id="7i7-ue-gvS"/>
+                            <constraint firstItem="Ltl-Xg-lTX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6gD-gZ-aoA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BMS-X9-olb" secondAttribute="trailing" constant="123" id="ASF-Q0-9is"/>
                             <constraint firstItem="tKE-pa-aXA" firstAttribute="top" secondItem="BMS-X9-olb" secondAttribute="bottom" constant="8" id="CfM-pS-97S"/>
-                            <constraint firstItem="Ltl-Xg-lTX" firstAttribute="top" secondItem="tKE-pa-aXA" secondAttribute="bottom" constant="4" id="Dk7-hZ-pDE"/>
-                            <constraint firstItem="Ltl-Xg-lTX" firstAttribute="top" secondItem="tKE-pa-aXA" secondAttribute="bottom" constant="4" id="GEa-m2-B8e"/>
                             <constraint firstItem="eY9-2b-jjM" firstAttribute="top" secondItem="aFQ-tD-3RB" secondAttribute="bottom" constant="8" id="Lyk-S8-dh5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eY9-2b-jjM" secondAttribute="trailing" constant="338" id="MDj-Oz-fT5"/>
-                            <constraint firstItem="aFQ-tD-3RB" firstAttribute="top" secondItem="Ltl-Xg-lTX" secondAttribute="bottom" constant="14" id="Ou9-cf-MJ4"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Ltl-Xg-lTX" secondAttribute="trailing" constant="308" id="PFU-bK-tpN"/>
-                            <constraint firstItem="Ltl-Xg-lTX" firstAttribute="top" secondItem="tKE-pa-aXA" secondAttribute="bottom" constant="4" id="SGB-Wv-3HZ"/>
+                            <constraint firstItem="aFQ-tD-3RB" firstAttribute="top" secondItem="Ltl-Xg-lTX" secondAttribute="bottom" constant="18" id="NxN-N9-WyS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ltl-Xg-lTX" secondAttribute="trailing" constant="123" id="RQl-XB-arr"/>
                             <constraint firstItem="aFQ-tD-3RB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="345" id="V3p-fF-g6Y"/>
+                            <constraint firstItem="Ltl-Xg-lTX" firstAttribute="top" secondItem="tKE-pa-aXA" secondAttribute="bottom" id="Wfs-iN-2p7"/>
                             <constraint firstItem="eY9-2b-jjM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="338" id="ZZO-P2-N8S"/>
                             <constraint firstItem="BMS-X9-olb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="368" id="ZhO-og-9LY"/>
                             <constraint firstItem="eY9-2b-jjM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zn1-el-8jg"/>
-                            <constraint firstItem="Ltl-Xg-lTX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="309" id="bD6-4I-mJN"/>
                             <constraint firstItem="tKE-pa-aXA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="123" id="bEx-Vd-YRa"/>
                             <constraint firstItem="BMS-X9-olb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dDB-VS-Iwc"/>
                             <constraint firstItem="tKE-pa-aXA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f6R-8y-6hv"/>
-                            <constraint firstItem="Ltl-Xg-lTX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="h7e-uT-ybm"/>
                             <constraint firstItem="BMS-X9-olb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="123" id="oQt-gp-Qek"/>
+                            <constraint firstItem="Ltl-Xg-lTX" firstAttribute="top" secondItem="tKE-pa-aXA" secondAttribute="bottom" id="pQQ-XB-aEh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aFQ-tD-3RB" secondAttribute="trailing" constant="345" id="qZS-nj-1aO"/>
                             <constraint firstItem="aFQ-tD-3RB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tcu-xy-TBK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tKE-pa-aXA" secondAttribute="trailing" constant="123" id="vtf-eR-KFJ"/>
+                            <constraint firstItem="Ltl-Xg-lTX" firstAttribute="top" secondItem="tKE-pa-aXA" secondAttribute="bottom" id="wTv-TK-0mb"/>
+                            <constraint firstItem="Ltl-Xg-lTX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="123" id="zeK-Gb-jFZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My School Book" id="RGT-Ob-XSK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1171" y="-463"/>
+            <point key="canvasLocation" x="1170.3125" y="-463.47656249999994"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="m61-cR-Ioy">
@@ -738,7 +741,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="My School Book" id="UFG-fA-cVy"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aeI-mm-p5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
