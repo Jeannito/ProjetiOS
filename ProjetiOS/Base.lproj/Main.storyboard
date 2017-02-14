@@ -42,7 +42,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ltl-Xg-lTX">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ltl-Xg-lTX">
                                 <rect key="frame" x="329" y="504" width="111" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <state key="normal" title="forgot your password ?"/>
@@ -89,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="996.875" y="68.5546875"/>
+            <point key="canvasLocation" x="1216" y="68"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="m61-cR-Ioy">
@@ -153,7 +153,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="229.6875" y="785.7421875"/>
+            <point key="canvasLocation" x="1216" y="1460"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="xVK-FR-Mdg">
@@ -218,7 +218,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J9V-Uw-2sX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="900" y="783.984375"/>
+            <point key="canvasLocation" x="2229" y="1460"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="ZGP-Ky-te2">
@@ -272,7 +272,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aeI-mm-p5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1649.21875" y="68.5546875"/>
+            <point key="canvasLocation" x="2229" y="68"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TBR-oZ-6OM">
@@ -295,5 +295,6 @@
     </scenes>
     <resources>
         <image name="MSBlogo.png" width="269" height="152"/>
+        <image name="personal.png" width="16" height="16"/>
     </resources>
 </document>
