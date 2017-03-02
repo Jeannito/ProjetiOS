@@ -58,6 +58,7 @@
                                 <rect key="frame" x="365" y="542" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
+                                    <action selector="log:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DZe-iB-Xtp"/>
                                     <segue destination="qNJ-41-8pa" kind="show" id="CZV-JN-Lkh"/>
                                 </connections>
                             </button>
@@ -89,6 +90,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My School Book" id="RGT-Ob-XSK"/>
+                    <connections>
+                        <outlet property="login" destination="BMS-X9-olb" id="f3P-vP-eBw"/>
+                        <outlet property="password" destination="tKE-pa-aXA" id="JBg-aa-KXU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -288,7 +293,7 @@
                                         <rect key="frame" x="0.0" y="28" width="240" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fvB-Y2-pUf" id="rVF-La-rAA">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -296,7 +301,7 @@
                                         <rect key="frame" x="0.0" y="72" width="240" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qFt-ys-Zul" id="Nmt-wz-wl8">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -304,7 +309,7 @@
                                         <rect key="frame" x="0.0" y="116" width="240" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bPB-wT-Sud" id="gH1-7S-qKv">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -312,7 +317,7 @@
                                         <rect key="frame" x="0.0" y="160" width="240" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CXo-7g-kgW" id="MQF-Rd-4iA">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -677,7 +682,7 @@
         <!--My School Book-->
         <scene sceneID="ZGP-Ky-te2">
             <objects>
-                <viewController id="nQT-Fd-U3J" sceneMemberID="viewController">
+                <viewController id="nQT-Fd-U3J" customClass="SignUpViewController" customModule="ProjetiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ypd-r0-hbx"/>
                         <viewControllerLayoutGuide type="bottom" id="Rxj-1d-6If"/>
@@ -718,6 +723,9 @@
                                 <rect key="frame" x="358" y="730" width="52" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign up"/>
+                                <connections>
+                                    <action selector="signup:" destination="nQT-Fd-U3J" eventType="touchUpInside" id="efe-AZ-tNw"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yUQ-jp-puE">
                                 <rect key="frame" x="234" y="414" width="176" height="30"/>
@@ -743,6 +751,14 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="My School Book" id="UFG-fA-cVy"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="confirmpassword" destination="WXf-3h-igV" id="zET-ER-VPk"/>
+                        <outlet property="email" destination="dWA-kI-pcu" id="Bzj-Hx-ZqB"/>
+                        <outlet property="firstname" destination="p9b-qg-cQw" id="8Hb-d6-OfD"/>
+                        <outlet property="lastname" destination="yUQ-jp-puE" id="u4W-Gw-pty"/>
+                        <outlet property="login" destination="5Nq-9v-Dz6" id="QIP-oh-b1I"/>
+                        <outlet property="password" destination="bRN-6d-end" id="pPR-xL-SzU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aeI-mm-p5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

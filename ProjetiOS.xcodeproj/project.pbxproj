@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A619CF901E68332C003B0F0D /* EnsemblePersonne.swift in Sources */ = {isa = PBXBuildFile; fileRef = A619CF8F1E68332C003B0F0D /* EnsemblePersonne.swift */; };
+		A619CF921E683B88003B0F0D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A619CF911E683B88003B0F0D /* SignUpViewController.swift */; };
 		A66C12CB1E51AD5F00C1DB4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C12CA1E51AD5F00C1DB4B /* AppDelegate.swift */; };
 		A66C12CD1E51AD5F00C1DB4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C12CC1E51AD5F00C1DB4B /* ViewController.swift */; };
 		A66C12D31E51AD5F00C1DB4B /* ProjetiOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A66C12D11E51AD5F00C1DB4B /* ProjetiOS.xcdatamodeld */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A619CF8F1E68332C003B0F0D /* EnsemblePersonne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnsemblePersonne.swift; sourceTree = "<group>"; };
+		A619CF911E683B88003B0F0D /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A66C12C71E51AD5F00C1DB4B /* ProjetiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A66C12CA1E51AD5F00C1DB4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A66C12CC1E51AD5F00C1DB4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 				A66C12CA1E51AD5F00C1DB4B /* AppDelegate.swift */,
 				A66C12FD1E51BED400C1DB4B /* Main.storyboard */,
 				A66C12CC1E51AD5F00C1DB4B /* ViewController.swift */,
+				A619CF911E683B88003B0F0D /* SignUpViewController.swift */,
+				A619CF8F1E68332C003B0F0D /* EnsemblePersonne.swift */,
 				A66C12D41E51AD5F00C1DB4B /* Assets.xcassets */,
 				A66C12D61E51AD5F00C1DB4B /* LaunchScreen.storyboard */,
 				A66C12D91E51AD5F00C1DB4B /* Info.plist */,
@@ -269,7 +275,9 @@
 			files = (
 				A66C12CD1E51AD5F00C1DB4B /* ViewController.swift in Sources */,
 				A66C12CB1E51AD5F00C1DB4B /* AppDelegate.swift in Sources */,
+				A619CF901E68332C003B0F0D /* EnsemblePersonne.swift in Sources */,
 				A66C12D31E51AD5F00C1DB4B /* ProjetiOS.xcdatamodeld in Sources */,
+				A619CF921E683B88003B0F0D /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
