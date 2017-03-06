@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import CoreData
 
-class SignUpViewController: UIViewController, UIApplicationDelegate{
+class SignUpViewController: UIViewController, UIApplicationDelegate, UIPickerViewDataSource, UIPickerViewDelegate{
 
     
     @IBOutlet weak var firstnameField: UITextField!
@@ -20,18 +20,67 @@ class SignUpViewController: UIViewController, UIApplicationDelegate{
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmpasswordField: UITextField!
     
-    @IBAction func signup(_ sender: Any) {
-        var firstname = self.firstnameField.text
-        var lastname = self.lastnameField.text
-        var login = self.loginField.text
-        var email = self.emailField.text
-        var password = self.passwordField.text
-        var confirmpassword = self.confirmpasswordField.text
-        
-        
-        
+    @IBOutlet weak var pickerView: UIPickerView!
+    
+    let status = ["Student","Teacher","Responsible"]
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int
+    {
+        return 1
     }
     
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
+    {
+        return status[row]
+    }
     
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+    {
+        return status.count
+    }
     
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func didReceiveMemoryWarning()
+    {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    
+    func Alert() {
+        let alertController = UIAlertController(title: "Password Error", message:
+            "Your password are differents", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Ok chef", style: UIAlertActionStyle.default,handler: nil))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func signup(_ sender: Any) {
+        let firstname = self.firstnameField.text
+        let lastname = self.lastnameField.text
+        let login = self.loginField.text
+        let email = self.emailField.text
+        let password = self.passwordField.text
+        let confirmpassword = self.confirmpasswordField.text
+        
+        if(password == confirmpassword)
+        {
+            let context = CoreDataManager.getContext()
+            //create a person
+            let user = User(context: context)
+            //save datas into the person
+            user.prenom = firstname
+            user.nom = lastname
+            user.login = login
+            user.password = password
+            user.email = email
+        } else {
+            self.Alert()
+        }
+    }
 }

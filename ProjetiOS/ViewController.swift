@@ -35,9 +35,9 @@ class ViewController: UIViewController {
         let user = User(context: context)
         user.login = name
         user.password = password
-        /*do{
-            try context.save()
-        }*/
+        do{
+            /*try context.save()*/
+        }
     }
     
     /*let user = saveNewPerson(ericko, taru34)*/

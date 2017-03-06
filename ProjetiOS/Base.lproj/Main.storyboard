@@ -26,7 +26,7 @@
                                 <rect key="frame" x="358" y="580" width="52" height="30"/>
                                 <state key="normal" title="Sign up"/>
                                 <connections>
-                                    <segue destination="nQT-Fd-U3J" kind="show" id="Sam-mJ-Hwu"/>
+                                    <segue destination="nQT-Fd-U3J" kind="show" identifier="signUpSegue" id="2Wa-dm-aM7"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tKE-pa-aXA">
@@ -742,7 +742,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bRo-PH-CVr">
-                                <rect key="frame" x="430" y="414" width="168" height="30"/>
+                                <rect key="frame" x="430" y="353" width="168" height="91"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                         </subviews>
@@ -752,12 +752,14 @@
                     <navigationItem key="navigationItem" title="My School Book" id="UFG-fA-cVy"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="confirmpassword" destination="WXf-3h-igV" id="zET-ER-VPk"/>
-                        <outlet property="email" destination="dWA-kI-pcu" id="Bzj-Hx-ZqB"/>
-                        <outlet property="firstname" destination="p9b-qg-cQw" id="8Hb-d6-OfD"/>
-                        <outlet property="lastname" destination="yUQ-jp-puE" id="u4W-Gw-pty"/>
-                        <outlet property="login" destination="5Nq-9v-Dz6" id="QIP-oh-b1I"/>
-                        <outlet property="password" destination="bRN-6d-end" id="pPR-xL-SzU"/>
+                        <outlet property="confirmpasswordField" destination="WXf-3h-igV" id="CCs-pg-t8v"/>
+                        <outlet property="emailField" destination="dWA-kI-pcu" id="Cz3-0f-ELO"/>
+                        <outlet property="firstnameField" destination="p9b-qg-cQw" id="EMA-Nh-OKl"/>
+                        <outlet property="lastnameField" destination="yUQ-jp-puE" id="j5d-Ki-dth"/>
+                        <outlet property="loginField" destination="5Nq-9v-Dz6" id="gkt-jK-wLy"/>
+                        <outlet property="passwordField" destination="bRN-6d-end" id="Ldd-d8-twS"/>
+                        <outlet property="picker" destination="bRo-PH-CVr" id="TRw-9e-mz4"/>
+                        <outlet property="pickerView" destination="bRo-PH-CVr" id="dOR-n4-3Oi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aeI-mm-p5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
