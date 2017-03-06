@@ -758,8 +758,6 @@
                         <outlet property="lastnameField" destination="yUQ-jp-puE" id="j5d-Ki-dth"/>
                         <outlet property="loginField" destination="5Nq-9v-Dz6" id="gkt-jK-wLy"/>
                         <outlet property="passwordField" destination="bRN-6d-end" id="Ldd-d8-twS"/>
-                        <outlet property="picker" destination="bRo-PH-CVr" id="TRw-9e-mz4"/>
-                        <outlet property="pickerView" destination="bRo-PH-CVr" id="dOR-n4-3Oi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aeI-mm-p5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>

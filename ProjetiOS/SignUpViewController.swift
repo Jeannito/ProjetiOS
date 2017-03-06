@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import CoreData
 
-class SignUpViewController: UIViewController, UIApplicationDelegate, UIPickerViewDataSource, UIPickerViewDelegate{
+class SignUpViewController: UIViewController, UIApplicationDelegate{
 
     
     @IBOutlet weak var firstnameField: UITextField!
@@ -20,7 +20,7 @@ class SignUpViewController: UIViewController, UIApplicationDelegate, UIPickerVie
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmpasswordField: UITextField!
     
-    @IBOutlet weak var pickerView: UIPickerView!
+    /*@IBOutlet weak var pickerView: UIPickerView!
     
     let status = ["Student","Teacher","Responsible"]
     
@@ -49,7 +49,7 @@ class SignUpViewController: UIViewController, UIApplicationDelegate, UIPickerVie
     {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
+    }*/
 
     
     func Alert() {
