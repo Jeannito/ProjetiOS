@@ -24,7 +24,11 @@ class SignUpViewController: UIViewController, UIApplicationDelegate{
         var firstname = self.firstnameField.text
         var lastname = self.lastnameField.text
         var login = self.loginField.text
-        var 
+        var email = self.emailField.text
+        var password = self.passwordField.text
+        var confirmpassword = self.confirmpasswordField.text
+        
+        
         
     }
     
