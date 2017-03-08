@@ -39,10 +39,10 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         return status[row]
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+   /* func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
         let statut = status[pickerView.selectedRow(inComponent: 0)]
-    }
+    }*/
     
     override func viewDidLoad()
     {
@@ -72,18 +72,20 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         let email = self.emailField.text
         let password = self.passwordField.text
         let confirmpassword = self.confirmpasswordField.text
+        let status = self.pickerView.textInputContextIdentifier
         
         if(password == confirmpassword)
         {
             let context = CoreDataManager.getContext()
-            //create a person
+
             let user = User(context: context)
-            //save datas into the person
+
             user.prenom = firstname
             user.nom = lastname
             user.login = login
             user.password = password
             user.email = email
+            user.status = status
         } else {
             self.Alert()
         }
