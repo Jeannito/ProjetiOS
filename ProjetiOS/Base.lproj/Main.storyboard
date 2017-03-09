@@ -33,7 +33,7 @@
                                 <rect key="frame" x="143" y="426" width="482" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BMS-X9-olb">
                                 <rect key="frame" x="143" y="388" width="482" height="30"/>
@@ -180,7 +180,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qaM-Lf-u0U">
                                 <rect key="frame" x="234" y="451" width="301" height="30"/>
@@ -201,7 +201,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oO-Ke-Mts">
                                 <rect key="frame" x="356" y="633" width="57" height="30"/>
@@ -692,32 +692,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Nq-9v-Dz6">
-                                <rect key="frame" x="234" y="474" width="301" height="30"/>
+                                <rect key="frame" x="234" y="474" width="365" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dWA-kI-pcu">
-                                <rect key="frame" x="234" y="532" width="301" height="30"/>
+                                <rect key="frame" x="234" y="532" width="365" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bRN-6d-end">
-                                <rect key="frame" x="234" y="594" width="301" height="30"/>
+                                <rect key="frame" x="234" y="594" width="365" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WXf-3h-igV">
-                                <rect key="frame" x="234" y="656" width="301" height="30"/>
+                                <rect key="frame" x="234" y="656" width="365" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ga-9Q-h0o">
                                 <rect key="frame" x="358" y="730" width="52" height="30"/>
@@ -743,7 +743,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bRo-PH-CVr">
-                                <rect key="frame" x="234" y="102" width="176" height="79"/>
+                                <rect key="frame" x="423" y="353" width="176" height="91"/>
                                 <connections>
                                     <outlet property="dataSource" destination="nQT-Fd-U3J" id="ai5-8D-KFd"/>
                                     <outlet property="delegate" destination="nQT-Fd-U3J" id="xIf-I3-0FI"/>
@@ -752,9 +752,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="bRo-PH-CVr" secondAttribute="trailing" constant="338" id="1o0-gf-2ln"/>
-                            <constraint firstItem="bRo-PH-CVr" firstAttribute="top" secondItem="ypd-r0-hbx" secondAttribute="bottom" constant="82" id="9dK-ft-wwI"/>
-                            <constraint firstItem="bRo-PH-CVr" firstAttribute="leading" secondItem="Sqw-cm-Jrf" secondAttribute="leadingMargin" constant="214" id="zyQ-RK-9pl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bRo-PH-CVr" secondAttribute="trailing" constant="149" id="1o0-gf-2ln"/>
+                            <constraint firstItem="bRo-PH-CVr" firstAttribute="top" secondItem="ypd-r0-hbx" secondAttribute="bottom" constant="333" id="9dK-ft-wwI"/>
+                            <constraint firstItem="bRo-PH-CVr" firstAttribute="leading" secondItem="Sqw-cm-Jrf" secondAttribute="leadingMargin" constant="403" id="zyQ-RK-9pl"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -767,6 +767,7 @@
                         <outlet property="lastnameField" destination="yUQ-jp-puE" id="j5d-Ki-dth"/>
                         <outlet property="loginField" destination="5Nq-9v-Dz6" id="gkt-jK-wLy"/>
                         <outlet property="passwordField" destination="bRN-6d-end" id="Ldd-d8-twS"/>
+                        <outlet property="statusPicker" destination="bRo-PH-CVr" id="p28-aB-omw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aeI-mm-p5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -778,7 +779,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3pu-tV-zfP" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YmV-BC-5On">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YmV-BC-5On">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

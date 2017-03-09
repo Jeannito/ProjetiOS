@@ -20,28 +20,28 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmpasswordField: UITextField!
     
-    @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var statusPicker: UIPickerView!
     
-    let status = ["Student","Teacher","Responsible"]
+    let pickerData = ["Student","Teacher","Responsible"]
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int
     {
         return 1
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
     {
-        return status.count
+        return pickerData.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
-        return status[row]
+        return pickerData[row]
     }
     
-   /* func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    /*func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
-        let statut = status[pickerView.selectedRow(inComponent: 0)]
+        let status = pickerData[statusPicker.selectedRow(inComponent: 0)]
     }*/
     
     override func viewDidLoad()
@@ -72,7 +72,7 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         let email = self.emailField.text
         let password = self.passwordField.text
         let confirmpassword = self.confirmpasswordField.text
-        let status = self.pickerView.textInputContextIdentifier
+        let status = self.statusPicker.textInputContextIdentifier
         
         if(password == confirmpassword)
         {
