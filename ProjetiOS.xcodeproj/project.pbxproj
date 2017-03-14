@@ -20,6 +20,7 @@
 		A66C12FF1E51BED400C1DB4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66C12FD1E51BED400C1DB4B /* Main.storyboard */; };
 		A6BE717A1E700246003AA803 /* ConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BE71791E700246003AA803 /* ConnectionViewController.swift */; };
 		A6BE717C1E702163003AA803 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BE717B1E702163003AA803 /* Session.swift */; };
+		AF13C7AC1E7446FC002D1BCF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF13C7AB1E7446FC002D1BCF /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		A66C12FE1E51BED400C1DB4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6BE71791E700246003AA803 /* ConnectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionViewController.swift; sourceTree = "<group>"; };
 		A6BE717B1E702163003AA803 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		AF13C7AB1E7446FC002D1BCF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				A66C12D61E51AD5F00C1DB4B /* LaunchScreen.storyboard */,
 				A66C12D91E51AD5F00C1DB4B /* Info.plist */,
 				A66C12D11E51AD5F00C1DB4B /* ProjetiOS.xcdatamodeld */,
+				AF13C7AB1E7446FC002D1BCF /* HomeViewController.swift */,
 			);
 			path = ProjetiOS;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				A6BE717C1E702163003AA803 /* Session.swift in Sources */,
 				A60CFD891E6D504900040607 /* CoreDataManager.swift in Sources */,
 				A6BE717A1E700246003AA803 /* ConnectionViewController.swift in Sources */,
+				AF13C7AC1E7446FC002D1BCF /* HomeViewController.swift in Sources */,
 				A66C12CB1E51AD5F00C1DB4B /* AppDelegate.swift in Sources */,
 				A619CF901E68332C003B0F0D /* EnsemblePersonne.swift in Sources */,
 				A66C12D31E51AD5F00C1DB4B /* ProjetiOS.xcdatamodeld in Sources */,

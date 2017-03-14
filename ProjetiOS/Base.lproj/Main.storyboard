@@ -102,7 +102,7 @@
         <!--My School Book-->
         <scene sceneID="m61-cR-Ioy">
             <objects>
-                <viewController id="qNJ-41-8pa" sceneMemberID="viewController">
+                <viewController id="qNJ-41-8pa" customClass="HomeViewController" customModule="ProjetiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Gqs-NM-CTT"/>
                         <viewControllerLayoutGuide type="bottom" id="E4z-sd-yYO"/>
@@ -144,11 +144,17 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DK9-2t-x3i">
+                                <rect key="frame" x="28" y="118" width="728" height="811"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                     </view>
                     <navigationItem key="navigationItem" title="My School Book" id="7HU-VU-t0b"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="XyU-fy-HY6" id="KvG-zG-tDa"/>
+                        <outlet property="tableMessage" destination="DK9-2t-x3i" id="bjz-0d-K3r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Efs-5c-FQr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -779,7 +785,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3pu-tV-zfP" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YmV-BC-5On">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YmV-BC-5On">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
