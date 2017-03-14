@@ -2,14 +2,20 @@
 //  HomeViewController.swift
 //  ProjetiOS
 //
-//  Created by Erick Taru on 11/03/2017.
+//  Created by Erick Taru on 14/03/2017.
 //  Copyright © 2017 Jean BRUTE-DE-REMUR. All rights reserved.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController {
-
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var firstNames : [String] = ["Jeannot", "Erick"]
+    var lastNames : [String] = ["B2R", "Taru"]
+    var messages : [String] = ["Message 1", "Message 2"]
+    
+    @IBOutlet weak var messagesTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,9 +27,18 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBOutlet weak var tableMessage: UITableView!
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.firstNames.count
+    }
     
-
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.messagesTable.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! MessageTableViewCell
+        cell.firstNameLabel.text = self.firstNames[indexPath.row]
+        cell.lastNameLabel.text = self.lastNames[indexPath.row]
+        cell.messageLabel.text = self.messages[indexPath.row]
+        return cell
+    }
+    
     /*
     // MARK: - Navigation
 
