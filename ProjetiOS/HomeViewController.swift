@@ -49,5 +49,44 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    func AlertEmpty() {
+        let alertController = UIAlertController(title: "Empty Field", message:
+            "You have to fill the message field... ^^", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Ok chef", style: UIAlertActionStyle.default,handler: nil))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBOutlet weak var MessageField: UITextField!
+    
+    @IBAction func sendAction(_ sender: Any) {
+        let messageText = self.MessageField.text
+        
+        if(messageText != "")
+        {
+            let context = CoreDataManager.getContext()
+            
+            let message = Message(context: context)
+            
+            let date = Date()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd.MM.yyyy"
+            let result = formatter.string(from: date)
+            let resultString = String(result)
+            
+            message.date = resultString
+            message.idM = 1
+            message.status = session?.getStatus()
+            message.login = session?.getLogin()
+            message.text = messageText
+            
+        } else {
+            self.AlertEmpty()
+        }
+        
+    }
+    
 
 }

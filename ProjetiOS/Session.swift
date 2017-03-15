@@ -18,4 +18,14 @@ public class Session{
         self.login = login
         self.status = status
     }
+    
+    func getLogin()-> String?{
+        return self.login
+    }
+    
+    func getStatus()-> String?{
+        return self.status
+    }
+    
+    
 }
