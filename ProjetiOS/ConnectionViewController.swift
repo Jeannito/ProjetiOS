@@ -75,9 +75,11 @@ class ConnectionViewController: UIViewController {
                 AlertLoginWrong()
             }
             else if(listLogin[0].password == password){
-                let session : Session? = nil
+                /*let session : Session? = nil
                 session?.login = listLogin[0].login
-                session?.status = listLogin[0].status
+                session?.status = listLogin[0].status*/
+                Session.sharedInstance.setLogin(login: listLogin[0].login!)
+                Session.sharedInstance.setStatus(status: listLogin[0].status!)
             } else {
                 AlertPasswordWrong()
             }

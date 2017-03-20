@@ -11,7 +11,6 @@ import CoreData
 import UIKit
 
 extension User {
-    
 
     class func getUsersByLogin(withLogin: String) -> [User] {
         var users: [User] = []
@@ -37,6 +36,5 @@ extension User {
         }
         return users
     }
-    
     
 }
