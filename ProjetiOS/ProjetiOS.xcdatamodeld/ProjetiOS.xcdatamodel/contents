@@ -48,7 +48,7 @@
         <element name="Document" positionX="234" positionY="984" width="128" height="60"/>
         <element name="DocumentOfficiel" positionX="-342" positionY="786" width="128" height="73"/>
         <element name="Image" positionX="79" positionY="984" width="128" height="60"/>
-        <element name="Message" positionX="-117" positionY="756" width="128" height="28"/>
+        <element name="Message" positionX="-117" positionY="756" width="128" height="150"/>
         <element name="MessageSimple" positionX="-81" positionY="984" width="128" height="60"/>
         <element name="Promotion" positionX="-342" positionY="567" width="128" height="118"/>
         <element name="TypeMessage" positionX="72" positionY="807" width="128" height="88"/>

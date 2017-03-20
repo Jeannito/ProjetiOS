@@ -75,11 +75,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             formatter.dateFormat = "dd.MM.yyyy"
             let result = formatter.string(from: date)
             let resultString = String(result)
+            let instance = Session.sharedInstance
             
             message.date = resultString
             message.idM = 1
-            message.status = session?.getStatus()
-            message.login = session?.getLogin()
+            message.status = instance.getStatus()
+            message.sender = instance.getLogin()
             message.text = messageText
             
         } else {

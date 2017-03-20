@@ -10,7 +10,6 @@ import Foundation
 
 public class Session{
     
-
     var login : String? = nil
     var status : String? = nil
 
@@ -19,12 +18,22 @@ public class Session{
         self.status = status
     }
     
+    public static let sharedInstance = Session(login: "null", status: "null")
+    
+    func setLogin(login : String){
+        Session.sharedInstance.login = login
+    }
+    
+    func setStatus(status : String){
+        Session.sharedInstance.status = status
+    }
+    
     func getLogin()-> String?{
-        return self.login
+        return Session.sharedInstance.login
     }
     
     func getStatus()-> String?{
-        return self.status
+        return Session.sharedInstance.status
     }
     
     
