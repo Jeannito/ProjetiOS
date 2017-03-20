@@ -21,19 +21,19 @@ public class Session{
     public static let sharedInstance = Session(login: "null", status: "null")
     
     func setLogin(login : String){
-        Session.sharedInstance.login = login
+        self.login = login
     }
     
-    func setStatus(status : String){
-        Session.sharedInstance.status = status
+    public func setStatus(status : String){
+        self.status = status
     }
     
-    func getLogin()-> String?{
-        return Session.sharedInstance.login
+    public func getLogin()-> String?{
+        return self.login
     }
     
-    func getStatus()-> String?{
-        return Session.sharedInstance.status
+    public func getStatus()-> String?{
+        return self.status
     }
     
     
