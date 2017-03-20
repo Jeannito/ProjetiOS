@@ -77,11 +77,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let resultString = String(result)
             let instance = Session.sharedInstance
             
-            message.date = resultString
+            /*message.date = resultString
             message.idM = 1
             message.status = instance.getStatus()
             message.sender = instance.getLogin()
-            message.text = messageText
+            message.text = messageText*/
             
         } else {
             self.AlertEmpty()
