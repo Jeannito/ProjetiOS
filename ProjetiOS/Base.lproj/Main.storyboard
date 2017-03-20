@@ -197,6 +197,9 @@
                                 <rect key="frame" x="720" y="937" width="36" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sendAction:" destination="qNJ-41-8pa" eventType="touchUpInside" id="Bmm-wd-zlH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.25294046199247144" green="0.40681814305245784" blue="0.72336632013320923" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -219,6 +222,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="My School Book" id="7HU-VU-t0b"/>
                     <connections>
+                        <outlet property="MessageField" destination="d0M-wP-cu6" id="ubF-Ka-1x7"/>
                         <outlet property="messagesTable" destination="hfc-Yi-bGx" id="GFK-y0-1Ga"/>
                         <outlet property="searchDisplayController" destination="XyU-fy-HY6" id="KvG-zG-tDa"/>
                     </connections>
