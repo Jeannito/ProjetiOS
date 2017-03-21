@@ -12,6 +12,7 @@ import Foundation
 
 class ProfilViewController: UIViewController {
 
+    let context = CoreDataManager.getContext()
     
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var emailField: UITextField!
@@ -20,7 +21,6 @@ class ProfilViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        _ = CoreDataManager.getContext()
         loginField.text = Session.sharedInstance.login
         // Do any additional setup after loading the view.
     }
@@ -53,7 +53,6 @@ class ProfilViewController: UIViewController {
         
         if(password == confirmpassword)
         {
-            let context = CoreDataManager.getContext()
             
             let user = User(context: context)
             
