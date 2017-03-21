@@ -60,12 +60,13 @@ class ProfilViewController: UIViewController {
             user.password = password
             user.email = email
             
+            self.Alert2()
+            CoreDataManager.save()
+            
         } else {
             self.Alert1()
         }
         
-        self.Alert2()
-        CoreDataManager.save()
     }
     
     /*
