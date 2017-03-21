@@ -50,8 +50,7 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        statusPicker.dataSource = self
-        statusPicker.delegate = self
+        statusPicked = pickerData[statusPicker.selectedRow(inComponent: 0)]
     }
 
     
@@ -62,10 +61,17 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
 
     
-    func Alert() {
+    func Alert1() {
         let alertController = UIAlertController(title: "Password Error", message:
             "Your password are differents", preferredStyle: UIAlertControllerStyle.alert)
         alertController.addAction(UIAlertAction(title: "Ok chef", style: UIAlertActionStyle.default,handler: nil))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func Alert2() {
+        let alertController = UIAlertController(title: "Success !", message: "Your sign up was successfull",  preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Connect", style: UIAlertActionStyle.default,handler: nil))
         
         self.present(alertController, animated: true, completion: nil)
     }
@@ -92,9 +98,10 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             user.email = email
             user.status = status
         } else {
-            self.Alert()
+            self.Alert1()
         }
         
+        self.Alert2()
         CoreDataManager.save()
     }
 }
