@@ -41,7 +41,7 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         return pickerData[row]
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) -> String?
+    private func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) -> String?
     {
         statusPicked = pickerData[row]
         return statusPicked
