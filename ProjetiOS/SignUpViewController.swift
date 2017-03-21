@@ -94,5 +94,7 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         } else {
             self.Alert()
         }
+        
+        CoreDataManager.save()
     }
 }
