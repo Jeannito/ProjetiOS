@@ -24,6 +24,8 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     let pickerData = ["Student","Teacher","Responsible"]
     
+    var statusPicked: String?
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int
     {
         return 1
@@ -39,14 +41,17 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         return pickerData[row]
     }
     
-    /*func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) -> String?
     {
-        let status = pickerData[statusPicker.selectedRow(inComponent: 0)]
-    }*/
+        statusPicked = pickerData[row]
+        return statusPicked
+    }
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        statusPicker.dataSource = self
+        statusPicker.delegate = self
     }
 
     
@@ -72,7 +77,7 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         let email = self.emailField.text
         let password = self.passwordField.text
         let confirmpassword = self.confirmpasswordField.text
-        let status = self.statusPicker.textInputContextIdentifier
+        let status = self.statusPicked
         
         if(password == confirmpassword)
         {
