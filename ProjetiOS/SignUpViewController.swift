@@ -63,7 +63,7 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     func Alert1() {
         let alertController = UIAlertController(title: "Password Error", message:
-            "Your password are differents", preferredStyle: UIAlertControllerStyle.alert)
+            "Your passwords are different", preferredStyle: UIAlertControllerStyle.alert)
         alertController.addAction(UIAlertAction(title: "Ok chef", style: UIAlertActionStyle.default,handler: nil))
         
         self.present(alertController, animated: true, completion: nil)

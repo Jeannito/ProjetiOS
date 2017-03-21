@@ -20,6 +20,7 @@
 		A66C12FF1E51BED400C1DB4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66C12FD1E51BED400C1DB4B /* Main.storyboard */; };
 		A6BE717A1E700246003AA803 /* ConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BE71791E700246003AA803 /* ConnectionViewController.swift */; };
 		A6BE717C1E702163003AA803 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BE717B1E702163003AA803 /* Session.swift */; };
+		AF0CE5471E813B8B003701C8 /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0CE5461E813B8B003701C8 /* ProfilViewController.swift */; };
 		AF70CA531E77ECDC00DB7D6F /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF70CA521E77ECDC00DB7D6F /* MessageTableViewCell.swift */; };
 		AF70CA551E77EDF100DB7D6F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF70CA541E77EDF100DB7D6F /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,7 @@
 		A66C12FE1E51BED400C1DB4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6BE71791E700246003AA803 /* ConnectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionViewController.swift; sourceTree = "<group>"; };
 		A6BE717B1E702163003AA803 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		AF0CE5461E813B8B003701C8 /* ProfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
 		AF70CA521E77ECDC00DB7D6F /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		AF70CA541E77EDF100DB7D6F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +118,7 @@
 				A66C12FB1E51B7E400C1DB4B /* MSBlogo.png */,
 				A66C12CA1E51AD5F00C1DB4B /* AppDelegate.swift */,
 				A66C12FD1E51BED400C1DB4B /* Main.storyboard */,
+				AF0CE5461E813B8B003701C8 /* ProfilViewController.swift */,
 				AF70CA541E77EDF100DB7D6F /* HomeViewController.swift */,
 				AF70CA521E77ECDC00DB7D6F /* MessageTableViewCell.swift */,
 				A6BE71791E700246003AA803 /* ConnectionViewController.swift */,
@@ -291,6 +294,7 @@
 				A66C12CB1E51AD5F00C1DB4B /* AppDelegate.swift in Sources */,
 				A619CF901E68332C003B0F0D /* EnsemblePersonne.swift in Sources */,
 				AF70CA551E77EDF100DB7D6F /* HomeViewController.swift in Sources */,
+				AF0CE5471E813B8B003701C8 /* ProfilViewController.swift in Sources */,
 				AF70CA531E77ECDC00DB7D6F /* MessageTableViewCell.swift in Sources */,
 				A66C12D31E51AD5F00C1DB4B /* ProjetiOS.xcdatamodeld in Sources */,
 				A619CF921E683B88003B0F0D /* SignUpViewController.swift in Sources */,

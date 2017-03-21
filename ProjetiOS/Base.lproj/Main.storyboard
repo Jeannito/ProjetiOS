@@ -242,7 +242,7 @@
         <!--My School Book-->
         <scene sceneID="L8c-UT-Kph">
             <objects>
-                <viewController id="Spn-nE-2Db" sceneMemberID="viewController">
+                <viewController id="Spn-nE-2Db" customClass="ProfilViewController" customModule="ProjetiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eZh-oU-QDk"/>
                         <viewControllerLayoutGuide type="bottom" id="cq3-ni-5Zd"/>
@@ -251,43 +251,77 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GCw-IH-x8I">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GCw-IH-x8I">
                                 <rect key="frame" x="234" y="505" width="301" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Spn-nE-2Db" id="nIk-vZ-ami"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qaM-Lf-u0U">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qaM-Lf-u0U">
                                 <rect key="frame" x="234" y="451" width="301" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Spn-nE-2Db" id="E5c-yy-Rac"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tpF-hK-Boj">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tpF-hK-Boj">
                                 <rect key="frame" x="234" y="398" width="301" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Spn-nE-2Db" id="Veb-IK-Ssj"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P0g-G2-7JA">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirm new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P0g-G2-7JA">
                                 <rect key="frame" x="234" y="561" width="301" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Spn-nE-2Db" id="yx0-1o-fo8"/>
+                                </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oO-Ke-Mts">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oO-Ke-Mts">
                                 <rect key="frame" x="356" y="633" width="57" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Modifier"/>
+                                <connections>
+                                    <action selector="modify:" destination="Spn-nE-2Db" eventType="touchUpInside" id="gYJ-ja-XnA"/>
+                                    <segue destination="Spn-nE-2Db" kind="show" id="a8v-4W-4DY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tpF-hK-Boj" firstAttribute="top" secondItem="eZh-oU-QDk" secondAttribute="bottom" constant="378" id="1cJ-zb-E8O"/>
+                            <constraint firstItem="qaM-Lf-u0U" firstAttribute="top" secondItem="tpF-hK-Boj" secondAttribute="bottom" constant="23" id="4Ef-aq-eiF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="P0g-G2-7JA" secondAttribute="trailing" constant="213" id="4Si-IP-O6a"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8oO-Ke-Mts" secondAttribute="trailing" constant="335" id="9c2-G7-z6g"/>
+                            <constraint firstItem="qaM-Lf-u0U" firstAttribute="leading" secondItem="6jl-fv-A8N" secondAttribute="leadingMargin" constant="214" id="AcT-Pg-AUZ"/>
+                            <constraint firstItem="8oO-Ke-Mts" firstAttribute="leading" secondItem="6jl-fv-A8N" secondAttribute="leadingMargin" constant="336" id="D9T-yZ-k7q"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tpF-hK-Boj" secondAttribute="trailing" constant="213" id="Jd1-Dh-Ss4"/>
+                            <constraint firstItem="P0g-G2-7JA" firstAttribute="top" secondItem="GCw-IH-x8I" secondAttribute="bottom" constant="26" id="OlI-M4-IrP"/>
+                            <constraint firstItem="tpF-hK-Boj" firstAttribute="leading" secondItem="6jl-fv-A8N" secondAttribute="leadingMargin" constant="214" id="WKh-qU-Dku"/>
+                            <constraint firstItem="8oO-Ke-Mts" firstAttribute="top" secondItem="P0g-G2-7JA" secondAttribute="bottom" constant="42" id="YNK-zf-fCs"/>
+                            <constraint firstItem="GCw-IH-x8I" firstAttribute="leading" secondItem="6jl-fv-A8N" secondAttribute="leadingMargin" constant="214" id="eNg-eR-G9x"/>
+                            <constraint firstItem="GCw-IH-x8I" firstAttribute="top" secondItem="qaM-Lf-u0U" secondAttribute="bottom" constant="24" id="nzX-OF-xZC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GCw-IH-x8I" secondAttribute="trailing" constant="213" id="rj1-Lx-XfJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qaM-Lf-u0U" secondAttribute="trailing" constant="213" id="tXr-m1-rdZ"/>
+                            <constraint firstItem="P0g-G2-7JA" firstAttribute="leading" secondItem="6jl-fv-A8N" secondAttribute="leadingMargin" constant="214" id="zJo-Gv-cet"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My School Book" id="jO5-dA-8kT"/>
+                    <connections>
+                        <outlet property="confirmpasswordField" destination="P0g-G2-7JA" id="rQc-dh-SRd"/>
+                        <outlet property="emailField" destination="qaM-Lf-u0U" id="oO5-l4-5Eh"/>
+                        <outlet property="loginField" destination="tpF-hK-Boj" id="YAc-pF-7rP"/>
+                        <outlet property="passwordField" destination="GCw-IH-x8I" id="PQv-3U-FlZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ee-zs-Roh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -796,7 +830,7 @@
                                 <state key="normal" title="Sign up"/>
                                 <connections>
                                     <action selector="signup:" destination="nQT-Fd-U3J" eventType="touchUpInside" id="efe-AZ-tNw"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="AcB-74-1DG"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="signUpSuccess" id="AcB-74-1DG"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="first name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p9b-qg-cQw">
@@ -893,5 +927,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="AcB-74-1DG"/>
+        <segue reference="3kq-8F-Qsr"/>
     </inferredMetricsTieBreakers>
 </document>
