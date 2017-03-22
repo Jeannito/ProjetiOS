@@ -6,7 +6,7 @@
 //  Copyright © 2017 Jean BRUTE-DE-REMUR. All rights reserved.
 //
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+/*class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var messagesTable: UITableView!
     
@@ -62,3 +62,4 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
      */
     
 }
+*/
