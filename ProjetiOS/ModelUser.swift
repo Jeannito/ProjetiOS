@@ -1,8 +1,8 @@
 //
-//  EnsemblePersonne.swift
+//  ModelUser.swift
 //  ProjetiOS
 //
-//  Created by Jean BRUTE-DE-REMUR on 02/03/2017.
+//  Created by Jean BRUTE-DE-REMUR on 22/03/2017.
 //  Copyright © 2017 Jean BRUTE-DE-REMUR. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import CoreData
 import UIKit
 
 extension User {
-
+    
     class func getUsersByLogin(withLogin: String) -> [User] {
         var users: [User] = []
         let context = CoreDataManager.getContext()
@@ -36,5 +36,4 @@ extension User {
         }
         return users
     }
-    
 }

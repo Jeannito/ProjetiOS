@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A60CFD891E6D504900040607 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60CFD881E6D504900040607 /* CoreDataManager.swift */; };
-		A619CF901E68332C003B0F0D /* EnsemblePersonne.swift in Sources */ = {isa = PBXBuildFile; fileRef = A619CF8F1E68332C003B0F0D /* EnsemblePersonne.swift */; };
 		A619CF921E683B88003B0F0D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A619CF911E683B88003B0F0D /* SignUpViewController.swift */; };
+		A64965811E827A4400341A1E /* ModelMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64965801E827A4400341A1E /* ModelMessage.swift */; };
+		A64965831E827DBA00341A1E /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64965821E827DBA00341A1E /* ModelUser.swift */; };
 		A66C12CB1E51AD5F00C1DB4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C12CA1E51AD5F00C1DB4B /* AppDelegate.swift */; };
 		A66C12D31E51AD5F00C1DB4B /* ProjetiOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A66C12D11E51AD5F00C1DB4B /* ProjetiOS.xcdatamodeld */; };
 		A66C12D51E51AD5F00C1DB4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A66C12D41E51AD5F00C1DB4B /* Assets.xcassets */; };
@@ -44,8 +45,9 @@
 
 /* Begin PBXFileReference section */
 		A60CFD881E6D504900040607 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		A619CF8F1E68332C003B0F0D /* EnsemblePersonne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnsemblePersonne.swift; sourceTree = "<group>"; };
 		A619CF911E683B88003B0F0D /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		A64965801E827A4400341A1E /* ModelMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelMessage.swift; sourceTree = "<group>"; };
+		A64965821E827DBA00341A1E /* ModelUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
 		A66C12C71E51AD5F00C1DB4B /* ProjetiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A66C12CA1E51AD5F00C1DB4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A66C12D21E51AD5F00C1DB4B /* ProjetiOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProjetiOS.xcdatamodel; sourceTree = "<group>"; };
@@ -119,12 +121,13 @@
 				A66C12CA1E51AD5F00C1DB4B /* AppDelegate.swift */,
 				A66C12FD1E51BED400C1DB4B /* Main.storyboard */,
 				AF0CE5461E813B8B003701C8 /* ProfilViewController.swift */,
+				A64965801E827A4400341A1E /* ModelMessage.swift */,
 				AF70CA541E77EDF100DB7D6F /* HomeViewController.swift */,
 				AF70CA521E77ECDC00DB7D6F /* MessageTableViewCell.swift */,
 				A6BE71791E700246003AA803 /* ConnectionViewController.swift */,
 				A6BE717B1E702163003AA803 /* Session.swift */,
 				A619CF911E683B88003B0F0D /* SignUpViewController.swift */,
-				A619CF8F1E68332C003B0F0D /* EnsemblePersonne.swift */,
+				A64965821E827DBA00341A1E /* ModelUser.swift */,
 				A60CFD881E6D504900040607 /* CoreDataManager.swift */,
 				A66C12D41E51AD5F00C1DB4B /* Assets.xcassets */,
 				A66C12D61E51AD5F00C1DB4B /* LaunchScreen.storyboard */,
@@ -292,12 +295,13 @@
 				A60CFD891E6D504900040607 /* CoreDataManager.swift in Sources */,
 				A6BE717A1E700246003AA803 /* ConnectionViewController.swift in Sources */,
 				A66C12CB1E51AD5F00C1DB4B /* AppDelegate.swift in Sources */,
-				A619CF901E68332C003B0F0D /* EnsemblePersonne.swift in Sources */,
 				AF70CA551E77EDF100DB7D6F /* HomeViewController.swift in Sources */,
+				A64965831E827DBA00341A1E /* ModelUser.swift in Sources */,
 				AF0CE5471E813B8B003701C8 /* ProfilViewController.swift in Sources */,
 				AF70CA531E77ECDC00DB7D6F /* MessageTableViewCell.swift in Sources */,
 				A66C12D31E51AD5F00C1DB4B /* ProjetiOS.xcdatamodeld in Sources */,
 				A619CF921E683B88003B0F0D /* SignUpViewController.swift in Sources */,
+				A64965811E827A4400341A1E /* ModelMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

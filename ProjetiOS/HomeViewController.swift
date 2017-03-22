@@ -66,22 +66,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         if(messageText != "")
         {
-            let context = CoreDataManager.getContext()
-            
-            let message = Message(context: context)
-            
-            let date = Date()
-            let formatter = DateFormatter()
-            formatter.dateFormat = "dd.MM.yyyy"
-            let result = formatter.string(from: date)
-            let resultString = String(result)
-            let instance = Session.sharedInstance
-            
-            message.date = resultString
-            message.idM = 1
-            message.status = instance.getStatus()
-            message.sender = instance.getLogin()
-            message.text = messageText
+            Message.sendMessage(withMessage: messageText!)
             
         } else {
             self.AlertEmpty()
