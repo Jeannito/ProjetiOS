@@ -12,6 +12,7 @@
 		A64965811E827A4400341A1E /* ModelMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64965801E827A4400341A1E /* ModelMessage.swift */; };
 		A64965831E827DBA00341A1E /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64965821E827DBA00341A1E /* ModelUser.swift */; };
 		A64965871E82911600341A1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A64965861E82911600341A1E /* Main.storyboard */; };
+		A64965891E8292D000341A1E /* ProfilInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64965881E8292D000341A1E /* ProfilInformationViewController.swift */; };
 		A66C12CB1E51AD5F00C1DB4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C12CA1E51AD5F00C1DB4B /* AppDelegate.swift */; };
 		A66C12D31E51AD5F00C1DB4B /* ProjetiOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A66C12D11E51AD5F00C1DB4B /* ProjetiOS.xcdatamodeld */; };
 		A66C12D51E51AD5F00C1DB4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A66C12D41E51AD5F00C1DB4B /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		A64965801E827A4400341A1E /* ModelMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelMessage.swift; sourceTree = "<group>"; };
 		A64965821E827DBA00341A1E /* ModelUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
 		A64965861E82911600341A1E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A64965881E8292D000341A1E /* ProfilInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilInformationViewController.swift; sourceTree = "<group>"; };
 		A66C12C71E51AD5F00C1DB4B /* ProjetiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A66C12CA1E51AD5F00C1DB4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A66C12D21E51AD5F00C1DB4B /* ProjetiOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProjetiOS.xcdatamodel; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			children = (
 				A66C12FB1E51B7E400C1DB4B /* MSBlogo.png */,
 				A66C12CA1E51AD5F00C1DB4B /* AppDelegate.swift */,
+				A64965881E8292D000341A1E /* ProfilInformationViewController.swift */,
 				AF0CE5461E813B8B003701C8 /* ProfilViewController.swift */,
 				A64965801E827A4400341A1E /* ModelMessage.swift */,
 				AF70CA541E77EDF100DB7D6F /* HomeViewController.swift */,
@@ -292,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6BE717C1E702163003AA803 /* Session.swift in Sources */,
+				A64965891E8292D000341A1E /* ProfilInformationViewController.swift in Sources */,
 				A60CFD891E6D504900040607 /* CoreDataManager.swift in Sources */,
 				A6BE717A1E700246003AA803 /* ConnectionViewController.swift in Sources */,
 				A66C12CB1E51AD5F00C1DB4B /* AppDelegate.swift in Sources */,
