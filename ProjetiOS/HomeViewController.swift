@@ -21,9 +21,17 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Do any additional setup after loading the view.
     }
 
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func signOut(_ sender: Any) {
+        self.performSegue(withIdentifier: "deconnect", sender: self)
+        Session.sharedInstance.setLogin(login: "nil")
+        Session.sharedInstance.setStatus(status: "nil")
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

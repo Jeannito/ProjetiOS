@@ -36,4 +36,9 @@ extension User {
         }
         return users
     }
+    
+    class func deleteUser(withLogin: String){
+        let user = getUsersByLogin(withLogin: withLogin)
+        CoreDataManager.context.delete(user[0])
+    }
 }
