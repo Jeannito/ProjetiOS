@@ -25,6 +25,19 @@ extension Message {
         return messages
     }
     
+    class func getMessageByLogin(withLogin: String) -> [Message] {
+        var messages: [Message] = []
+        let context = CoreDataManager.getContext()
+        let request : NSFetchRequest<Message> = Message.fetchRequest()
+        request.predicate = NSPredicate(format: "login == %@", withLogin)
+        do {
+            try messages = context.fetch(request)
+        } catch let error as NSError {
+            fatalError("failed to get message by status=\(withLogin): \(error)")
+        }
+        return messages
+    }
+    
     class func getAllMessage() -> [Message] {
         var messages: [Message] = []
         let context = CoreDataManager.getContext()
@@ -54,5 +67,7 @@ extension Message {
         message.status = instance.getStatus()
         message.sender = instance.getLogin()
         message.text = withMessage
+        
+        CoreDataManager.save()
     }
 }

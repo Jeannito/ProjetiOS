@@ -11,6 +11,7 @@
 		A619CF921E683B88003B0F0D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A619CF911E683B88003B0F0D /* SignUpViewController.swift */; };
 		A64965811E827A4400341A1E /* ModelMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64965801E827A4400341A1E /* ModelMessage.swift */; };
 		A64965831E827DBA00341A1E /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64965821E827DBA00341A1E /* ModelUser.swift */; };
+		A64965871E82911600341A1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A64965861E82911600341A1E /* Main.storyboard */; };
 		A66C12CB1E51AD5F00C1DB4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C12CA1E51AD5F00C1DB4B /* AppDelegate.swift */; };
 		A66C12D31E51AD5F00C1DB4B /* ProjetiOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A66C12D11E51AD5F00C1DB4B /* ProjetiOS.xcdatamodeld */; };
 		A66C12D51E51AD5F00C1DB4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A66C12D41E51AD5F00C1DB4B /* Assets.xcassets */; };
@@ -18,7 +19,6 @@
 		A66C12E31E51AD5F00C1DB4B /* ProjetiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C12E21E51AD5F00C1DB4B /* ProjetiOSTests.swift */; };
 		A66C12EE1E51AD5F00C1DB4B /* ProjetiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C12ED1E51AD5F00C1DB4B /* ProjetiOSUITests.swift */; };
 		A66C12FC1E51B7E400C1DB4B /* MSBlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = A66C12FB1E51B7E400C1DB4B /* MSBlogo.png */; };
-		A66C12FF1E51BED400C1DB4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66C12FD1E51BED400C1DB4B /* Main.storyboard */; };
 		A6BE717A1E700246003AA803 /* ConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BE71791E700246003AA803 /* ConnectionViewController.swift */; };
 		A6BE717C1E702163003AA803 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BE717B1E702163003AA803 /* Session.swift */; };
 		AF0CE5471E813B8B003701C8 /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0CE5461E813B8B003701C8 /* ProfilViewController.swift */; };
@@ -48,6 +48,7 @@
 		A619CF911E683B88003B0F0D /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A64965801E827A4400341A1E /* ModelMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelMessage.swift; sourceTree = "<group>"; };
 		A64965821E827DBA00341A1E /* ModelUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
+		A64965861E82911600341A1E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A66C12C71E51AD5F00C1DB4B /* ProjetiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A66C12CA1E51AD5F00C1DB4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A66C12D21E51AD5F00C1DB4B /* ProjetiOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProjetiOS.xcdatamodel; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		A66C12ED1E51AD5F00C1DB4B /* ProjetiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjetiOSUITests.swift; sourceTree = "<group>"; };
 		A66C12EF1E51AD5F00C1DB4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A66C12FB1E51B7E400C1DB4B /* MSBlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MSBlogo.png; path = Assets.xcassets/MSBlogo.png; sourceTree = "<group>"; };
-		A66C12FE1E51BED400C1DB4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6BE71791E700246003AA803 /* ConnectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionViewController.swift; sourceTree = "<group>"; };
 		A6BE717B1E702163003AA803 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		AF0CE5461E813B8B003701C8 /* ProfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +97,7 @@
 		A66C12BE1E51AD5F00C1DB4B = {
 			isa = PBXGroup;
 			children = (
+				A64965861E82911600341A1E /* Main.storyboard */,
 				A66C12C91E51AD5F00C1DB4B /* ProjetiOS */,
 				A66C12E11E51AD5F00C1DB4B /* ProjetiOSTests */,
 				A66C12EC1E51AD5F00C1DB4B /* ProjetiOSUITests */,
@@ -119,7 +120,6 @@
 			children = (
 				A66C12FB1E51B7E400C1DB4B /* MSBlogo.png */,
 				A66C12CA1E51AD5F00C1DB4B /* AppDelegate.swift */,
-				A66C12FD1E51BED400C1DB4B /* Main.storyboard */,
 				AF0CE5461E813B8B003701C8 /* ProfilViewController.swift */,
 				A64965801E827A4400341A1E /* ModelMessage.swift */,
 				AF70CA541E77EDF100DB7D6F /* HomeViewController.swift */,
@@ -266,7 +266,7 @@
 				A66C12D81E51AD5F00C1DB4B /* LaunchScreen.storyboard in Resources */,
 				A66C12FC1E51B7E400C1DB4B /* MSBlogo.png in Resources */,
 				A66C12D51E51AD5F00C1DB4B /* Assets.xcassets in Resources */,
-				A66C12FF1E51BED400C1DB4B /* Main.storyboard in Resources */,
+				A64965871E82911600341A1E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,14 +343,6 @@
 				A66C12D71E51AD5F00C1DB4B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		A66C12FD1E51BED400C1DB4B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A66C12FE1E51BED400C1DB4B /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
