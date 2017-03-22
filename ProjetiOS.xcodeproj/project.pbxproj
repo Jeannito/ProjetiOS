@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2EC225901E831A95007ED651 /* membersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC2258F1E831A95007ED651 /* membersListViewController.swift */; };
 		A60CFD891E6D504900040607 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60CFD881E6D504900040607 /* CoreDataManager.swift */; };
 		A619CF921E683B88003B0F0D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A619CF911E683B88003B0F0D /* SignUpViewController.swift */; };
 		A64965811E827A4400341A1E /* ModelMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64965801E827A4400341A1E /* ModelMessage.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2EC2258F1E831A95007ED651 /* membersListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = membersListViewController.swift; sourceTree = "<group>"; };
 		A60CFD881E6D504900040607 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		A619CF911E683B88003B0F0D /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A64965801E827A4400341A1E /* ModelMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelMessage.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				A66C12D61E51AD5F00C1DB4B /* LaunchScreen.storyboard */,
 				A66C12D91E51AD5F00C1DB4B /* Info.plist */,
 				A66C12D11E51AD5F00C1DB4B /* ProjetiOS.xcdatamodeld */,
+				2EC2258F1E831A95007ED651 /* membersListViewController.swift */,
 			);
 			path = ProjetiOS;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6BE717C1E702163003AA803 /* Session.swift in Sources */,
+				2EC225901E831A95007ED651 /* membersListViewController.swift in Sources */,
 				A64965891E8292D000341A1E /* ProfilInformationViewController.swift in Sources */,
 				A60CFD891E6D504900040607 /* CoreDataManager.swift in Sources */,
 				A6BE717A1E700246003AA803 /* ConnectionViewController.swift in Sources */,
