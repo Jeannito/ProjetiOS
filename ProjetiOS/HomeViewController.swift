@@ -13,7 +13,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var messagesTable: UITableView!
     
-    
+    var message = Message.getAllMessage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,19 +27,23 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let message = Message.getAllMessage()
-        return message.count
+       
+        return self.message.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.messagesTable.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! MessageTableViewCell
         
-        let message = Message.getAllMessage()
         
-        cell.loginLabel.text = message[indexPath.row].sender
-        cell.messageLabel.text = message[indexPath.row].text
+        
+        cell.loginLabel.text = self.message[indexPath.row].sender
+        cell.messageLabel.text = self.message[indexPath.row].text
  
         return cell
+    }
+    
+    func refreshMsg(){
+        self.message=Message.getAllMessage()
     }
     
     /*
@@ -69,10 +73,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if(messageText != "")
         {
             Message.sendMessage(withMessage: messageText!)
+            self.refreshMsg()
             
         } else {
             self.AlertEmpty()
         }
+        
         
     }
     
