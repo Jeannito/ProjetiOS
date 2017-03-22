@@ -21,7 +21,7 @@ class ProfilInformationViewController: UIViewController {
     
     let instance = Session.sharedInstance
 
-    @IBAction func deletUser(_ sender: Any) {
+    @IBAction func deleteUser(_ sender: Any) {
         User.deleteUser(withLogin: instance.getLogin()!)
     }
     
