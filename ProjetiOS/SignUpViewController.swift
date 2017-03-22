@@ -70,7 +70,7 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     
     func Alert2() {
-        let alertController = UIAlertController(title: "Success !", message: "Your sign up was successfull",  preferredStyle: UIAlertControllerStyle.alert)
+        let alertController = UIAlertController(title: "Success !", message: "Your sign up was successfull !",  preferredStyle: UIAlertControllerStyle.alert)
         alertController.addAction(UIAlertAction(title: "Connect", style: UIAlertActionStyle.default,handler: nil))
         
         self.present(alertController, animated: true, completion: nil)

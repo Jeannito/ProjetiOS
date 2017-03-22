@@ -19,9 +19,16 @@ class ProfilViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmpasswordField: UITextField!
     
+    let instance = Session.sharedInstance
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginField.text = Session.sharedInstance.login
+        let information = User.getUsersByLogin(withLogin: self.instance.getLogin()!)
+        loginField.text = information[0].login
+        emailField.text = information[0].email
+        
         // Do any additional setup after loading the view.
     }
 
@@ -39,7 +46,7 @@ class ProfilViewController: UIViewController {
     }
     
     func Alert2() {
-        let alertController = UIAlertController(title: "Success !", message: "Your profile has been updated",  preferredStyle: UIAlertControllerStyle.alert)
+        let alertController = UIAlertController(title: "Success !", message: "Your profile has been updated !",  preferredStyle: UIAlertControllerStyle.alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
         
         self.present(alertController, animated: true, completion: nil)
@@ -54,13 +61,17 @@ class ProfilViewController: UIViewController {
         if(password == confirmpassword)
         {
             
-            let user = User(context: context)
+            let information = User.getUsersByLogin(withLogin: self.instance.getLogin()!)
             
-            user.login = login
-            user.password = password
-            user.email = email
+            
+            information[0].login = login
+            information[0].email = email
+            information[0].password = password
+            
+            Session.sharedInstance.setLogin(login: login!)
             
             self.Alert2()
+            
             CoreDataManager.save()
             
         } else {
