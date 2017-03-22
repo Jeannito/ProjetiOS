@@ -613,7 +613,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="xgu-Nh-Qn8" customClass="UserTableViewCell" customModule="ProjetiOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userCell" id="xgu-Nh-Qn8" customClass="UserTableViewCell" customModule="ProjetiOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="646" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xgu-Nh-Qn8" id="5tl-RC-a1f">
@@ -964,7 +964,7 @@
         <image name="loginBGCard" width="367" height="477"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3nr-gw-McR"/>
+        <segue reference="s79-hP-uPT"/>
         <segue reference="hWn-Qk-r1l"/>
     </inferredMetricsTieBreakers>
 </document>

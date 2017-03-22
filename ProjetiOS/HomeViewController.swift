@@ -31,7 +31,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.performSegue(withIdentifier: "deconnect", sender: self)
         Session.sharedInstance.setLogin(login: "nil")
         Session.sharedInstance.setStatus(status: "nil")
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
