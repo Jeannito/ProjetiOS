@@ -103,5 +103,7 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         self.Alert2()
         CoreDataManager.save()
+        
+        self.performSegue(withIdentifier: "signUp", sender: self)
     }
 }
