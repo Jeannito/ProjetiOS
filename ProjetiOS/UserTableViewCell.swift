@@ -11,7 +11,6 @@ import UIKit
 class UserTableViewCell: UITableViewCell {
     
     @IBOutlet weak var userPicture: UIImageView!
-    
     @IBOutlet weak var firstNameLabel: UILabel!
     @IBOutlet weak var lastNameLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
