@@ -39,6 +39,7 @@
         <attribute name="login" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nom" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="prenom" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Message" inverseName="newRelationship" inverseEntity="Message" syncable="YES"/>
@@ -52,6 +53,6 @@
         <element name="MessageSimple" positionX="-81" positionY="984" width="128" height="60"/>
         <element name="Promotion" positionX="-342" positionY="567" width="128" height="118"/>
         <element name="TypeMessage" positionX="72" positionY="807" width="128" height="88"/>
-        <element name="User" positionX="-117" positionY="522" width="128" height="165"/>
+        <element name="User" positionX="-117" positionY="522" width="128" height="180"/>
     </elements>
 </model>
