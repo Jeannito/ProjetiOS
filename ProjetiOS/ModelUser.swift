@@ -1,18 +1,55 @@
 //
-//  ModelUser.swift
+//  ModelUser(bis).swift
 //  ProjetiOS
 //
-//  Created by Jean BRUTE-DE-REMUR on 22/03/2017.
+//  Created by Bruté de Rémur Raphaël on 23/03/2017.
 //  Copyright © 2017 Jean BRUTE-DE-REMUR. All rights reserved.
 //
+
 
 import Foundation
 import CoreData
 import UIKit
 
-extension User {
+class ModelUser {
     
-    class func getUsersByLogin(withLogin: String) -> [User] {
+    let context = CoreDataManager.getContext()
+    let request : NSFetchRequest<User> = User.fetchRequest()
+    
+    fileprivate lazy var userFetched : NSFetchedResultsController<User> = {
+        self.request.sortDescriptors = [NSSortDescriptor(key:#keyPath(User.login),ascending:true)]
+        let fetchResultController = NSFetchedResultsController(fetchRequest: self.request, managedObjectContext: CoreDataManager.getContext(), sectionNameKeyPath: nil, cacheName: nil)
+        return fetchResultController
+    }()
+    
+    
+    init(){
+        do {
+            try userFetched.performFetch()
+        }
+        catch let error as NSError{
+            fatalError("failed to get user\(error)")
+        }
+    }
+
+    func refreshUser(){
+        do {
+            try userFetched.performFetch()
+        }
+        catch let error as NSError{
+            fatalError("failed to get users\(error)")
+        }
+        
+    }
+    
+    
+    func getUser() -> NSFetchedResultsController<User>  {
+        return userFetched
+    }
+    
+
+
+    func getUsersByLogin(withLogin: String) -> [User] {
         var users: [User] = []
         let context = CoreDataManager.getContext()
         let request : NSFetchRequest<User> = User.fetchRequest()
@@ -25,7 +62,7 @@ extension User {
         return users
     }
     
-    class func getAllUsers() -> [User] {
+    func getAllUsers() -> [User] {
         var users: [User] = []
         let context = CoreDataManager.getContext()
         let request : NSFetchRequest<User> = User.fetchRequest()
@@ -37,8 +74,14 @@ extension User {
         return users
     }
     
-    class func deleteUser(withLogin: String){
+    func deleteUser(withLogin: String){
         let user = getUsersByLogin(withLogin: withLogin)
         CoreDataManager.context.delete(user[0])
     }
+    
+    func getNumberUser() -> Int {
+        return (userFetched.fetchedObjects!.count)
+    }
+
+    
 }

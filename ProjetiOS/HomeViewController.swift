@@ -9,15 +9,17 @@
 import UIKit
 import CoreData
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate {
     
     @IBOutlet weak var messagesTable: UITableView!
     
-    var message = Message.getAllMessage()
+    var msgFetched : ModelMessage = ModelMessage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.msgFetched.getMessages().delegate = self
+        self.msgFetched.refreshMsg()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -34,35 +36,52 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
-        return self.message.count
+        return self.msgFetched.getNumberMessages()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.messagesTable.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! MessageTableViewCell
         
+        let message = self.msgFetched.getMessages().object(at: indexPath)
         
-        
-        cell.loginLabel.text = self.message[indexPath.row].sender
-        cell.messageLabel.text = self.message[indexPath.row].text
+        cell.loginLabel.text = message.sender
+        cell.messageLabel.text = message.text
  
         return cell
     }
     
-    func refreshMsg(){
-        self.message=Message.getAllMessage()
+    
+    // MARK: - NSFetchResultController delegate protocol
+    
+    /// Start the update of a fetch result
+    ///
+    /// - Parameter controller: fetchresultcontroller
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.messagesTable.beginUpdates()
     }
     
-    /*
-    // MARK: - Navigationself.firstNames[indexPath.row]
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    /// End the update of a fetch result
+    ///
+    /// - Parameter controller: fetchresultcontroller
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.messagesTable.endUpdates()
+        self.messagesTable.reloadData()
     }
-    */
     
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type{
+        case .delete:
+            if let indexPath = indexPath{
+                self.messagesTable.deleteRows(at: [indexPath], with: .automatic)
+            }
+        case .insert:
+            if let newIndexPath = newIndexPath{
+                self.messagesTable.insertRows(at: [newIndexPath], with: .fade)
+            }
+        default:
+            break
+        }
+    }
     
     func AlertEmpty() {
         let alertController = UIAlertController(title: "Empty Field", message:
@@ -79,13 +98,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         if(messageText != "")
         {
-            Message.sendMessage(withMessage: messageText!)
-            self.refreshMsg()
+            msgFetched.sendMessage(withMessage: messageText!)
+            
             
         } else {
             self.AlertEmpty()
         }
-        
+        self.viewDidLoad()
         
     }
     

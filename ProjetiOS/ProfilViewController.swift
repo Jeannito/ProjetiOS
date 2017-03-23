@@ -20,12 +20,12 @@ class ProfilViewController: UIViewController {
     @IBOutlet weak var confirmpasswordField: UITextField!
     
     let instance = Session.sharedInstance
-    
+    var user : ModelUser = ModelUser()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let information = User.getUsersByLogin(withLogin: self.instance.getLogin()!)
+        let information = user.getUsersByLogin(withLogin: self.instance.getLogin()!)
         loginField.text = information[0].login
         emailField.text = information[0].email
         
@@ -61,7 +61,7 @@ class ProfilViewController: UIViewController {
         if(password == confirmpassword)
         {
             
-            let information = User.getUsersByLogin(withLogin: self.instance.getLogin()!)
+            let information = user.getUsersByLogin(withLogin: self.instance.getLogin()!)
             
             
             information[0].login = login

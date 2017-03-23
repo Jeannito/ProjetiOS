@@ -12,7 +12,7 @@ import CoreData
 
 class ConnectionViewController: UIViewController {
 
-
+    var user : ModelUser = ModelUser()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +70,7 @@ class ConnectionViewController: UIViewController {
         } else if(login==""){
             AlertLogin()
         } else {
-            let listLogin = User.getUsersByLogin(withLogin: login!)
+            let listLogin = user.getUsersByLogin(withLogin: login!)
             if (listLogin.count==0){
                 AlertLoginWrong()
             }

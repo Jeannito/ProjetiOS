@@ -20,15 +20,16 @@ class ProfilInformationViewController: UIViewController {
     @IBOutlet weak var statusLabel: UILabel!
     
     let instance = Session.sharedInstance
+    var user : ModelUser = ModelUser()
 
     @IBAction func deleteUser(_ sender: Any) {
-        User.deleteUser(withLogin: instance.getLogin()!)
+        user.deleteUser(withLogin: instance.getLogin()!)
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let information = User.getUsersByLogin(withLogin: self.instance.getLogin()!)
+        let information = user.getUsersByLogin(withLogin: self.instance.getLogin()!)
         firstnameLabel.text = information[0].prenom
         lastnameLabel.text = information[0].nom
         loginLabel.text = information[0].login
