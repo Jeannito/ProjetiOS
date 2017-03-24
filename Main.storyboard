@@ -498,7 +498,7 @@
                                 </state>
                                 <connections>
                                     <action selector="modify:" destination="Spn-nE-2Db" eventType="touchUpInside" id="gYJ-ja-XnA"/>
-                                    <segue destination="zJX-Ws-RmX" kind="show" identifier="modify" id="WOk-GV-5kP"/>
+                                    <segue destination="zJX-Ws-RmX" kind="show" identifier="modifyOk" id="WOk-GV-5kP"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="imY-CJ-Q9L">

@@ -45,13 +45,6 @@ class ProfilViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
-    func Alert2() {
-        let alertController = UIAlertController(title: "Success !", message: "Your profile has been updated !",  preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
-        
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
     @IBAction func modify(_ sender: Any) {
         let login = self.loginField.text
         let email = self.emailField.text
@@ -70,11 +63,10 @@ class ProfilViewController: UIViewController {
             
             Session.sharedInstance.setLogin(login: login!)
             
-            self.Alert2()
+            self.performSegue(withIdentifier: "modifyOk", sender: self)            
             
             CoreDataManager.save()
             
-             self.performSegue(withIdentifier: "modify", sender: self)
             
         } else {
             self.Alert1()
