@@ -63,7 +63,7 @@ class ProfilViewController: UIViewController {
             
             Session.sharedInstance.setLogin(login: login!)
             
-            self.performSegue(withIdentifier: "modifyOk", sender: self)            
+            self.performSegue(withIdentifier: "modifyOk", sender: self)
             
             CoreDataManager.save()
             
@@ -71,6 +71,10 @@ class ProfilViewController: UIViewController {
         } else {
             self.Alert1()
         }
+        
+    }
+    
+    @IBAction func `return`(_ sender: Any) {
         
     }
     

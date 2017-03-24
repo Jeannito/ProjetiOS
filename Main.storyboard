@@ -489,11 +489,11 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oO-Ke-Mts">
-                                <rect key="frame" x="278" y="689" width="213" height="55"/>
+                                <rect key="frame" x="218" y="683" width="140" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.44038713260000001" green="0.74486178879999998" blue="0.92690304489999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.45887261629104614" green="0.70878124237060547" blue="0.87906378507614136" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="20"/>
-                                <state key="normal" title="Modifier">
+                                <state key="normal" title="Update">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <connections>
@@ -505,6 +505,19 @@
                                 <rect key="frame" x="218" y="245" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozU-Gs-IB8">
+                                <rect key="frame" x="395" y="683" width="140" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.45887261629104614" green="0.70878124237060547" blue="0.87906378507614136" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="20"/>
+                                <state key="normal" title="Return">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="return:" destination="Spn-nE-2Db" eventType="touchUpInside" id="MvU-en-QCb"/>
+                                    <segue destination="zJX-Ws-RmX" kind="show" id="Aih-kc-H7c"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -879,7 +892,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ga-9Q-h0o">
-                                <rect key="frame" x="292" y="728" width="212" height="62"/>
+                                <rect key="frame" x="234" y="728" width="176" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.45875990389999999" green="0.70990544560000002" blue="0.87968963379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="20"/>
@@ -911,6 +924,19 @@
                                     <outlet property="delegate" destination="nQT-Fd-U3J" id="xIf-I3-0FI"/>
                                 </connections>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4J4-fj-7VS">
+                                <rect key="frame" x="423" y="728" width="176" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.45887261629104614" green="0.70878124237060547" blue="0.87906378507614136" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="20"/>
+                                <state key="normal" title="Return">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="return:" destination="nQT-Fd-U3J" eventType="touchUpInside" id="sW7-02-bAh"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="wJy-xa-1GH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -947,7 +973,7 @@
         <image name="users" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="s79-hP-uPT"/>
+        <segue reference="wJy-xa-1GH"/>
         <segue reference="WOk-GV-5kP"/>
     </inferredMetricsTieBreakers>
 </document>
