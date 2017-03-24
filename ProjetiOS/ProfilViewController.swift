@@ -74,6 +74,8 @@ class ProfilViewController: UIViewController {
             
             CoreDataManager.save()
             
+             self.performSegue(withIdentifier: "modify", sender: self)
+            
         } else {
             self.Alert1()
         }

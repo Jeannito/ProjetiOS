@@ -22,7 +22,7 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     @IBOutlet weak var statusPicker: UIPickerView!
     
-    let pickerData = ["Student","Teacher","Responsible"]
+    let pickerData = ["Student","Teacher","Manager", "Administration"]
     
     var statusPicked: String?
     
