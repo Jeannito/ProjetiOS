@@ -13,6 +13,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var messagesTable: UITableView!
     
+    var userFetched : ModelUser = ModelUser()
     var msgFetched : ModelMessage = ModelMessage()
     
     override func viewDidLoad() {
@@ -42,10 +43,18 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.messagesTable.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! MessageTableViewCell
         
+        var user = userFetched.getUsersByLogin(withLogin: Session.sharedInstance.getLogin()!)
+        
         let message = self.msgFetched.getMessages().object(at: indexPath)
         
+        cell.dateLabel.text = message.date
         cell.loginLabel.text = message.sender
         cell.messageLabel.text = message.text
+        if user[0].photo != nil {
+            cell.userPicture.image = UIImage(data: user[0].photo as! Data)
+        } else {
+            cell.userPicture.image = UIImage(named: "user")
+        }
  
         return cell
     }
