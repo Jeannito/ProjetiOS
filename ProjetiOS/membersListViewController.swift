@@ -41,7 +41,7 @@ class membersListViewController: UIViewController, UITableViewDataSource, UITabl
         
         cell.lastNameLabel.text = users.nom
         cell.firstNameLabel.text = users.prenom
-        /*cell.statusLabel.text = users.status*/
+        cell.statusLabel.text = users.status
         
         return cell
     }

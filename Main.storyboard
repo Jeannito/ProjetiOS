@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3pu-tV-zfP">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3pu-tV-zfP">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -64,7 +64,7 @@
                                 </state>
                                 <connections>
                                     <action selector="log:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cqY-rK-fF0"/>
-                                    <segue destination="qNJ-41-8pa" kind="show" id="CZV-JN-Lkh"/>
+                                    <segue destination="roh-Dg-PiH" kind="show" id="0kC-g4-Ugf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eY9-2b-jjM">
@@ -112,7 +112,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1170.3125" y="-463.47656249999994"/>
+            <point key="canvasLocation" x="621" y="-463"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Csf-Dg-3Gr">
+            <objects>
+                <tabBarController id="roh-Dg-PiH" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Em4-T5-Toh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="qNJ-41-8pa" kind="relationship" relationship="viewControllers" id="865-z1-tJp"/>
+                        <segue destination="zJX-Ws-RmX" kind="relationship" relationship="viewControllers" id="BBQ-aT-ePd"/>
+                        <segue destination="xAI-DN-aay" kind="relationship" relationship="viewControllers" id="CTy-Go-V4D"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QO5-TR-zGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1842" y="428"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="m61-cR-Ioy">
@@ -130,21 +149,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d0M-wP-cu6">
-                                <rect key="frame" x="8" y="910" width="700" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="700" id="ZIC-Bz-UfW"/>
-                                </constraints>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d0M-wP-cu6">
+                                <rect key="frame" x="20" y="826" width="663" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="cpK-l1-rk0">
-                                <rect key="frame" x="0.0" y="20" width="768" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" alpha="0.94999999999999996" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="60" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="hfc-Yi-bGx">
-                                <rect key="frame" x="0.0" y="64" width="768" height="830"/>
+                                <rect key="frame" x="0.0" y="93" width="768" height="709"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
@@ -187,28 +200,43 @@
                                     <outlet property="delegate" destination="qNJ-41-8pa" id="aMj-yU-dbu"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wvt-tf-aOl">
-                                <rect key="frame" x="0.0" y="954" width="274" height="70"/>
+                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wvt-tf-aOl">
+                                <rect key="frame" x="37" y="877" width="203" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.45875990389999999" green="0.70990544560000002" blue="0.87968963379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="OS3-3h-7io"/>
-                                    <constraint firstAttribute="width" constant="274" id="tlM-w4-1Fj"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="20"/>
-                                <state key="normal" title="Information">
+                                <state key="normal" title="Send a photo">
                                     <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFi-rd-Jg4">
+                                <rect key="frame" x="708" y="826" width="40" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                </state>
                                 <connections>
-                                    <segue destination="xAI-DN-aay" kind="show" id="lE1-tA-SFi"/>
+                                    <action selector="sendAction:" destination="qNJ-41-8pa" eventType="touchUpInside" id="Bmm-wd-zlH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMO-rY-Fcp">
-                                <rect key="frame" x="529" y="953" width="239" height="71"/>
+                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Kt-dp-P9K">
+                                <rect key="frame" x="289" y="875" width="190" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.45875990389999999" green="0.70990544560000002" blue="0.87968963379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="71" id="DVt-Mg-7n3"/>
-                                    <constraint firstAttribute="width" constant="239" id="k8Y-WY-yxC"/>
-                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="20"/>
+                                <state key="normal" title="Send a file">
+                                    <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <searchBar contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cpK-l1-rk0">
+                                <rect key="frame" x="0.0" y="49" width="768" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMO-rY-Fcp">
+                                <rect key="frame" x="532" y="876" width="195" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.45875990389999999" green="0.70990544560000002" blue="0.87968963379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="20"/>
                                 <state key="normal" title="Deconnexion">
                                     <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -218,54 +246,17 @@
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="deconnect" id="s79-hP-uPT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFi-rd-Jg4">
-                                <rect key="frame" x="716" y="907" width="40" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Send">
-                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="sendAction:" destination="qNJ-41-8pa" eventType="touchUpInside" id="Bmm-wd-zlH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Kt-dp-P9K">
-                                <rect key="frame" x="274" y="953" width="255" height="71"/>
-                                <color key="backgroundColor" red="0.45875990389999999" green="0.70990544560000002" blue="0.87968963379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="71" id="BHL-qR-NIb"/>
-                                    <constraint firstAttribute="width" constant="255" id="tWS-c5-5gm"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="20"/>
-                                <state key="normal" title="Profil">
-                                    <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="zJX-Ws-RmX" kind="show" id="aYj-Ws-OYa"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Wvt-tf-aOl" firstAttribute="leading" secondItem="D8p-im-12X" secondAttribute="leading" id="2l2-zr-wnY"/>
-                            <constraint firstItem="7Kt-dp-P9K" firstAttribute="leading" secondItem="Wvt-tf-aOl" secondAttribute="trailing" id="4Ee-Vt-f8h"/>
                             <constraint firstAttribute="trailing" secondItem="cpK-l1-rk0" secondAttribute="trailing" id="6eL-oh-EIb"/>
                             <constraint firstItem="cpK-l1-rk0" firstAttribute="top" secondItem="Gqs-NM-CTT" secondAttribute="bottom" id="AMn-dP-VEz"/>
-                            <constraint firstItem="zFi-rd-Jg4" firstAttribute="leading" secondItem="d0M-wP-cu6" secondAttribute="trailing" constant="8" id="B1g-gn-AHN"/>
-                            <constraint firstItem="7Kt-dp-P9K" firstAttribute="top" secondItem="d0M-wP-cu6" secondAttribute="bottom" constant="13" id="BxR-h5-6K9"/>
-                            <constraint firstItem="d0M-wP-cu6" firstAttribute="leading" secondItem="D8p-im-12X" secondAttribute="leading" constant="8" id="CPc-2t-xra"/>
                             <constraint firstItem="cpK-l1-rk0" firstAttribute="leading" secondItem="D8p-im-12X" secondAttribute="leading" id="I6l-In-DwJ"/>
                             <constraint firstItem="cpK-l1-rk0" firstAttribute="top" secondItem="Gqs-NM-CTT" secondAttribute="bottom" id="N8R-xQ-CVp"/>
-                            <constraint firstItem="E4z-sd-yYO" firstAttribute="top" secondItem="7Kt-dp-P9K" secondAttribute="bottom" id="PLq-aQ-49v"/>
-                            <constraint firstItem="7Kt-dp-P9K" firstAttribute="leading" secondItem="Wvt-tf-aOl" secondAttribute="trailing" id="YAb-HB-qUO"/>
-                            <constraint firstItem="E4z-sd-yYO" firstAttribute="top" secondItem="JMO-rY-Fcp" secondAttribute="bottom" id="a2M-fb-DNQ"/>
-                            <constraint firstItem="E4z-sd-yYO" firstAttribute="top" secondItem="Wvt-tf-aOl" secondAttribute="bottom" id="an2-ac-3cC"/>
                             <constraint firstAttribute="trailing" secondItem="cpK-l1-rk0" secondAttribute="trailing" id="hHy-Cm-h4m"/>
-                            <constraint firstItem="E4z-sd-yYO" firstAttribute="top" secondItem="Wvt-tf-aOl" secondAttribute="bottom" id="hMv-we-3ll"/>
-                            <constraint firstAttribute="trailing" secondItem="JMO-rY-Fcp" secondAttribute="trailing" id="pf6-Gc-Qpi"/>
                             <constraint firstItem="cpK-l1-rk0" firstAttribute="leading" secondItem="D8p-im-12X" secondAttribute="leading" id="wVw-mG-VN7"/>
-                            <constraint firstItem="Wvt-tf-aOl" firstAttribute="leading" secondItem="D8p-im-12X" secondAttribute="leading" id="xBE-CF-Ksj"/>
-                            <constraint firstItem="JMO-rY-Fcp" firstAttribute="top" secondItem="zFi-rd-Jg4" secondAttribute="bottom" constant="13" id="z6W-YG-MIu"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Send" image="003-paper-plane" selectedImage="003-paper-plane" id="vaI-76-m6b"/>
                     <navigationItem key="navigationItem" title="My School Book" id="7HU-VU-t0b"/>
                     <connections>
                         <outlet property="MessageField" destination="d0M-wP-cu6" id="ubF-Ka-1x7"/>
@@ -283,9 +274,9 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-349.21875" y="962.69531249999989"/>
+            <point key="canvasLocation" x="-126.5625" y="457.61718749999994"/>
         </scene>
-        <!--Profil Information View Controller-->
+        <!--User-->
         <scene sceneID="MAy-Ap-yNd">
             <objects>
                 <viewController id="zJX-Ws-RmX" customClass="ProfilInformationViewController" customModule="ProjetiOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -406,6 +397,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="User" image="002-user" selectedImage="002-user" id="ngP-PR-B0d"/>
                     <connections>
                         <outlet property="firstnameLabel" destination="qGr-iA-kuz" id="QRL-gc-DOv"/>
                         <outlet property="lastnameLabel" destination="3QE-ud-NJD" id="WgJ-Jx-0PR"/>
@@ -417,7 +409,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6RI-wG-5y0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-355.46875" y="1640.625"/>
+            <point key="canvasLocation" x="-127" y="1279"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="L8c-UT-Kph">
@@ -476,9 +468,9 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oO-Ke-Mts">
-                                <rect key="frame" x="278" y="658" width="213" height="72"/>
+                                <rect key="frame" x="278" y="675" width="213" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.25535392759999997" green="0.60785150529999998" blue="0.83247834440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.44038713260000001" green="0.74486178879999998" blue="0.92690304489999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="20"/>
                                 <state key="normal" title="Modifier">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -515,7 +507,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ee-zs-Roh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-355.46875" y="2347.8515625"/>
+            <point key="canvasLocation" x="-127" y="2075"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="BGi-Av-0hJ">
@@ -539,44 +531,44 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6F-RR-4dK">
-                                <rect key="frame" x="255" y="322" width="259" height="64"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6F-RR-4dK">
+                                <rect key="frame" x="255" y="338" width="259" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.45875990390777588" green="0.70990544557571411" blue="0.87968963384628296" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="MEMBERS">
+                                <state key="normal" title="    MEMBERS" image="users">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <connections>
                                     <segue destination="tnB-QS-Oth" kind="show" id="I14-Ti-XzE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iiJ-OZ-9a5">
-                                <rect key="frame" x="255" y="427" width="259" height="64"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iiJ-OZ-9a5">
+                                <rect key="frame" x="255" y="437" width="259" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.45875990389999999" green="0.70990544560000002" blue="0.87968963379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="FILES">
+                                <state key="normal" title="    FILES" image="folder">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <connections>
                                     <segue destination="ngZ-y9-irc" kind="show" id="1Ri-dt-b4e"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLf-Qp-dKa">
-                                <rect key="frame" x="255" y="532" width="259" height="64"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLf-Qp-dKa">
+                                <rect key="frame" x="255" y="548" width="259" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.45875990389999999" green="0.70990544560000002" blue="0.87968963379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="PICTURES">
+                                <state key="normal" title="    PICTURES" image="picture">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <connections>
                                     <segue destination="sp5-9R-3Yi" kind="show" id="mhb-UZ-aNh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8YK-Gj-FGu">
-                                <rect key="frame" x="255" y="635" width="259" height="64"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8YK-Gj-FGu">
+                                <rect key="frame" x="255" y="651" width="259" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.45875990389999999" green="0.70990544560000002" blue="0.87968963379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="CALENDAR">
+                                <state key="normal" title="    CALENDAR" image="calendar">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <connections>
@@ -586,11 +578,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="More" image="001-more" selectedImage="001-more" id="fL9-Cf-6Ew"/>
                     <navigationItem key="navigationItem" title="My School Book" id="acQ-UT-4ve"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J9V-Uw-2sX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1170.3125" y="987.89062499999989"/>
+            <point key="canvasLocation" x="1123.4375" y="823.828125"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="daq-bW-Z2k">
@@ -618,7 +611,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="83" id="0FO-DC-Ukx" customClass="UserTableViewCell" customModule="ProjetiOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="usersCell" rowHeight="83" id="0FO-DC-Ukx" customClass="UserTableViewCell" customModule="ProjetiOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="646" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0FO-DC-Ukx" id="sLm-Wt-cHV">
@@ -664,15 +657,22 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="tnB-QS-Oth" id="h2Z-d9-dQU"/>
+                                    <outlet property="delegate" destination="tnB-QS-Oth" id="hxd-xI-OZb"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="My School Book" id="y2X-XX-1gu"/>
+                    <connections>
+                        <outlet property="usersTable" destination="Lyw-P9-4qc" id="8xJ-YC-o2g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oa0-JC-Hun" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3938.28125" y="3578.9062499999995"/>
+            <point key="canvasLocation" x="2950" y="2075"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="qaV-yq-1vX">
@@ -732,7 +732,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2856.25" y="3578.9062499999995"/>
+            <point key="canvasLocation" x="2200" y="2075"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="QYv-ur-jNl">
@@ -758,7 +758,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b5y-2N-CtG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="727" y="3579"/>
+            <point key="canvasLocation" x="720" y="2075"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="9mR-a0-0Ad">
@@ -810,7 +810,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3a2-z9-d4b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1742.96875" y="3578.9062499999995"/>
+            <point key="canvasLocation" x="1448" y="2075"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="ZGP-Ky-te2">
@@ -937,7 +937,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aeI-mm-p5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2393.75" y="-463.47656249999994"/>
+            <point key="canvasLocation" x="1448" y="-463"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TBR-oZ-6OM">
@@ -959,13 +959,20 @@
         </scene>
     </scenes>
     <resources>
+        <image name="001-more" width="32" height="32"/>
+        <image name="002-user" width="32" height="32"/>
+        <image name="003-paper-plane" width="32" height="32"/>
         <image name="MSBlogo.png" width="269" height="152"/>
         <image name="bgLogin" width="414" height="736"/>
         <image name="bizp7-gros_carre_blanc" width="891" height="528"/>
+        <image name="calendar" width="32" height="32"/>
+        <image name="folder" width="32" height="32"/>
         <image name="loginBGCard" width="367" height="477"/>
+        <image name="picture" width="32" height="32"/>
+        <image name="users" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="s79-hP-uPT"/>
         <segue reference="hWn-Qk-r1l"/>
+        <segue reference="s79-hP-uPT"/>
     </inferredMetricsTieBreakers>
 </document>
