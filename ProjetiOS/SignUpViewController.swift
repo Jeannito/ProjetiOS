@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import CoreData
 
-class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate {
 
     
     @IBOutlet weak var firstnameField: UITextField!
@@ -21,8 +21,10 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBOutlet weak var confirmpasswordField: UITextField!
     
     @IBOutlet weak var statusPicker: UIPickerView!
+    @IBOutlet weak var userPicture: UIImageView!
     
     let pickerData = ["Student","Teacher","Manager", "Administration"]
+    let picker = UIImagePickerController()
     
     var statusPicked: String?
     
@@ -51,6 +53,8 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     {
         super.viewDidLoad()
         statusPicked = pickerData[statusPicker.selectedRow(inComponent: 0)]
+        let tapImage = UITapGestureRecognizer(target: self, action: #selector(self.changeImage))
+        self.userPicture.addGestureRecognizer(tapImage)
     }
 
     
@@ -76,6 +80,30 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         self.present(alertController, animated: true, completion: nil)
     }
     
+    @nonobjc func imagePickerController(_ picker: UIImagePickerController,
+                                        didFinishPickingMediaWithInfo info: [String : AnyObject])
+    {
+        if let chosenImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            self.userPicture.contentMode = .scaleAspectFit
+            self.userPicture.image = chosenImage
+            dismiss(animated:true, completion: nil)
+        }
+    }
+    
+    /// When clicking cancel, remove the picker
+    ///
+    /// - Parameter picker: The picker which has to be removed
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func changeImage(sender: UITapGestureRecognizer){
+        picker.allowsEditing = false
+        picker.sourceType = .photoLibrary
+        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        present(picker, animated: true, completion: nil)
+    }
+    
     @IBAction func signup(_ sender: Any) {
         let firstname = self.firstnameField.text
         let lastname = self.lastnameField.text
@@ -97,6 +125,7 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             user.password = password
             user.email = email
             user.status = status
+            user.photo = UIImageJPEGRepresentation(self.userPicture.image!,1)! as NSData
         } else {
             self.Alert1()
         }
