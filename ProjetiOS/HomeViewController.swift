@@ -32,8 +32,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBAction func signOut(_ sender: Any) {
         self.performSegue(withIdentifier: "deconnect", sender: self)
-        Session.sharedInstance.setLogin(login: "nil")
-        Session.sharedInstance.setStatus(status: "nil")
+        Session.sharedInstance.endSession()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,7 +50,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.loginLabel.text = message.sender
         cell.messageLabel.text = message.text
         if user[0].photo != nil {
-            cell.userPicture.image = UIImage(data: user[0].photo as! Data)
+            var thesender = userFetched.getUsersByLogin(withLogin: message.sender!)
+            cell.userPicture.image = UIImage(data: thesender[0].photo as! Data)
         } else {
             cell.userPicture.image = UIImage(named: "user")
         }

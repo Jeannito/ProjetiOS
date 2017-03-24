@@ -36,5 +36,9 @@ public class Session{
         return self.status
     }
     
+    public func endSession(){
+        self.login = nil
+        self.status = nil
+    }
     
 }
