@@ -911,9 +911,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" highlightedImage="user" translatesAutoresizingMaskIntoConstraints="NO" id="bbo-Zu-eOU">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user" highlightedImage="user" translatesAutoresizingMaskIntoConstraints="NO" id="bbo-Zu-eOU">
                                 <rect key="frame" x="234" y="209" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="gfm-nw-q0Z" appends="YES" id="Zn3-45-QGR"/>
+                                </connections>
                             </imageView>
                             <pickerView alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bRo-PH-CVr">
                                 <rect key="frame" x="423" y="380" width="176" height="113"/>
@@ -955,6 +959,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aeI-mm-p5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="gfm-nw-q0Z"/>
             </objects>
             <point key="canvasLocation" x="488" y="-463"/>
         </scene>
