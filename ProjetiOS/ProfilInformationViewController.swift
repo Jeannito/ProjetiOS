@@ -35,6 +35,11 @@ class ProfilInformationViewController: UIViewController {
         loginLabel.text = information[0].login
         mailLabel.text = information[0].email
         statusLabel.text = information[0].status
+        if information[0].photo != nil{
+            userPicture.image = UIImage(data: information[0].photo as! Data)
+        } else {
+            userPicture.image = UIImage(named: "user")
+        }
         // Do any additional setup after loading the view.
     }
     
