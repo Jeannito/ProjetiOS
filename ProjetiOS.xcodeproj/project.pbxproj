@@ -14,7 +14,7 @@
 		630E0F4C1E86714200B6F6BD /* ModelPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630E0F4B1E86714200B6F6BD /* ModelPicture.swift */; };
 		630E0F4E1E86757900B6F6BD /* PictureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630E0F4D1E86757900B6F6BD /* PictureCollectionViewCell.swift */; };
 		630E0F501E8682E600B6F6BD /* SendPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630E0F4F1E8682E600B6F6BD /* SendPhotoViewController.swift */; };
-		630E0F521E86941800B6F6BD /* MembersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630E0F511E86941800B6F6BD /* MembersListViewController.swift */; };
+		630E0F541E86A04B00B6F6BD /* MembersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630E0F531E86A04B00B6F6BD /* MembersListViewController.swift */; };
 		A60CFD891E6D504900040607 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60CFD881E6D504900040607 /* CoreDataManager.swift */; };
 		A619CF921E683B88003B0F0D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A619CF911E683B88003B0F0D /* SignUpViewController.swift */; };
 		A64965871E82911600341A1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A64965861E82911600341A1E /* Main.storyboard */; };
@@ -60,7 +60,7 @@
 		630E0F4B1E86714200B6F6BD /* ModelPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelPicture.swift; sourceTree = "<group>"; };
 		630E0F4D1E86757900B6F6BD /* PictureCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PictureCollectionViewCell.swift; path = ../PictureCollectionViewCell.swift; sourceTree = "<group>"; };
 		630E0F4F1E8682E600B6F6BD /* SendPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendPhotoViewController.swift; path = ../SendPhotoViewController.swift; sourceTree = "<group>"; };
-		630E0F511E86941800B6F6BD /* MembersListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembersListViewController.swift; sourceTree = "<group>"; };
+		630E0F531E86A04B00B6F6BD /* MembersListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembersListViewController.swift; sourceTree = "<group>"; };
 		A60CFD881E6D504900040607 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		A619CF911E683B88003B0F0D /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A64965861E82911600341A1E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };

@@ -128,7 +128,7 @@
                     <connections>
                         <segue destination="qNJ-41-8pa" kind="relationship" relationship="viewControllers" id="865-z1-tJp"/>
                         <segue destination="zJX-Ws-RmX" kind="relationship" relationship="viewControllers" id="BBQ-aT-ePd"/>
-                        <segue destination="xAI-DN-aay" kind="relationship" relationship="viewControllers" id="CTy-Go-V4D"/>
+                        <segue destination="xAI-DN-aay" kind="relationship" relationship="viewControllers" id="GPF-ld-TDF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QO5-TR-zGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -189,7 +189,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbf-bJ-Osm">
-                                                    <rect key="frame" x="116" y="30" width="125" height="21"/>
+                                                    <rect key="frame" x="116" y="30" width="267" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -303,7 +303,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-2918" y="714"/>
+            <point key="canvasLocation" x="-2918.75" y="713.671875"/>
         </scene>
         <!--Send Photo View Controller-->
         <scene sceneID="FrP-UB-LWx">
@@ -655,7 +655,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="tnB-QS-Oth" kind="show" id="I14-Ti-XzE"/>
+                                    <segue destination="xIQ-E9-d0X" kind="show" id="xWF-jK-pX3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iiJ-OZ-9a5">
@@ -666,7 +666,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ngZ-y9-irc" kind="show" id="1Ri-dt-b4e"/>
+                                    <segue destination="xIQ-E9-d0X" kind="show" id="a38-Lc-g4N"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLf-Qp-dKa">
@@ -677,7 +677,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="sp5-9R-3Yi" kind="show" id="mhb-UZ-aNh"/>
+                                    <segue destination="xIQ-E9-d0X" kind="show" id="Kzo-V9-JDW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8YK-Gj-FGu">
@@ -688,7 +688,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="gSs-JW-42S" kind="show" id="5Lb-rj-nb4"/>
+                                    <segue destination="xIQ-E9-d0X" kind="show" id="6bS-X6-wkZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -699,7 +699,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J9V-Uw-2sX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2071" y="397"/>
+            <point key="canvasLocation" x="1295" y="397"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="daq-bW-Z2k">
@@ -778,9 +778,23 @@
                                     <outlet property="delegate" destination="tnB-QS-Oth" id="hxd-xI-OZb"/>
                                 </connections>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MSs-QK-qVE">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Members" id="bHI-k1-tLI">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="gDy-qo-ghZ">
+                                            <connections>
+                                                <segue destination="roh-Dg-PiH" kind="show" id="UIa-OD-NMS"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="User" image="users" selectedImage="users" id="frP-Bs-7ua"/>
                     <navigationItem key="navigationItem" title="My School Book" id="y2X-XX-1gu"/>
                     <connections>
                         <outlet property="usersTable" destination="Lyw-P9-4qc" id="8xJ-YC-o2g"/>
@@ -788,7 +802,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oa0-JC-Hun" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3309" y="1213"/>
+            <point key="canvasLocation" x="3338" y="1600"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="qaV-yq-1vX">
@@ -829,9 +843,23 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gim-eH-wpE">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Files" id="mxb-D9-TRt">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="d4k-FT-eQs">
+                                            <connections>
+                                                <segue destination="roh-Dg-PiH" kind="show" id="UNt-Td-83a"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Files" image="folder" selectedImage="folder" id="4o9-BB-Zpa"/>
                     <navigationItem key="navigationItem" title="My School Book" id="qah-Ml-tzb"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="1QQ-4B-ALr" id="Kbd-Al-5v5"/>
@@ -848,7 +876,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2467" y="1213"/>
+            <point key="canvasLocation" x="2425" y="1600"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="QYv-ur-jNl">
@@ -867,14 +895,51 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RaZ-mq-Ndp">
+                                <rect key="frame" x="2" y="0.0" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Calendar" id="5aE-lz-Xd0">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="tyl-2i-SDC">
+                                            <connections>
+                                                <segue destination="roh-Dg-PiH" kind="show" id="c4g-wS-m76"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" selectedImage="calendar" id="wh9-Hz-pgc"/>
                     <navigationItem key="navigationItem" title="My School Book" id="Ip5-no-7rq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b5y-2N-CtG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="752" y="1213"/>
+            <point key="canvasLocation" x="865" y="1600"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="bdR-Kh-wPH">
+            <objects>
+                <tabBarController id="xIQ-E9-d0X" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="1Fo-5P-eoH"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="FWO-zg-TWO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.38823529410000002" green="0.64705882349999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="gSs-JW-42S" kind="relationship" relationship="viewControllers" id="d82-Gd-hkf"/>
+                        <segue destination="sp5-9R-3Yi" kind="relationship" relationship="viewControllers" id="eYk-gx-IFJ"/>
+                        <segue destination="ngZ-y9-irc" kind="relationship" relationship="viewControllers" id="0Fo-Rn-e06"/>
+                        <segue destination="tnB-QS-Oth" kind="relationship" relationship="viewControllers" id="0XT-hW-Z6u"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n2W-Ew-NXH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2921" y="491"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="9mR-a0-0Ad">
@@ -926,9 +991,23 @@
                                     <outlet property="delegate" destination="sp5-9R-3Yi" id="dmI-gU-yMN"/>
                                 </connections>
                             </collectionView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i2R-tV-FLf">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Images" id="LNL-J0-sI0">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="sdu-P5-q4M">
+                                            <connections>
+                                                <segue destination="roh-Dg-PiH" kind="show" id="pUu-zi-MQF"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Picture" image="picture" selectedImage="picture" id="Vcm-cA-MKt"/>
                     <navigationItem key="navigationItem" title="My School Book" id="YPf-JB-BhZ"/>
                     <connections>
                         <outlet property="pictureTable" destination="zo3-LB-cAq" id="pMI-At-FbM"/>
@@ -936,7 +1015,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3a2-z9-d4b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1691" y="1213"/>
+            <point key="canvasLocation" x="1657" y="1600"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="ZGP-Ky-te2">
