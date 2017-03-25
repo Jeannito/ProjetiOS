@@ -876,7 +876,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loginBGCard" translatesAutoresizingMaskIntoConstraints="NO" id="kep-pK-LpY">
-                                <rect key="frame" x="105" y="99" width="587" height="780"/>
+                                <rect key="frame" x="105" y="100" width="587" height="780"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Nq-9v-Dz6">
@@ -964,6 +964,30 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="wJy-xa-1GH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6c-LR-fuU">
+                                <rect key="frame" x="406" y="275" width="95" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.45887261629104614" green="0.70878124237060547" blue="0.87906378507614136" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="15"/>
+                                <state key="normal" title="Take a photo">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="takeAPhoto:" destination="nQT-Fd-U3J" eventType="touchUpInside" id="aIQ-Hz-xcE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCn-gM-7sK">
+                                <rect key="frame" x="406" y="240" width="95" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.45887261629104614" green="0.70878124237060547" blue="0.87906378507614136" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="15"/>
+                                <state key="normal" title="Library">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="photoFromLibrary:" destination="nQT-Fd-U3J" eventType="touchUpInside" id="k4V-RZ-Q6D"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -984,7 +1008,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aeI-mm-p5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="gfm-nw-q0Z"/>
             </objects>
-            <point key="canvasLocation" x="488" y="-463"/>
+            <point key="canvasLocation" x="487.5" y="-463.47656249999994"/>
         </scene>
     </scenes>
     <resources>
