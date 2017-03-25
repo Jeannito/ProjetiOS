@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import CoreData
 
-class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate{
 
     let context = CoreDataManager.getContext()
     
@@ -22,6 +22,8 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBOutlet weak var confirmpasswordField: UITextField!
     @IBOutlet weak var statusPicker: UIPickerView!
     @IBOutlet weak var userPicture: UIImageView!
+    @IBOutlet weak var promotionField: UITextField!
+    @IBOutlet weak var yearField: UITextField!
     
     var statusPicked: String?
     let pickerData = ["Student","Teacher","Manager", "Administration"]
@@ -58,7 +60,6 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         picker.delegate = self
         statusPicked = pickerData[statusPicker.selectedRow(inComponent: 0)]
     }
-    
     
     override func didReceiveMemoryWarning()
     {
@@ -121,24 +122,6 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         dismiss(animated: true, completion: nil)
     }
     
-    
-    
-    //Alerts
-    func Alert1() {
-        let alertController = UIAlertController(title: "Password Error", message:
-            "Your passwords are different", preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Ok chef", style: UIAlertActionStyle.default,handler: nil))
-        
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    func Alert2() {
-        let alertController = UIAlertController(title: "Success !", message: "Your sign up was successfull !",  preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Connect", style: UIAlertActionStyle.default,handler: nil))
-        
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
     func changeImage(sender: UITapGestureRecognizer){
         picker.allowsEditing = false
         picker.sourceType = .photoLibrary
@@ -146,11 +129,47 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         present(picker, animated: true, completion: nil)
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        if identifier == "signUp" {
+            
+            if ((firstnameField.text?.isEmpty)! || (lastnameField.text?.isEmpty)! || (loginField.text?.isEmpty)! || (emailField.text?.isEmpty)! || (passwordField.text?.isEmpty)! || (confirmpasswordField.text?.isEmpty)! || (promotionField.text?.isEmpty)! || (yearField.text?.isEmpty)!) {
+                AlertManager.alert(view: self, WithTitle: "Empty field !", andMsg: "All fields must be filled !")
+                return false
+            }
+                
+            if (user.getUsersByLogin(withLogin: loginField.text!).count > 0) {
+                AlertManager.alert(view: self, WithTitle: "Error !", andMsg: "Login already used !")
+                return false
+            }
+                
+            if (promotionField.text != "IG" && promotionField.text != "GBA" && promotionField.text != "MI" && promotionField.text != "STE" && promotionField.text != "MAT" && promotionField.text != "MEA" && promotionField.text != "MSI" && promotionField.text != "EGC" && promotionField.text != "SE") {
+                AlertManager.alert(view: self, WithTitle: "Error !", andMsg: "Enter valid promotion !")
+                return false
+            }
+                
+            if(yearField.text != "3" && yearField.text != "4" && yearField.text != "5") {
+                AlertManager.alert(view: self, WithTitle: "Error !", andMsg: "Enter valid year !")
+                return false
+            }
+                
+            if(passwordField.text != confirmpasswordField.text) {
+                AlertManager.alert(view: self, WithTitle: "Error !", andMsg: "Passwords do not match !")
+                return false
+            }
+                
+            else {
+                return true
+            }
+            
+        }
+        
+        return true
+    }
     
     //Buttons
-    
-    
     @IBAction func signup(_ sender: Any) {
+        
         let firstname = self.firstnameField.text
         let lastname = self.lastnameField.text
         let login = self.loginField.text
@@ -159,6 +178,10 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         let confirmpassword = self.confirmpasswordField.text
         let status = self.statusPicked
         let photo = self.userPicture.image
+        let promotion = self.promotionField.text
+        let year = self.yearField.text
+        
+        
         
         if(password == confirmpassword)
         {
@@ -179,7 +202,7 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             CoreDataManager.save()
             
         } else {
-            self.Alert1()
+            
         }
         
     }
