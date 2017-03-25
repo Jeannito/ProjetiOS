@@ -18,6 +18,8 @@ class ProfilInformationViewController: UIViewController {
     @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var mailLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var promotionLabel: UILabel!
+    @IBOutlet weak var yearLabel: UILabel!
     
     let instance = Session.sharedInstance
     var user : ModelUser = ModelUser()
