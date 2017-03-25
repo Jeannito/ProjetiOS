@@ -6,10 +6,10 @@
 //  Copyright © 2017 Jean BRUTE-DE-REMUR. All rights reserved.
 //
 
-
 import Foundation
 import CoreData
 import UIKit
+
 
 class ModelUser {
     

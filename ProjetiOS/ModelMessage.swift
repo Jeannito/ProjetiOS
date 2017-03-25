@@ -120,7 +120,6 @@ class ModelMessage{
         let instance = Session.sharedInstance
         
         message.date = resultString
-        message.idM = 1
         message.status = instance.getStatus()
         message.sender = instance.getLogin()
         message.text = withMessage

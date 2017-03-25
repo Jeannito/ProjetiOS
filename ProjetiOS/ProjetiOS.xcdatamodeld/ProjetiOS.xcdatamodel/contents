@@ -1,38 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Document" representedClassName="Document" syncable="YES" codeGenerationType="class">
-        <attribute name="doc" optional="YES" attributeType="Binary" syncable="YES"/>
-    </entity>
-    <entity name="DocumentOfficiel" representedClassName="DocumentOfficiel" syncable="YES" codeGenerationType="class">
-        <attribute name="doc" optional="YES" attributeType="Binary" syncable="YES"/>
-        <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Promotion" inverseName="newRelationship1" inverseEntity="Promotion" syncable="YES"/>
-    </entity>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="15G31" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Image" representedClassName="Image" syncable="YES" codeGenerationType="class">
         <attribute name="img" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="nom" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="est_contenu" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Message" inverseName="contient" inverseEntity="Message" syncable="YES"/>
     </entity>
     <entity name="Message" representedClassName="Message" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="idM" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="sender" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="newRelationship" inverseEntity="User" syncable="YES"/>
-        <relationship name="newRelationship1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TypeMessage" inverseName="newRelationship" inverseEntity="TypeMessage" syncable="YES"/>
-    </entity>
-    <entity name="MessageSimple" representedClassName="MessageSimple" syncable="YES" codeGenerationType="class">
-        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="contient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="est_contenu" inverseEntity="Image" syncable="YES"/>
+        <relationship name="est_envoye" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="envoie" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Promotion" representedClassName="Promotion" syncable="YES" codeGenerationType="class">
         <attribute name="annee" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="idP" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="nom" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="newRelationship1" inverseEntity="User" syncable="YES"/>
-        <relationship name="newRelationship1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DocumentOfficiel" inverseName="newRelationship" inverseEntity="DocumentOfficiel" syncable="YES"/>
-    </entity>
-    <entity name="TypeMessage" representedClassName="TypeMessage" syncable="YES" codeGenerationType="class">
-        <attribute name="idT" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="libelle" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Message" inverseName="newRelationship1" inverseEntity="Message" syncable="YES"/>
+        <relationship name="est_compose" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="appartient" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
@@ -42,17 +26,13 @@
         <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="prenom" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Message" inverseName="newRelationship" inverseEntity="Message" syncable="YES"/>
-        <relationship name="newRelationship1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Promotion" inverseName="newRelationship" inverseEntity="Promotion" syncable="YES"/>
+        <relationship name="appartient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Promotion" inverseName="est_compose" inverseEntity="Promotion" syncable="YES"/>
+        <relationship name="envoie" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Message" inverseName="est_envoye" inverseEntity="Message" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Document" positionX="234" positionY="984" width="128" height="60"/>
-        <element name="DocumentOfficiel" positionX="-342" positionY="786" width="128" height="73"/>
-        <element name="Image" positionX="79" positionY="984" width="128" height="60"/>
-        <element name="Message" positionX="-117" positionY="756" width="128" height="150"/>
-        <element name="MessageSimple" positionX="-81" positionY="984" width="128" height="60"/>
-        <element name="Promotion" positionX="-342" positionY="567" width="128" height="118"/>
-        <element name="TypeMessage" positionX="72" positionY="807" width="128" height="88"/>
-        <element name="User" positionX="-117" positionY="522" width="128" height="180"/>
+        <element name="Image" positionX="-342" positionY="813" width="128" height="88"/>
+        <element name="Message" positionX="-117" positionY="756" width="128" height="133"/>
+        <element name="Promotion" positionX="-342" positionY="567" width="128" height="88"/>
+        <element name="User" positionX="-117" positionY="522" width="128" height="178"/>
     </elements>
 </model>
