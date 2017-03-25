@@ -11,8 +11,11 @@ import Foundation
 import CoreData
 
 class ConnectionViewController: UIViewController {
-
+    
     var user : ModelUser = ModelUser()
+
+    @IBOutlet weak var loginField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,66 +26,50 @@ class ConnectionViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    func AlertPassword() {
-        let alertController = UIAlertController(title: "Password Error", message:
-            "Your password is missing, fill it!", preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Ok chef", style: UIAlertActionStyle.default,handler: nil))
-        
-        self.present(alertController, animated: true, completion: nil)
-    }
     
-    func AlertLogin() {
-        let alertController = UIAlertController(title: "Login missing", message:
-            "Your login is missing, fill it!", preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Ok chef", style: UIAlertActionStyle.default,handler: nil))
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    func AlertPasswordWrong() {
-        let alertController = UIAlertController(title: "Wrong password", message:
-            "Your password is wrong!", preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Ok chef", style: UIAlertActionStyle.default,handler: nil))
-        
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    func AlertLoginWrong() {
-        let alertController = UIAlertController(title: "Wrong login", message:
-            "Your login is wrong!", preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Ok chef", style: UIAlertActionStyle.default,handler: nil))
-        
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-
-    @IBOutlet weak var loginField: UITextField!
-
-    @IBOutlet weak var passwordField: UITextField!
-
-    @IBAction func log(_ sender: Any) {
-        let password = self.passwordField.text
-        let login = self.loginField.text
-        
-        if(password==""){
-            AlertPassword()
-        } else if(login==""){
-            AlertLogin()
-        } else {
-            let listLogin = user.getUsersByLogin(withLogin: login!)
-            if (listLogin.count==0){
-                AlertLoginWrong()
+        if identifier == "login" {
+            
+            if ((loginField.text?.isEmpty)! || (passwordField.text?.isEmpty)!) {
+                AlertManager.alert(view: self, WithTitle: "Empty field !", andMsg: "All fields must be filled !")
+                return false
             }
-            else if(listLogin[0].password == password){
-                Session.sharedInstance.setLogin(login: listLogin[0].login!)
-                Session.sharedInstance.setStatus(status: listLogin[0].status!)
-            } else {
-                AlertPasswordWrong()
+            
+            if (user.getUsersByLogin(withLogin: loginField.text!).count == 0) {
+                AlertManager.alert(view: self, WithTitle: "Error !", andMsg: "Invalid login !")
+                return false
+            }
+            
+            let checkPassword = user.getUsersByLogin(withLogin: loginField.text!)
+                
+            if(checkPassword[0].password != passwordField.text) {
+                AlertManager.alert(view: self, WithTitle: "Error !", andMsg: "Invalid password !")
+                return false
+            }
+                
+            else {
+                return true
             }
             
         }
         
+        return true
     }
-
+    
+    @IBAction func log(_ sender: Any) {
+        
+        let userInfo = user.getUsersByLogin(withLogin: loginField.text!)
+        
+        if(user.getUsersByLogin(withLogin: loginField.text!).count == 0) {
+            Session.sharedInstance.endSession()
+        }
+        else {
+            Session.sharedInstance.setLogin(login: userInfo[0].login!)
+            Session.sharedInstance.setStatus(status: userInfo[0].status!)
+        }
+        
+    }
+        
 }
+

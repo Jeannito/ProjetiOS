@@ -175,36 +175,28 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         let login = self.loginField.text
         let email = self.emailField.text
         let password = self.passwordField.text
-        let confirmpassword = self.confirmpasswordField.text
         let status = self.statusPicked
         let photo = self.userPicture.image
         let promotion = self.promotionField.text
         let year = self.yearField.text
         
         
-        
-        if(password == confirmpassword)
-        {
-            let user = User(context: context)
-            if photo != nil {
+        let user = User(context: context)
+        if photo != nil {
                 
-                let imageData = UIImageJPEGRepresentation(photo!, 0.6)
-                user.photo = imageData! as NSData
-            }
-            
-            user.prenom = firstname
-            user.nom = lastname
-            user.login = login
-            user.password = password
-            user.email = email
-            user.status = status
-            
-            CoreDataManager.save()
-            
-        } else {
-            
+            let imageData = UIImageJPEGRepresentation(photo!, 0.6)
+            user.photo = imageData! as NSData
         }
+            
+        user.prenom = firstname
+        user.nom = lastname
+        user.login = login
+        user.password = password
+        user.email = email
+        user.status = status
         
+        CoreDataManager.save()
+         
     }
     
     @IBAction func `return`(_ sender: Any) {
