@@ -22,6 +22,7 @@ class ProfilViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     let instance = Session.sharedInstance
     var user : ModelUser = ModelUser()
+    
     let picker = UIImagePickerController()
     
     @IBAction func photoFromLibrary(_ sender: Any) {
@@ -138,6 +139,7 @@ class ProfilViewController: UIViewController, UIImagePickerControllerDelegate, U
         userPicture.image = chosenImage //4
         dismiss(animated:true, completion: nil) //5
     }
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }

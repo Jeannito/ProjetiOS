@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -112,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="621" y="-463"/>
+            <point key="canvasLocation" x="-961" y="-463"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Csf-Dg-3Gr">
@@ -133,7 +133,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QO5-TR-zGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1842" y="428"/>
+            <point key="canvasLocation" x="-248" y="271"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="m61-cR-Ioy">
@@ -291,7 +291,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-126.5625" y="457.61718749999994"/>
+            <point key="canvasLocation" x="-1638" y="977"/>
         </scene>
         <!--User-->
         <scene sceneID="MAy-Ap-yNd">
@@ -426,7 +426,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6RI-wG-5y0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-127.34375" y="1278.515625"/>
+            <point key="canvasLocation" x="-248" y="1023"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="L8c-UT-Kph">
@@ -554,7 +554,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ee-zs-Roh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-127.34375" y="2074.8046875"/>
+            <point key="canvasLocation" x="-962" y="2075"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="BGi-Av-0hJ">
@@ -630,7 +630,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J9V-Uw-2sX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1123.4375" y="823.828125"/>
+            <point key="canvasLocation" x="1164" y="257"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="daq-bW-Z2k">
@@ -719,7 +719,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oa0-JC-Hun" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2950" y="2075"/>
+            <point key="canvasLocation" x="2552" y="1022"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="qaV-yq-1vX">
@@ -779,7 +779,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2200" y="2075"/>
+            <point key="canvasLocation" x="1863" y="1022"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="QYv-ur-jNl">
@@ -805,7 +805,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b5y-2N-CtG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="720" y="2075"/>
+            <point key="canvasLocation" x="488" y="1022"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="9mR-a0-0Ad">
@@ -857,7 +857,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3a2-z9-d4b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1448" y="2075"/>
+            <point key="canvasLocation" x="1163" y="1022"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="ZGP-Ky-te2">
@@ -876,7 +876,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loginBGCard" translatesAutoresizingMaskIntoConstraints="NO" id="kep-pK-LpY">
-                                <rect key="frame" x="105" y="99" width="587" height="780"/>
+                                <rect key="frame" x="105" y="100" width="587" height="780"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Nq-9v-Dz6">
@@ -964,6 +964,30 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="wJy-xa-1GH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6c-LR-fuU">
+                                <rect key="frame" x="406" y="275" width="95" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.45887261629104614" green="0.70878124237060547" blue="0.87906378507614136" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="15"/>
+                                <state key="normal" title="Take a photo">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="takeAPhoto:" destination="nQT-Fd-U3J" eventType="touchUpInside" id="aIQ-Hz-xcE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCn-gM-7sK">
+                                <rect key="frame" x="406" y="240" width="95" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.45887261629104614" green="0.70878124237060547" blue="0.87906378507614136" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="15"/>
+                                <state key="normal" title="Library">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="photoFromLibrary:" destination="nQT-Fd-U3J" eventType="touchUpInside" id="k4V-RZ-Q6D"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -984,7 +1008,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aeI-mm-p5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="gfm-nw-q0Z"/>
             </objects>
-            <point key="canvasLocation" x="1447.65625" y="-463.47656249999994"/>
+            <point key="canvasLocation" x="487.5" y="-463.47656249999994"/>
         </scene>
     </scenes>
     <resources>

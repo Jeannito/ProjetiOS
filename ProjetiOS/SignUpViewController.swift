@@ -10,8 +10,9 @@ import UIKit
 import Foundation
 import CoreData
 
-class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate {
+class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
+    let context = CoreDataManager.getContext()
     
     @IBOutlet weak var firstnameField: UITextField!
     @IBOutlet weak var lastnameField: UITextField!
@@ -19,15 +20,54 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmpasswordField: UITextField!
-    
     @IBOutlet weak var statusPicker: UIPickerView!
     @IBOutlet weak var userPicture: UIImageView!
     
+    var statusPicked: String?
     let pickerData = ["Student","Teacher","Manager", "Administration"]
+    
     let picker = UIImagePickerController()
     
-    var statusPicked: String?
+    let instance = Session.sharedInstance
+    var user : ModelUser = ModelUser()
     
+    @IBAction func photoFromLibrary(_ sender: Any) {
+        picker.allowsEditing = false
+        picker.sourceType = .photoLibrary
+        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        present(picker, animated: true, completion: nil)
+    }
+        
+    @IBAction func takeAPhoto(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            picker.allowsEditing = false
+            picker.sourceType = UIImagePickerControllerSourceType.camera
+            picker.cameraCaptureMode = .photo
+            picker.modalPresentationStyle = .fullScreen
+            present(picker,animated: true,completion: nil)
+        } else {
+            noCamera()
+        }
+    }
+    
+    
+    //loaded info
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        picker.delegate = self
+        statusPicked = pickerData[statusPicker.selectedRow(inComponent: 0)]
+    }
+    
+    
+    override func didReceiveMemoryWarning()
+    {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    //PickerView functions
     func numberOfComponents(in pickerView: UIPickerView) -> Int
     {
         return 1
@@ -49,22 +89,41 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         return statusPicked
     }
     
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        statusPicked = pickerData[statusPicker.selectedRow(inComponent: 0)]
-        let tapImage = UITapGestureRecognizer(target: self, action: #selector(self.changeImage))
-        self.userPicture.addGestureRecognizer(tapImage)
-    }
-
     
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    //ImagePicker functions
+    func noCamera(){
+        let alertVC = UIAlertController(
+            title: "No Camera",
+            message: "Sorry, this device has no camera",
+            preferredStyle: .alert)
+        let okAction = UIAlertAction(
+            title: "OK",
+            style:.default,
+            handler: nil)
+        alertVC.addAction(okAction)
+        present(
+            alertVC,
+            animated: true,
+            completion: nil)
     }
-
     
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : AnyObject])
+    {
+        var  chosenImage = UIImage()
+        chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
+        userPicture.contentMode = .scaleAspectFit //3
+        userPicture.image = chosenImage //4
+        dismiss(animated:true, completion: nil) //5
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+    //Alerts
     func Alert1() {
         let alertController = UIAlertController(title: "Password Error", message:
             "Your passwords are different", preferredStyle: UIAlertControllerStyle.alert)
@@ -80,29 +139,16 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         self.present(alertController, animated: true, completion: nil)
     }
     
-    @nonobjc func imagePickerController(_ picker: UIImagePickerController,
-                                        didFinishPickingMediaWithInfo info: [String : AnyObject])
-    {
-        if let chosenImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            self.userPicture.contentMode = .scaleAspectFit
-            self.userPicture.image = chosenImage
-            dismiss(animated:true, completion: nil)
-        }
-    }
-    
-    /// When clicking cancel, remove the picker
-    ///
-    /// - Parameter picker: The picker which has to be removed
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-    
     func changeImage(sender: UITapGestureRecognizer){
         picker.allowsEditing = false
         picker.sourceType = .photoLibrary
         picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
         present(picker, animated: true, completion: nil)
     }
+    
+    
+    //Buttons
+    
     
     @IBAction func signup(_ sender: Any) {
         let firstname = self.firstnameField.text
@@ -112,26 +158,29 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         let password = self.passwordField.text
         let confirmpassword = self.confirmpasswordField.text
         let status = self.statusPicked
+        let photo = self.userPicture.image
         
         if(password == confirmpassword)
         {
-            let context = CoreDataManager.getContext()
-
             let user = User(context: context)
-
+            if photo != nil {
+                
+                let imageData = UIImageJPEGRepresentation(photo!, 0.6)
+                user.photo = imageData! as NSData
+            }
+            
             user.prenom = firstname
             user.nom = lastname
             user.login = login
             user.password = password
             user.email = email
             user.status = status
-            user.photo = UIImageJPEGRepresentation(self.userPicture.image!,1)! as NSData
+            
+            CoreDataManager.save()
+            
         } else {
             self.Alert1()
         }
-        
-        self.Alert2()
-        CoreDataManager.save()
         
     }
     
