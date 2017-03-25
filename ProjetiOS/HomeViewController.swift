@@ -50,10 +50,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.loginLabel.text = message.sender
         if message.img != nil{
             cell.imgMessage.image = UIImage(data: message.img as! Data)
-            cell.messageLabel.text = nil
         } else {
             cell.messageLabel.text = message.text
-            cell.imgMessage.image = nil
         }
 
         if user[0].photo != nil {
