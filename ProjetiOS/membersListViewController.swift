@@ -1,20 +1,20 @@
 //
-//  membersListViewController.swift
+//  MembersListViewController.swift
 //  ProjetiOS
 //
-//  Created by Bruté de Rémur Raphaël on 22/03/2017.
+//  Created by Jean Bruté de Rémur on 25/03/2017.
 //  Copyright © 2017 Jean BRUTE-DE-REMUR. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class membersListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate  {
+class MembersListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate  {
     
     @IBOutlet weak var usersTable: UITableView!
     
     var user : ModelUser = ModelUser()
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,6 +77,6 @@ class membersListViewController: UIViewController, UITableViewDataSource, UITabl
             break
         }
     }
-
+    
 }
 
