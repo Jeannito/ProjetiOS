@@ -166,6 +166,12 @@
 				630E0F4F1E8682E600B6F6BD /* SendPhotoViewController.swift */,
 				A6BE717B1E702163003AA803 /* Session.swift */,
 				A619CF911E683B88003B0F0D /* SignUpViewController.swift */,
+				A60CFD881E6D504900040607 /* CoreDataManager.swift */,
+				A66C12D41E51AD5F00C1DB4B /* Assets.xcassets */,
+				A66C12FB1E51B7E400C1DB4B /* MSBlogo.png */,
+				A66C12D61E51AD5F00C1DB4B /* LaunchScreen.storyboard */,
+				A66C12D91E51AD5F00C1DB4B /* Info.plist */,
+				A66C12D11E51AD5F00C1DB4B /* ProjetiOS.xcdatamodeld */,
 				2EC225931E832673007ED651 /* UserTableViewCell.swift */,
 			);
 			path = ProjetiOS;
