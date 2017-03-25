@@ -15,6 +15,8 @@
 		630E0F4E1E86757900B6F6BD /* PictureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630E0F4D1E86757900B6F6BD /* PictureCollectionViewCell.swift */; };
 		630E0F501E8682E600B6F6BD /* SendPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630E0F4F1E8682E600B6F6BD /* SendPhotoViewController.swift */; };
 		630E0F541E86A04B00B6F6BD /* MembersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630E0F531E86A04B00B6F6BD /* MembersListViewController.swift */; };
+		630E0F561E86CB2500B6F6BD /* JTAppleCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630E0F551E86CB2500B6F6BD /* JTAppleCalendar.framework */; };
+		630E0F581E86CD7500B6F6BD /* CalendarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 630E0F571E86CD7500B6F6BD /* CalendarCell.xib */; };
 		A60CFD891E6D504900040607 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60CFD881E6D504900040607 /* CoreDataManager.swift */; };
 		A619CF921E683B88003B0F0D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A619CF911E683B88003B0F0D /* SignUpViewController.swift */; };
 		A64965871E82911600341A1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A64965861E82911600341A1E /* Main.storyboard */; };
@@ -60,6 +62,8 @@
 		630E0F4D1E86757900B6F6BD /* PictureCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PictureCollectionViewCell.swift; path = ../PictureCollectionViewCell.swift; sourceTree = "<group>"; };
 		630E0F4F1E8682E600B6F6BD /* SendPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendPhotoViewController.swift; path = ../SendPhotoViewController.swift; sourceTree = "<group>"; };
 		630E0F531E86A04B00B6F6BD /* MembersListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembersListViewController.swift; sourceTree = "<group>"; };
+		630E0F551E86CB2500B6F6BD /* JTAppleCalendar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JTAppleCalendar.framework; sourceTree = "<group>"; };
+		630E0F571E86CD7500B6F6BD /* CalendarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarCell.xib; sourceTree = "<group>"; };
 		A60CFD881E6D504900040607 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		A619CF911E683B88003B0F0D /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A64965861E82911600341A1E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				630E0F561E86CB2500B6F6BD /* JTAppleCalendar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +125,7 @@
 		A66C12BE1E51AD5F00C1DB4B = {
 			isa = PBXGroup;
 			children = (
+				630E0F551E86CB2500B6F6BD /* JTAppleCalendar.framework */,
 				A64965861E82911600341A1E /* Main.storyboard */,
 				A66C12C91E51AD5F00C1DB4B /* ProjetiOS */,
 				A66C12E11E51AD5F00C1DB4B /* ProjetiOSTests */,
@@ -143,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				630E0F4F1E8682E600B6F6BD /* SendPhotoViewController.swift */,
+				630E0F571E86CD7500B6F6BD /* CalendarCell.xib */,
 				630E0F4D1E86757900B6F6BD /* PictureCollectionViewCell.swift */,
 				A66C12CA1E51AD5F00C1DB4B /* AppDelegate.swift */,
 				A64965881E8292D000341A1E /* ProfilInformationViewController.swift */,
@@ -298,6 +305,7 @@
 				A66C12FC1E51B7E400C1DB4B /* MSBlogo.png in Resources */,
 				A66C12D51E51AD5F00C1DB4B /* Assets.xcassets in Resources */,
 				A64965871E82911600341A1E /* Main.storyboard in Resources */,
+				630E0F581E86CD7500B6F6BD /* CalendarCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +496,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = F6MSPYNQNG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ProjetiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "TARU-BRUTEDEREMUR.ProjetiOS";
@@ -503,6 +515,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = F6MSPYNQNG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ProjetiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "TARU-BRUTEDEREMUR.ProjetiOS";
