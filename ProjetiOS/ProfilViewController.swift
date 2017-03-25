@@ -51,6 +51,7 @@ class ProfilViewController: UIViewController, UIImagePickerControllerDelegate, U
         let information = user.getUsersByLogin(withLogin: self.instance.getLogin()!)
         loginField.text = information[0].login
         emailField.text = information[0].email
+        userPicture.image = UIImage(data: information[0].photo as! Data)
         
         // Do any additional setup after loading the view.
     }
