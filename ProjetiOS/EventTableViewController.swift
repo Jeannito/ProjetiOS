@@ -31,7 +31,6 @@ class EventTableViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return self.eventFetch.getNumberEvent()
     }
     
@@ -52,15 +51,18 @@ class EventTableViewController: UIViewController, UITableViewDataSource, UITable
         cell.dateDebutEvent.text = resultStringDateFin
         cell.noteEventLabel.text = event.note
         
-        cell.addCalendarButton.tag = indexPath.row
-        /*cell.addCalendarButton.addTarget(self, action: #selector(addEventCalendar(sender:/*, withTitle: event.titre!, withNote: event.note!, withDateDebut: event.dateDebut as! Date, withDateFin: event.dateFin as! Date*/)), for: .touchUpInside)*/
+        /*cell.addCalendarButton.tag = indexPath.row
+        cell.addCalendarButton.addTarget(self, action: #selector(addEventCalendar(sender:/*, withTitle: event.titre!, withNote: event.note!, withDateDebut: event.dateDebut as! Date, withDateFin: event.dateFin as! Date*/)), for: .touchUpInside)*/
         return cell
     }
     
     func addEventCalendar(sender: AnyObject/*, withTitle: String, withNote: String, withDateDebut: Date, withDateFin: Date*/)
     {
-        let addEvent : EventHelper = EventHelper()
-        addEvent.generateEvent()
+        AlertManager.alert(view: self, WithTitle: "Event added", andMsg: "This event is added to your calendar")
+        
+        
+        /*let addEvent : EventHelper = EventHelper()
+        addEvent.generateEvent()*/
     }
     
     // MARK: - NSFetchResultController delegate protocol

@@ -10,18 +10,50 @@ import UIKit
 import CoreData
 import EventKit
 
-class SendEventViewController: UIViewController {
+class SendEventViewController: UIViewController, UINavigationControllerDelegate{
+    
+    var dateDebut : Date? = nil
+    var dateFin : Date? = nil
     
     @IBOutlet weak var titleEventLabel: UITextField!
     @IBOutlet weak var dateDebutPicker: UIDatePicker!
     @IBOutlet weak var dateFinPicker: UIDatePicker!
     @IBOutlet weak var noteEvent: UITextView!
 
+    
+    
+    //loaded info
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+    }
+    
+    
+    override func didReceiveMemoryWarning()
+    {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        if identifier == "addEvent" {
+            if (noteEvent.text.isEmpty || (titleEventLabel.text?.isEmpty)!) {
+                AlertManager.alert(view: self, WithTitle: "Fill all the field", andMsg: "You have to fill all the field before continue")
+                return false
+            }
+            else{
+                return true
+            }
+        }
+        return true
+    }
+    
     @IBAction func dateDebutPickerAction(_ sender: Any) {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy EEE - hh:mm:ss a"
-        let dateDebut = dateDebutPicker.date
+        self.dateDebut = dateDebutPicker.date
         
         
     }
@@ -30,14 +62,25 @@ class SendEventViewController: UIViewController {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy EEE - hh:mm:ss a"
-        let dateFin = dateFinPicker.date
+        self.dateFin = dateFinPicker.date
         
     }
     
     
     
-    @IBAction func sendEvent(_ sender: Any) {
+    @IBAction func sendEvent(_ sender: Any){
+        if(dateDebut == nil){
+            self.dateDebut = Date()
+        }
+        if(dateFin == nil){
+            self.dateFin = Date()
+        }
         
+        let eventFetched : ModelEvent=ModelEvent()
+        if (noteEvent.text.isEmpty || (titleEventLabel.text?.isEmpty)!) {
+            return
+        }
+        eventFetched.sendEvent(withTitle: titleEventLabel.text!, withNote: noteEvent.text!, withDateDebut: dateDebut!, withDateFin: dateFin!)
     }
     
 }
