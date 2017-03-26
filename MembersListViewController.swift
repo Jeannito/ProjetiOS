@@ -12,13 +12,22 @@ class MembersListViewController: UIViewController, UITableViewDataSource, UITabl
     
     @IBOutlet weak var usersTable: UITableView!
     
-    var user : ModelUser = ModelUser()
+    var userFetched : ModelUser = ModelUser()
     
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    var filteredUsers = [User]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.user.getUser().delegate = self
-        self.user.refreshUser()
+        self.userFetched.getUser().delegate = self
+        self.userFetched.refreshUser()
+        
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        usersTable.tableHeaderView = searchController.searchBar
+        
         // Do any additional setup after loading the view.
     }
     
@@ -30,7 +39,10 @@ class MembersListViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.user.getNumberUser()
+        if(searchController.isActive && searchController.searchBar.text != "") {
+            return self.filteredUsers.count
+        }
+        return self.userFetched.getNumberUser()
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -38,26 +50,35 @@ class MembersListViewController: UIViewController, UITableViewDataSource, UITabl
         self.usersTable.beginUpdates()
         if((Session.sharedInstance.getStatus() == "Responsible") || (Session.sharedInstance.getStatus() == "Administration") || (Session.sharedInstance.getStatus() == "Teacher")){
             if(editingStyle == .delete){
-                self.user.deleteUser(withUser: self.user.getUser().object(at: indexPath))
+                self.userFetched.deleteUser(withUser: self.userFetched.getUser().object(at: indexPath))
             }
         }
         self.usersTable.endUpdates()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = self.usersTable.dequeueReusableCell(withIdentifier: "usersCell", for: indexPath) as! UserTableViewCell
         
-        let users = self.user.getUser().object(at: indexPath)
+        let user: User
         
-        cell.lastNameLabel.text = users.nom
-        cell.firstNameLabel.text = users.prenom
-        cell.statusLabel.text = users.status
-        cell.loginLabel.text = users.login
-        cell.emailLabel.text = users.email
-        cell.promotionLabel.text = users.promotion
-        cell.yearLabel.text = users.annee
-        if users.photo != nil {
-            cell.userPicture.image = UIImage(data: users.photo as! Data)
+        if(searchController.isActive && searchController.searchBar.text != "") {
+            user = filteredUsers[indexPath.row]
+        }
+        else {
+            user = self.userFetched.getUser().object(at: indexPath)
+        }
+        
+        cell.lastNameLabel.text = user.nom
+        cell.firstNameLabel.text = user.prenom
+        cell.statusLabel.text = user.status
+        cell.loginLabel.text = user.login
+        cell.emailLabel.text = user.email
+        cell.promotionLabel.text = user.promotion
+        cell.yearLabel.text = user.annee
+        
+        if user.photo != nil {
+            cell.userPicture.image = UIImage(data: user.photo as! Data)
         } else {
             cell.userPicture.image = UIImage(named: "user")
         }
@@ -97,4 +118,23 @@ class MembersListViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
     
+    //search functions
+    func filterContentForSearchText(searchText: String) {
+        let listUsers = userFetched.getAllUsers()
+        var noms: [String] = []
+        for i in 0...listUsers.count-1 {
+            noms.append(listUsers[i].nom!)
+        }
+        
+        filteredUsers = listUsers.filter { noms in
+            return (noms.nom?.lowercased().contains(searchText.lowercased()))!
+        }
+        usersTable.reloadData()
+    }
+}
+
+extension MembersListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchText: searchController.searchBar.text!)
+    }
 }
