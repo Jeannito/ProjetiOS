@@ -628,31 +628,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgLogin" translatesAutoresizingMaskIntoConstraints="NO" id="3Cz-iH-coC">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgLogin" translatesAutoresizingMaskIntoConstraints="NO" id="3Cz-iH-coC">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bizp7-gros_carre_blanc" translatesAutoresizingMaskIntoConstraints="NO" id="OD4-sg-thG">
-                                <rect key="frame" x="125" y="177" width="519" height="670"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bizp7-gros_carre_blanc" translatesAutoresizingMaskIntoConstraints="NO" id="OD4-sg-thG">
+                                <rect key="frame" x="125" y="177" width="519" height="600"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="600" id="IY0-Er-m4K"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6F-RR-4dK">
-                                <rect key="frame" x="255" y="338" width="259" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.45875990390777588" green="0.70990544557571411" blue="0.87968963384628296" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="    MEMBERS" image="users">
-                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                </state>
-                                <connections>
-                                    <segue destination="tnB-QS-Oth" kind="show" id="MGl-wr-5Hz"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iiJ-OZ-9a5">
-                                <rect key="frame" x="255" y="437" width="259" height="68"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iiJ-OZ-9a5">
+                                <rect key="frame" x="255" y="385" width="259" height="68"/>
                                 <color key="backgroundColor" red="0.45875990389999999" green="0.70990544560000002" blue="0.87968963379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="4Qc-ca-h1D"/>
+                                </constraints>
                                 <state key="normal" title="    FILES" image="folder">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
@@ -660,10 +652,12 @@
                                     <segue destination="ngZ-y9-irc" kind="show" id="AwE-7f-1C1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLf-Qp-dKa">
-                                <rect key="frame" x="255" y="548" width="259" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLf-Qp-dKa">
+                                <rect key="frame" x="255" y="496" width="259" height="66"/>
                                 <color key="backgroundColor" red="0.45875990389999999" green="0.70990544560000002" blue="0.87968963379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="flq-1l-D7Z"/>
+                                </constraints>
                                 <state key="normal" title="    PICTURES" image="picture">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
@@ -671,10 +665,12 @@
                                     <segue destination="sp5-9R-3Yi" kind="show" id="xRA-2z-aqt"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8YK-Gj-FGu">
-                                <rect key="frame" x="255" y="651" width="259" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8YK-Gj-FGu">
+                                <rect key="frame" x="255" y="599" width="259" height="67"/>
                                 <color key="backgroundColor" red="0.45875990389999999" green="0.70990544560000002" blue="0.87968963379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="3MA-pL-nFP"/>
+                                </constraints>
                                 <state key="normal" title="    EVENT" image="calendar">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
@@ -682,15 +678,49 @@
                                     <segue destination="gSs-JW-42S" kind="show" id="Psh-ie-OwU"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6F-RR-4dK">
+                                <rect key="frame" x="255" y="286" width="259" height="69"/>
+                                <color key="backgroundColor" red="0.45875990390777588" green="0.70990544557571411" blue="0.87968963384628296" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="6Tx-j9-cWK"/>
+                                </constraints>
+                                <state key="normal" title="    MEMBERS" image="users">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="tnB-QS-Oth" kind="show" id="MGl-wr-5Hz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8YK-Gj-FGu" firstAttribute="leading" secondItem="EWg-UU-K0Z" secondAttribute="leadingMargin" constant="235" id="0CY-nV-o4a"/>
+                            <constraint firstItem="OD4-sg-thG" firstAttribute="top" secondItem="dEk-xu-Kb7" secondAttribute="bottom" constant="157" id="6Ca-KM-izM"/>
+                            <constraint firstItem="b6F-RR-4dK" firstAttribute="top" secondItem="dEk-xu-Kb7" secondAttribute="bottom" constant="266" id="7Gv-Lb-oSE"/>
+                            <constraint firstAttribute="bottom" secondItem="3Cz-iH-coC" secondAttribute="bottom" id="FIE-Vq-EtS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OD4-sg-thG" secondAttribute="trailing" constant="104" id="Fcj-a2-HPo"/>
+                            <constraint firstItem="b6F-RR-4dK" firstAttribute="leading" secondItem="EWg-UU-K0Z" secondAttribute="leadingMargin" constant="235" id="M0G-AS-HqE"/>
+                            <constraint firstItem="3Cz-iH-coC" firstAttribute="leading" secondItem="EWg-UU-K0Z" secondAttribute="leading" id="MZd-pQ-12I"/>
+                            <constraint firstItem="3Cz-iH-coC" firstAttribute="top" secondItem="EWg-UU-K0Z" secondAttribute="top" id="R9K-gR-NmW"/>
+                            <constraint firstAttribute="trailing" secondItem="3Cz-iH-coC" secondAttribute="trailing" id="Uil-ZD-CQz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="b6F-RR-4dK" secondAttribute="trailing" constant="234" id="cf1-kN-gUv"/>
+                            <constraint firstItem="OD4-sg-thG" firstAttribute="leading" secondItem="EWg-UU-K0Z" secondAttribute="leadingMargin" constant="105" id="djN-RV-6Lb"/>
+                            <constraint firstItem="cLf-Qp-dKa" firstAttribute="top" secondItem="iiJ-OZ-9a5" secondAttribute="bottom" constant="43" id="eAF-Di-chI"/>
+                            <constraint firstItem="cLf-Qp-dKa" firstAttribute="leading" secondItem="EWg-UU-K0Z" secondAttribute="leadingMargin" constant="235" id="gFA-n9-dvx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iiJ-OZ-9a5" secondAttribute="trailing" constant="234" id="hRU-lR-c4a"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8YK-Gj-FGu" secondAttribute="trailing" constant="234" id="r9J-4O-ceI"/>
+                            <constraint firstItem="iiJ-OZ-9a5" firstAttribute="leading" secondItem="EWg-UU-K0Z" secondAttribute="leadingMargin" constant="235" id="uZg-rB-pGo"/>
+                            <constraint firstItem="8YK-Gj-FGu" firstAttribute="top" secondItem="cLf-Qp-dKa" secondAttribute="bottom" constant="37" id="wNn-qv-TLh"/>
+                            <constraint firstItem="iiJ-OZ-9a5" firstAttribute="top" secondItem="b6F-RR-4dK" secondAttribute="bottom" constant="30" id="yBU-MX-I8m"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cLf-Qp-dKa" secondAttribute="trailing" constant="234" id="zlD-LG-hlj"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="More" image="001-more" selectedImage="001-more" id="fL9-Cf-6Ew"/>
                     <navigationItem key="navigationItem" title="My School Book" id="acQ-UT-4ve"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J9V-Uw-2sX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2122" y="397"/>
+            <point key="canvasLocation" x="2121.875" y="396.6796875"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="daq-bW-Z2k">
@@ -1493,7 +1523,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="0kC-g4-Ugf"/>
-        <segue reference="wJy-xa-1GH"/>
-        <segue reference="gCa-Ax-cU0"/>
+        <segue reference="s79-hP-uPT"/>
+        <segue reference="Psh-ie-OwU"/>
     </inferredMetricsTieBreakers>
 </document>
