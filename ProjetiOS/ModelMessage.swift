@@ -95,6 +95,14 @@ class ModelMessage{
         return messages
     }
     
+    func MessageSortedByTarget(withTarget: String) -> NSFetchedResultsController<Message> {
+        request.sortDescriptors = [NSSortDescriptor(key:#keyPath(Message.date),ascending:true)]
+        request.predicate = NSPredicate(format: "target == %@ OR target == %@", "All", withTarget)
+        let fetchResultController = NSFetchedResultsController(fetchRequest: self.request, managedObjectContext: self.context, sectionNameKeyPath: nil, cacheName: nil)
+        self.msgFetched = fetchResultController
+        return msgFetched
+    }
+    
     func getAllMessage() -> [Message] {
         var messages: [Message] = []
         let context = CoreDataManager.getContext()
@@ -103,6 +111,19 @@ class ModelMessage{
             try messages = context.fetch(request)
         } catch let error as NSError {
             print(error)
+        }
+        return messages
+    }
+    
+    func getMessageByTarget(withTarget: String) -> [Message] {
+        var messages: [Message] = []
+        let context = CoreDataManager.getContext()
+        let request : NSFetchRequest<Message> = Message.fetchRequest()
+        request.predicate = NSPredicate(format: "target == %@ OR target == %@","All" ,withTarget)
+        do {
+            try messages = context.fetch(request)
+        } catch let error as NSError {
+            fatalError("failed to get message by target=\(withTarget): \(error)")
         }
         return messages
     }
