@@ -40,17 +40,24 @@ class EventTableViewController: UIViewController, UITableViewDataSource, UITable
         
         let event = self.eventFetch.getEvent().object(at: indexPath)
         
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy EEE - hh:mm:ss a"
+        let resultDateDebut = formatter.string(from: event.dateDebut as! Date)
+        let resultDateFin = formatter.string(from: event.dateFin as! Date)
+        let resultStringDateDebut = String(resultDateDebut)
+        let resultStringDateFin = String(resultDateFin)
+        
         cell.titreEventLabel.text = event.titre
-        cell.dateFinEvent.text = "02/03/09"
-        cell.dateDebutEvent.text = "02/04/09"
+        cell.dateFinEvent.text = resultStringDateDebut
+        cell.dateDebutEvent.text = resultStringDateFin
         cell.noteEventLabel.text = event.note
         
         cell.addCalendarButton.tag = indexPath.row
-        cell.addCalendarButton.addTarget(self, action: #selector(addEventCalendar(sender:)), for: .touchUpInside)
+        /*cell.addCalendarButton.addTarget(self, action: #selector(addEventCalendar(sender:/*, withTitle: event.titre!, withNote: event.note!, withDateDebut: event.dateDebut as! Date, withDateFin: event.dateFin as! Date*/)), for: .touchUpInside)*/
         return cell
     }
     
-    func addEventCalendar(sender: AnyObject /*withTitle: String, withNote: String, withDateDebut: Date, withDateFin: Date*/)
+    func addEventCalendar(sender: AnyObject/*, withTitle: String, withNote: String, withDateDebut: Date, withDateFin: Date*/)
     {
         let addEvent : EventHelper = EventHelper()
         addEvent.generateEvent()

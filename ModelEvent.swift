@@ -83,5 +83,14 @@ class ModelEvent {
         return (eventFetched.fetchedObjects!.count)
     }
     
-    
+    func sendEvent(withTitle: String, withNote: String, withDateDebut: Date, withDateFin: Date){
+        let context = CoreDataManager.getContext()
+        
+        let event = Event(context: context)
+        
+        event.titre = withTitle
+        event.note = withNote
+        event.dateDebut = withDateDebut as NSDate?
+        event.dateFin = withDateFin as NSDate?
+    }
 }
