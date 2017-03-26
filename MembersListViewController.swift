@@ -47,14 +47,14 @@ class MembersListViewController: UIViewController, UITableViewDataSource, UITabl
     
     func deleteHandlerAction(action: UITableViewRowAction, indexPath: IndexPath) -> Void {
         self.usersTable.beginUpdates()
-        if((Session.sharedInstance.getStatus() == "Responsible") || (Session.sharedInstance.getStatus() == "Administration") || (Session.sharedInstance.getStatus() == "Teacher")){
-            self.user.deleteUser(withUser: self.user.getUser().object(at: indexPath))
+        if((Session.sharedInstance.getStatus() == "Manager") || (Session.sharedInstance.getStatus() == "Administration") || (Session.sharedInstance.getStatus() == "Teacher")){
+            self.userFetched.deleteUser(withUser: self.userFetched.getUser().object(at: indexPath))
         }
         self.usersTable.endUpdates()
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        if((Session.sharedInstance.getStatus() == "Responsible") || (Session.sharedInstance.getStatus() == "Administration") || (Session.sharedInstance.getStatus() == "Teacher")){
+        if((Session.sharedInstance.getStatus() == "Manager") || (Session.sharedInstance.getStatus() == "Administration") || (Session.sharedInstance.getStatus() == "Teacher")){
             let delete = UITableViewRowAction(style:.default, title: "Delete", handler: self.deleteHandlerAction)
             delete.backgroundColor = UIColor.red
             return [delete]
