@@ -31,7 +31,7 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     let picker = UIImagePickerController()
     
     let instance = Session.sharedInstance
-    var user : ModelUser = ModelUser()
+    var users : ModelUser = ModelUser()
     
     @IBAction func photoFromLibrary(_ sender: Any) {
         picker.allowsEditing = false
@@ -138,7 +138,7 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                 return false
             }
                 
-            if (user.getUsersByLogin(withLogin: loginField.text!).count > 0) {
+            if (users.getUsersByLogin(withLogin: loginField.text!).count > 0) {
                 AlertManager.alert(view: self, WithTitle: "Error !", andMsg: "Login already used !")
                 return false
             }
@@ -175,10 +175,31 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         let login = self.loginField.text
         let email = self.emailField.text
         let password = self.passwordField.text
+        let confirmpassword = self.confirmpasswordField.text
         let status = self.statusPicked
         let photo = self.userPicture.image
         let promotion = self.promotionField.text
         let year = self.yearField.text
+        
+        if ((firstname?.isEmpty)! || (lastname?.isEmpty)! || (login?.isEmpty)! || (email?.isEmpty)! || (password?.isEmpty)! || (confirmpassword?.isEmpty)! || (promotion?.isEmpty)! || (year?.isEmpty)!) {
+            return
+        }
+        
+        if (users.getUsersByLogin(withLogin: login!).count > 0) {
+            return
+        }
+        
+        if (promotion != "IG" && promotion != "GBA" && promotion != "MI" && promotion != "STE" && promotion != "MAT" && promotion != "MEA" && promotion != "MSI" && promotion != "EGC" && promotion != "SE") {
+            return
+        }
+        
+        if(year != "3" && year != "4" && year != "5") {
+            return
+        }
+        
+        if(password != confirmpassword) {
+            return
+        }
         
         
         let user = User(context: context)
@@ -194,6 +215,8 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         user.password = password
         user.email = email
         user.status = status
+        user.promotion = promotion
+        user.annee = year
         
         CoreDataManager.save()
          
