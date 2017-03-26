@@ -88,7 +88,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         var user = userFetched.getUsersByLogin(withLogin: Session.sharedInstance.getLogin()!)
         
-        //let message = self.msgFetched.getMessages().object(at: indexPath)
         let message: Message
         
         if(searchController.isActive && searchController.searchBar.text != "") {
