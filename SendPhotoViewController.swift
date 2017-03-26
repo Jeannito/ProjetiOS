@@ -93,7 +93,7 @@ class SendPhotoViewController : UIViewController, UIImagePickerControllerDelegat
         
             let date = Date()
             let formatter = DateFormatter()
-            formatter.dateFormat = "dd.MM.yyyy"
+            formatter.dateFormat = "dd.MM.yyyy EEE - hh:mm:ss a"
             let result = formatter.string(from: date)
             let resultString = String(result)
             let instance = Session.sharedInstance
