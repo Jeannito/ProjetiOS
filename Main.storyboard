@@ -396,7 +396,8 @@
                                     <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="deletUser:" destination="zJX-Ws-RmX" eventType="touchUpInside" id="jHS-lU-DP0"/>
+                                    <action selector="deleteProfile:" destination="zJX-Ws-RmX" eventType="touchUpInside" id="fJ8-aX-sUL"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="delete" id="PVQ-w2-2xL"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="firstName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGr-iA-kuz">
@@ -1202,7 +1203,7 @@
         <image name="users" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OGL-qL-VgP"/>
-        <segue reference="s79-hP-uPT"/>
+        <segue reference="Qy9-FR-iAn"/>
+        <segue reference="PVQ-w2-2xL"/>
     </inferredMetricsTieBreakers>
 </document>
