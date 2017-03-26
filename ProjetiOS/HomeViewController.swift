@@ -9,10 +9,10 @@
 import UIKit
 import CoreData
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UIPickerViewDelegate {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    @IBOutlet weak var groupPicker: UIPickerView!
     @IBOutlet weak var messagesTable: UITableView!
-    @IBOutlet weak var pickerGroup: UIPickerView!
     
     var groupPicked: String?
     let pickerData = ["All", "Student","Teacher","Manager", "Administration"]
@@ -34,7 +34,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         definesPresentationContext = true
         messagesTable.tableHeaderView = searchController.searchBar
         
-        groupPicked = pickerData[pickerGroup.selectedRow(inComponent: 0)]
+        groupPicked = pickerData[groupPicker.selectedRow(inComponent: 0)]
         
         // Do any additional setup after loading the view.
     }
@@ -57,11 +57,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) -> String?
     {
-        groupPicked = pickerData[pickerGroup.selectedRow(inComponent: 0)]
+        groupPicked = pickerData[groupPicker.selectedRow(inComponent: 0)]
         return groupPicked
     }
-
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
