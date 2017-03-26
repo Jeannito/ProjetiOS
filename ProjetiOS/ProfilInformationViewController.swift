@@ -37,6 +37,8 @@ class ProfilInformationViewController: UIViewController {
         loginLabel.text = information[0].login
         mailLabel.text = information[0].email
         statusLabel.text = information[0].status
+        promotionLabel.text = information[0].promotion
+        yearLabel.text = information[0].annee
         if information[0].photo != nil{
             userPicture.image = UIImage(data: information[0].photo as! Data)
         } else {
