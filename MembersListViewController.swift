@@ -47,7 +47,7 @@ class MembersListViewController: UIViewController, UITableViewDataSource, UITabl
     
     func deleteHandlerAction(action: UITableViewRowAction, indexPath: IndexPath) -> Void {
         self.usersTable.beginUpdates()
-        if((Session.sharedInstance.getStatus() == "Responsible") || (Session.sharedInstance.getStatus() == "Administration") || (Session.sharedInstance.getStatus() == "Teacher")){
+        if((Session.sharedInstance.getStatus() == "Manager") || (Session.sharedInstance.getStatus() == "Administration") || (Session.sharedInstance.getStatus() == "Teacher")){
             self.userFetched.deleteUser(withUser: self.userFetched.getUser().object(at: indexPath))
         }
         self.usersTable.endUpdates()

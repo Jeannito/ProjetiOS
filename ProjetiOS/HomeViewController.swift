@@ -181,14 +181,23 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     //search functions
     func filterContentForSearchText(searchText: String) {
+        
         let listMessages = msgFetched.getAllMessage()
+        
         var message: [String] = []
         for i in 0...listMessages.count-1 {
             message.append(listMessages[i].text!)
         }
-
+        
+        var login: [String] = []
+        for i in 0...listMessages.count-1 {
+            login.append(listMessages[i].sender!)
+        }
+        
         filteredMessages = listMessages.filter { message in
             return (message.text?.lowercased().contains(searchText.lowercased()))!
+            } + listMessages.filter { login in
+                return (login.sender?.lowercased().contains(searchText.lowercased()))!
         }
         messagesTable.reloadData()
     }
