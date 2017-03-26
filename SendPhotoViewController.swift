@@ -110,6 +110,7 @@ class SendPhotoViewController : UIViewController, UIImagePickerControllerDelegat
             message.date = resultString
             message.status = instance.getStatus()
             message.sender = instance.getLogin()
+            message.text = ""
             
             message.img = imageData! as NSData
             
