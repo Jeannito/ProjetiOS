@@ -16,7 +16,6 @@ class EventTableViewController: UIViewController, UITableViewDataSource, UITable
     
     var eventFetch : ModelEvent = ModelEvent()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.eventFetch.getEvent().delegate = self
@@ -33,6 +32,55 @@ class EventTableViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.eventFetch.getNumberEvent()
     }
+    
+    func deleteHandlerAction(action: UITableViewRowAction, indexPath: IndexPath) -> Void {
+        self.eventTable.beginUpdates()
+        if((Session.sharedInstance.getStatus() == "Responsible") || (Session.sharedInstance.getStatus() == "Administration") || (Session.sharedInstance.getStatus() == "Teacher")){
+            self.eventFetch.deleteEvent(withEvent: self.eventFetch.getEvent().object(at: indexPath))
+        }
+        self.eventTable.endUpdates()
+    }
+    
+    func AddHandlerAction(action: UITableViewRowAction, indexPath: IndexPath) -> Void{
+        let addEvent : EventHelper = EventHelper()
+        let eventAdd = self.eventFetch.getEvent().object(at: indexPath)
+        addEvent.generateEvent(withEvent: eventAdd)
+        
+        AlertManager.alert(view: self, WithTitle: "Event added", andMsg: "This event is added to your calendar")
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    if((Session.sharedInstance.getStatus() == "Responsible") || (Session.sharedInstance.getStatus() == "Administration") || (Session.sharedInstance.getStatus() == "Teacher")){
+            let delete = UITableViewRowAction(style:.default, title: "Delete", handler: self.deleteHandlerAction)
+            delete.backgroundColor = UIColor.red
+            let add = UITableViewRowAction(style:.default, title: "Add Calendar", handler: self.AddHandlerAction)
+            add.backgroundColor = UIColor.blue
+            return [delete, add]
+        }
+        else {
+            let add = UITableViewRowAction(style:.default, title: "Add Calendar", handler: self.AddHandlerAction)
+            add.backgroundColor = UIColor.blue
+            return [add]
+        }
+        
+
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // the cells you would like the actions to appear needs to be editable
+        return true
+    }
+    
+    /*func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        // you need to implement this method too or you can't swipe to display the actions
+        self.eventTable.beginUpdates()
+        if((Session.sharedInstance.getStatus() == "Responsible") || (Session.sharedInstance.getStatus() == "Administration") || (Session.sharedInstance.getStatus() == "Teacher")){
+        if(editingStyle == .delete){
+            self.eventFetch.deleteEvent(withEvent: self.eventFetch.getEvent().object(at: indexPath))
+            }
+        }
+        self.eventTable.endUpdates()
+    }*/
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.eventTable.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventViewCell
@@ -51,22 +99,26 @@ class EventTableViewController: UIViewController, UITableViewDataSource, UITable
         cell.dateDebutEvent.text = resultStringDateFin
         cell.noteEventLabel.text = event.note
         
+        
+        
         /*cell.addCalendarButton.tag = indexPath.row
-        cell.addCalendarButton.addTarget(self, action: #selector(addEventCalendar(sender:/*, withTitle: event.titre!, withNote: event.note!, withDateDebut: event.dateDebut as! Date, withDateFin: event.dateFin as! Date*/)), for: .touchUpInside)*/
+        cell.addCalendarButton.addTarget(self, action: #selector(EventTableViewController.addEventCalendar), for: .touchUpInside)*/
         return cell
     }
     
-    func addEventCalendar(sender: AnyObject/*, withTitle: String, withNote: String, withDateDebut: Date, withDateFin: Date*/)
+    /*#selector(addEventCalendar(sender:, withTitle: event.titre!, withNote: event.note!, withDateDebut: event.dateDebut as! Date, withDateFin: event.dateFin as! Date))
+    */
+    
+    func addEventCalendar(/*sender: AnyObject, withTitle: String, withNote: String, withDateDebut: Date, withDateFin: Date*/)
     {
         AlertManager.alert(view: self, WithTitle: "Event added", andMsg: "This event is added to your calendar")
         
         
         /*let addEvent : EventHelper = EventHelper()
-        addEvent.generateEvent()*/
+        addEvent.generateEvent(/*, withTitle: String, withNote: String, withDateDebut: Date, withDateFin: Date*/)*/
     }
     
     // MARK: - NSFetchResultController delegate protocol
-    
     /// Start the update of a fetch result
     ///
     /// - Parameter controller: fetchresultcontroller
@@ -96,5 +148,4 @@ class EventTableViewController: UIViewController, UITableViewDataSource, UITable
             break
         }
     }
-    
 }

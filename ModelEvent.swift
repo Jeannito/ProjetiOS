@@ -74,9 +74,9 @@ class ModelEvent {
         return event
     }
     
-    func deleteEvent(withTitle: String){
-        let event = getEventByTitle(withTitle: withTitle)
-        CoreDataManager.context.delete(event[0])
+    func deleteEvent(withEvent: Event){
+        CoreDataManager.context.delete(withEvent)
+        CoreDataManager.save()
     }
     
     func getNumberEvent() -> Int {

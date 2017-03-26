@@ -74,9 +74,14 @@ class ModelUser {
         return users
     }
     
-    func deleteUser(withLogin: String){
+    func deleteUserByLogin(withLogin: String){
         let user = getUsersByLogin(withLogin: withLogin)
         CoreDataManager.context.delete(user[0])
+    }
+    
+    func deleteUser(withUser: User){
+        CoreDataManager.context.delete(withUser)
+        CoreDataManager.save()
     }
     
     func getNumberUser() -> Int {
