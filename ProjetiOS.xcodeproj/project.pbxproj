@@ -18,6 +18,8 @@
 		63A252141E87AD920036E694 /* EventViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A252131E87AD920036E694 /* EventViewCell.swift */; };
 		63A252181E87B2EB0036E694 /* ModelEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A252171E87B2EB0036E694 /* ModelEvent.swift */; };
 		63A2521A1E87B4680036E694 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A252191E87B4680036E694 /* EventTableViewController.swift */; };
+		63A2521C1E87C87A0036E694 /* SendEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A2521B1E87C87A0036E694 /* SendEventViewController.swift */; };
+		63A2521E1E87E8250036E694 /* EventHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A2521D1E87E8250036E694 /* EventHelper.swift */; };
 		A60CFD891E6D504900040607 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60CFD881E6D504900040607 /* CoreDataManager.swift */; };
 		A619CF921E683B88003B0F0D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A619CF911E683B88003B0F0D /* SignUpViewController.swift */; };
 		A64965871E82911600341A1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A64965861E82911600341A1E /* Main.storyboard */; };
@@ -67,6 +69,8 @@
 		63A252131E87AD920036E694 /* EventViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventViewCell.swift; path = ../EventViewCell.swift; sourceTree = "<group>"; };
 		63A252171E87B2EB0036E694 /* ModelEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelEvent.swift; path = ../ModelEvent.swift; sourceTree = "<group>"; };
 		63A252191E87B4680036E694 /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
+		63A2521B1E87C87A0036E694 /* SendEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendEventViewController.swift; sourceTree = "<group>"; };
+		63A2521D1E87E8250036E694 /* EventHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventHelper.swift; sourceTree = "<group>"; };
 		A60CFD881E6D504900040607 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		A619CF911E683B88003B0F0D /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A64965861E82911600341A1E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -151,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				63A252171E87B2EB0036E694 /* ModelEvent.swift */,
+				63A2521B1E87C87A0036E694 /* SendEventViewController.swift */,
+				63A2521D1E87E8250036E694 /* EventHelper.swift */,
 				63A252191E87B4680036E694 /* EventTableViewController.swift */,
 				63A252131E87AD920036E694 /* EventViewCell.swift */,
 				AF5B768F1E86D06B0001F496 /* AlertManager.swift */,
@@ -336,9 +342,11 @@
 			files = (
 				63A2521A1E87B4680036E694 /* EventTableViewController.swift in Sources */,
 				A6BE717C1E702163003AA803 /* Session.swift in Sources */,
+				63A2521C1E87C87A0036E694 /* SendEventViewController.swift in Sources */,
 				630E0F4E1E86757900B6F6BD /* PictureCollectionViewCell.swift in Sources */,
 				2EC225941E832673007ED651 /* UserTableViewCell.swift in Sources */,
 				A64965891E8292D000341A1E /* ProfilInformationViewController.swift in Sources */,
+				63A2521E1E87E8250036E694 /* EventHelper.swift in Sources */,
 				A60CFD891E6D504900040607 /* CoreDataManager.swift in Sources */,
 				A6BE717A1E700246003AA803 /* ConnectionViewController.swift in Sources */,
 				2E7108961E846FCB002165FE /* ModelMessage.swift in Sources */,
