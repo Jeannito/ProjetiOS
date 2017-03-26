@@ -18,6 +18,7 @@
         <attribute name="img" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="sender" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="target" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="contient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="est_contenu" inverseEntity="Image" syncable="YES"/>
         <relationship name="est_envoye" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="envoie" inverseEntity="User" syncable="YES"/>
@@ -41,10 +42,10 @@
         <relationship name="envoie" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Message" inverseName="est_envoye" inverseEntity="Message" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Event" positionX="-216" positionY="675" width="128" height="105"/>
         <element name="Image" positionX="-342" positionY="813" width="128" height="118"/>
-        <element name="Message" positionX="-117" positionY="756" width="128" height="148"/>
+        <element name="Message" positionX="-117" positionY="756" width="128" height="165"/>
         <element name="Promotion" positionX="-342" positionY="567" width="128" height="88"/>
         <element name="User" positionX="-117" positionY="522" width="128" height="178"/>
-        <element name="Event" positionX="-216" positionY="675" width="128" height="105"/>
     </elements>
 </model>

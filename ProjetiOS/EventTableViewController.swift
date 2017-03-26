@@ -62,25 +62,12 @@ class EventTableViewController: UIViewController, UITableViewDataSource, UITable
             add.backgroundColor = UIColor.blue
             return [add]
         }
-        
-
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // the cells you would like the actions to appear needs to be editable
         return true
     }
-    
-    /*func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        // you need to implement this method too or you can't swipe to display the actions
-        self.eventTable.beginUpdates()
-        if((Session.sharedInstance.getStatus() == "Responsible") || (Session.sharedInstance.getStatus() == "Administration") || (Session.sharedInstance.getStatus() == "Teacher")){
-        if(editingStyle == .delete){
-            self.eventFetch.deleteEvent(withEvent: self.eventFetch.getEvent().object(at: indexPath))
-            }
-        }
-        self.eventTable.endUpdates()
-    }*/
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.eventTable.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventViewCell
@@ -99,23 +86,7 @@ class EventTableViewController: UIViewController, UITableViewDataSource, UITable
         cell.dateDebutEvent.text = resultStringDateFin
         cell.noteEventLabel.text = event.note
         
-        
-        
-        /*cell.addCalendarButton.tag = indexPath.row
-        cell.addCalendarButton.addTarget(self, action: #selector(EventTableViewController.addEventCalendar), for: .touchUpInside)*/
         return cell
-    }
-    
-    /*#selector(addEventCalendar(sender:, withTitle: event.titre!, withNote: event.note!, withDateDebut: event.dateDebut as! Date, withDateFin: event.dateFin as! Date))
-    */
-    
-    func addEventCalendar(/*sender: AnyObject, withTitle: String, withNote: String, withDateDebut: Date, withDateFin: Date*/)
-    {
-        AlertManager.alert(view: self, WithTitle: "Event added", andMsg: "This event is added to your calendar")
-        
-        
-        /*let addEvent : EventHelper = EventHelper()
-        addEvent.generateEvent(/*, withTitle: String, withNote: String, withDateDebut: Date, withDateFin: Date*/)*/
     }
     
     // MARK: - NSFetchResultController delegate protocol

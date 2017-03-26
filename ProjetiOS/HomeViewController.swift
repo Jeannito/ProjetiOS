@@ -9,9 +9,13 @@
 import UIKit
 import CoreData
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UIPickerViewDelegate {
     
     @IBOutlet weak var messagesTable: UITableView!
+    @IBOutlet weak var pickerGroup: UIPickerView!
+    
+    var groupPicked: String?
+    let pickerData = ["All", "Student","Teacher","Manager", "Administration"]
     
     var userFetched : ModelUser = ModelUser()
     var msgFetched : ModelMessage = ModelMessage()
@@ -30,7 +34,31 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         definesPresentationContext = true
         messagesTable.tableHeaderView = searchController.searchBar
         
+        groupPicked = pickerData[pickerGroup.selectedRow(inComponent: 0)]
+        
         // Do any additional setup after loading the view.
+    }
+    
+    //PickerView functions
+    func numberOfComponents(in pickerView: UIPickerView) -> Int
+    {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+    {
+        return pickerData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
+    {
+        return pickerData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) -> String?
+    {
+        groupPicked = pickerData[pickerGroup.selectedRow(inComponent: 0)]
+        return groupPicked
     }
 
 
