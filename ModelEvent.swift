@@ -92,5 +92,7 @@ class ModelEvent {
         event.note = withNote
         event.dateDebut = withDateDebut as NSDate?
         event.dateFin = withDateFin as NSDate?
+        
+        CoreDataManager.save()
     }
 }
