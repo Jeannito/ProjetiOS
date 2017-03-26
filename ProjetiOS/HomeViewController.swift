@@ -166,10 +166,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func sendAction(_ sender: Any) {
         let messageText = self.MessageField.text
+        let group = self.groupPicked
         
         if(messageText != "")
         {
-            msgFetched.sendMessage(withMessage: messageText!)
+            msgFetched.sendMessage(withMessage: messageText!, withTarget: groupPicked!)
             
             
         } else {
