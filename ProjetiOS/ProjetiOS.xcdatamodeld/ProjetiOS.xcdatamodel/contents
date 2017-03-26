@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="15G31" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="15G1217" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Event" representedClassName="Event" syncable="YES" codeGenerationType="class">
+        <attribute name="dateDebut" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="dateFin" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="titre" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Image" representedClassName="Image" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="img" optional="YES" attributeType="Binary" syncable="YES"/>
@@ -37,5 +43,6 @@
         <element name="Message" positionX="-117" positionY="756" width="128" height="148"/>
         <element name="Promotion" positionX="-342" positionY="567" width="128" height="88"/>
         <element name="User" positionX="-117" positionY="522" width="128" height="178"/>
+        <element name="Event" positionX="-216" positionY="675" width="128" height="105"/>
     </elements>
 </model>

@@ -42,6 +42,12 @@ class MembersListViewController: UIViewController, UITableViewDataSource, UITabl
         cell.firstNameLabel.text = users.prenom
         cell.statusLabel.text = users.status
         
+        if users.photo != nil {
+            cell.userPicture.image = UIImage(data: users.photo as! Data)
+        } else {
+            cell.userPicture.image = UIImage(named: "user")
+        }
+        
         return cell
     }
     
