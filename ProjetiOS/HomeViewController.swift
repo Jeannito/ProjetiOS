@@ -9,19 +9,26 @@
 import UIKit
 import CoreData
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, UISearchBarDelegate, UISearchDisplayDelegate {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
     
     @IBOutlet weak var messagesTable: UITableView!
     
     var userFetched : ModelUser = ModelUser()
     var msgFetched : ModelMessage = ModelMessage()
     
-    var filteredMessages: Array<Message>?
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    var filteredMessages = [Message]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.msgFetched.getMessages().delegate = self
         self.msgFetched.refreshMsg()
+        
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        messagesTable.tableHeaderView = searchController.searchBar
         
         // Do any additional setup after loading the view.
     }
@@ -39,8 +46,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if tableView == self.searchDisplayController!.searchResultsTableView {
-            return self.filteredMessages?.count ?? 0
+        if (searchController.isActive && searchController.searchBar.text != "") {
+            return self.filteredMessages.count
         } else {
             return self.msgFetched.getNumberMessages()
         }
@@ -48,14 +55,24 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = self.messagesTable.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! MessageTableViewCell
         
         var user = userFetched.getUsersByLogin(withLogin: Session.sharedInstance.getLogin()!)
         
-        let message = self.msgFetched.getMessages().object(at: indexPath)
+        //let message = self.msgFetched.getMessages().object(at: indexPath)
+        let message: Message
+        
+        if(searchController.isActive && searchController.searchBar.text != "") {
+            message = filteredMessages[indexPath.row]
+        }
+        else {
+            message = self.msgFetched.getMessages().object(at: indexPath)
+        }
         
         cell.dateLabel.text = message.date
         cell.loginLabel.text = message.sender
+        
         if message.img != nil{
             cell.imgMessage.image = UIImage(data: message.img as! Data)
             cell.messageLabel.text = nil
@@ -63,7 +80,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell.imgMessage.image = nil
             cell.messageLabel.text = message.text
         }
-
+        
         /*if user[0].photo != nil {
             var thesender = userFetched.getUsersByLogin(withLogin: message.sender!)
             cell.userPicture.image = UIImage(data: thesender[0].photo as! Data)
@@ -133,25 +150,23 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     //search functions
-    
     func filterContentForSearchText(searchText: String) {
-        
         let listMessages = msgFetched.getAllMessage()
-    
-        // Filter the array using the filter method
-        if listMessages.isEmpty {
-            self.filteredMessages = nil
-            return
+        var message: [String] = []
+        for i in 0...listMessages.count-1 {
+            message.append(listMessages[i].text!)
         }
-        self.filteredMessages = listMessages.filter( { (aMessage: Message) -> Bool in
-            // to start, let's just search by name
-            return aMessage.text?.lowercased().range(of: searchText.lowercased()) != nil
-        })
-    }
-    
-    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchString searchString: String!) -> Bool {
-        self.filterContentForSearchText(searchText: searchString)
-        return true
+
+        filteredMessages = listMessages.filter { message in
+            return (message.text?.lowercased().contains(searchText.lowercased()))!
+        }
+        messagesTable.reloadData()
     }
 
+}
+
+extension HomeViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchText: searchController.searchBar.text!)
+    }
 }
