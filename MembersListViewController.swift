@@ -41,7 +41,10 @@ class MembersListViewController: UIViewController, UITableViewDataSource, UITabl
         cell.lastNameLabel.text = users.nom
         cell.firstNameLabel.text = users.prenom
         cell.statusLabel.text = users.status
-        
+        cell.loginLabel.text = users.login
+        cell.emailLabel.text = users.email
+        cell.promotionLabel.text = users.promotion
+        cell.yearLabel.text = users.annee
         if users.photo != nil {
             cell.userPicture.image = UIImage(data: users.photo as! Data)
         } else {
