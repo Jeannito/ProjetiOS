@@ -123,7 +123,7 @@ class ModelMessage{
         message.status = instance.getStatus()
         message.sender = instance.getLogin()
         message.text = withMessage
-        message.target = withTarget
+        //message.target = withTarget
         
         CoreDataManager.save()
     }
