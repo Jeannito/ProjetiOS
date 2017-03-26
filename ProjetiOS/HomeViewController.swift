@@ -24,6 +24,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var filteredMessages = [Message]()
     
+    var ensMess = [Message]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.msgFetched.getMessages().delegate = self
@@ -35,6 +37,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         messagesTable.tableHeaderView = searchController.searchBar
         
         groupPicked = pickerData[pickerGroup.selectedRow(inComponent: 0)]
+        
+        
         
         // Do any additional setup after loading the view.
     }
@@ -86,7 +90,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let cell = self.messagesTable.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! MessageTableViewCell
         
-        var user = userFetched.getUsersByLogin(withLogin: Session.sharedInstance.getLogin()!)
+        if(Session.sharedInstance.getStatus() == "Administration"){
+            var user = userFetched.getUser()
+        }
+        
+        /*var user = userFetched.getUsersByLogin(withLogin: Session.sharedInstance.getLogin()!)
         
         let message: Message
         
@@ -117,7 +125,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         } else {
             cell.userPicture.image = UIImage(named: "user")
-        }
+        }*/
  
         return cell
     }
