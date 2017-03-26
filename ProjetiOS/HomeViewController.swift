@@ -75,7 +75,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         if message.img != nil{
             cell.imgMessage.image = UIImage(data: message.img as! Data)
-            cell.messageLabel.text = nil
+            cell.messageLabel.text = ""
         } else {
             cell.imgMessage.image = nil
             cell.messageLabel.text = message.text
