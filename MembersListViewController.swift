@@ -121,14 +121,23 @@ class MembersListViewController: UIViewController, UITableViewDataSource, UITabl
     //search functions
     func filterContentForSearchText(searchText: String) {
         let listUsers = userFetched.getAllUsers()
+        
         var noms: [String] = []
         for i in 0...listUsers.count-1 {
             noms.append(listUsers[i].nom!)
         }
         
+        var prenoms: [String] = []
+        for i in 0...listUsers.count-1 {
+            prenoms.append(listUsers[i].prenom!)
+        }
+        
         filteredUsers = listUsers.filter { noms in
             return (noms.nom?.lowercased().contains(searchText.lowercased()))!
+        } + listUsers.filter { prenoms in
+            return (prenoms.prenom?.lowercased().contains(searchText.lowercased()))!
         }
+        
         usersTable.reloadData()
     }
 }
