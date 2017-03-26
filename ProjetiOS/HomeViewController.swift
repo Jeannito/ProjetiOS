@@ -9,12 +9,14 @@
 import UIKit
 import CoreData
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, UISearchBarDelegate, UISearchDisplayDelegate {
     
     @IBOutlet weak var messagesTable: UITableView!
     
     var userFetched : ModelUser = ModelUser()
     var msgFetched : ModelMessage = ModelMessage()
+    
+    var filteredMessages: Array<Message>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +38,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.msgFetched.getNumberMessages()
+        
+        if tableView == self.searchDisplayController!.searchResultsTableView {
+            return self.filteredMessages?.count ?? 0
+        } else {
+            return self.msgFetched.getNumberMessages()
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -56,12 +64,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell.messageLabel.text = message.text
         }
 
-        if user[0].photo != nil {
+        /*if user[0].photo != nil {
             var thesender = userFetched.getUsersByLogin(withLogin: message.sender!)
             cell.userPicture.image = UIImage(data: thesender[0].photo as! Data)
         } else {
             cell.userPicture.image = UIImage(named: "user")
-        }
+        }*/
  
         return cell
     }
@@ -124,4 +132,26 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
+    //search functions
+    
+    func filterContentForSearchText(searchText: String) {
+        
+        let listMessages = msgFetched.getAllMessage()
+    
+        // Filter the array using the filter method
+        if listMessages.isEmpty {
+            self.filteredMessages = nil
+            return
+        }
+        self.filteredMessages = listMessages.filter( { (aMessage: Message) -> Bool in
+            // to start, let's just search by name
+            return aMessage.text?.lowercased().range(of: searchText.lowercased()) != nil
+        })
+    }
+    
+    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchString searchString: String!) -> Bool {
+        self.filterContentForSearchText(searchText: searchString)
+        return true
+    }
+
 }
