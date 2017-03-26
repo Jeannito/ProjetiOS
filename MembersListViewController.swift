@@ -33,6 +33,17 @@ class MembersListViewController: UIViewController, UITableViewDataSource, UITabl
         return self.user.getNumberUser()
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        // you need to implement this method too or you can't swipe to display the actions
+        self.usersTable.beginUpdates()
+        if((Session.sharedInstance.getStatus() == "Responsible") || (Session.sharedInstance.getStatus() == "Administration") || (Session.sharedInstance.getStatus() == "Teacher")){
+            if(editingStyle == .delete){
+                self.user.deleteUser(withUser: self.user.getUser().object(at: indexPath))
+            }
+        }
+        self.usersTable.endUpdates()
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.usersTable.dequeueReusableCell(withIdentifier: "usersCell", for: indexPath) as! UserTableViewCell
         

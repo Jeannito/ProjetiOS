@@ -13,18 +13,18 @@ class EventHelper
     let appleEventStore = EKEventStore()
     var calendars: [EKCalendar]?
     
-    func generateEvent() {
+    func generateEvent(withEvent : Event) {
         let status = EKEventStore.authorizationStatus(for: EKEntityType.event)
         
         switch (status)
         {
         case EKAuthorizationStatus.notDetermined:
             // This happens on first-run
-            requestAccessToCalendar()
+            requestAccessToCalendar(withEvent: withEvent)
         case EKAuthorizationStatus.authorized:
             // User has access
             print("User has access to calendar")
-            self.addAppleEvents()
+            self.addAppleEvents(withEvent: withEvent)
         case EKAuthorizationStatus.restricted, EKAuthorizationStatus.denied:
             // We need to help them give us permission
             noPermission()
@@ -34,12 +34,12 @@ class EventHelper
     {
         print("User has to change settings...goto settings to view access")
     }
-    func requestAccessToCalendar() {
+    func requestAccessToCalendar(withEvent: Event) {
         appleEventStore.requestAccess(to: .event, completion: { (granted, error) in
             if (granted) && (error == nil) {
                 DispatchQueue.main.async {
                     print("User has access to calendar")
-                    self.addAppleEvents()
+                    self.addAppleEvents(withEvent: withEvent)
                 }
             } else {
                 DispatchQueue.main.async{
@@ -49,13 +49,13 @@ class EventHelper
         })
     }
     
-    func addAppleEvents()
+    func addAppleEvents(withEvent: Event)
     {
         let event:EKEvent = EKEvent(eventStore: appleEventStore)
-        event.title = "Test Event"
-        event.startDate = NSDate() as Date
-        event.endDate = NSDate() as Date
-        event.notes = "This is a note"
+        event.title = withEvent.titre!
+        event.startDate = withEvent.dateDebut as! Date
+        event.endDate = withEvent.dateFin as! Date
+        event.notes = withEvent.note!
         event.calendar = appleEventStore.defaultCalendarForNewEvents
         
         do {

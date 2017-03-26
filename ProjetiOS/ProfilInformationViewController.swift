@@ -51,7 +51,7 @@ class ProfilInformationViewController: UIViewController, UIApplicationDelegate {
     }
     
     @IBAction func deleteProfile(_ sender: Any) {
-        user.deleteUser(withLogin: loginLabel.text!)
+        user.deleteUserByLogin(withLogin: loginLabel.text!)
         Session.sharedInstance.endSession()
         CoreDataManager.save()
     }
