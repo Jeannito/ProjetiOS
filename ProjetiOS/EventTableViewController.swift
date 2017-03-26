@@ -35,7 +35,7 @@ class EventTableViewController: UIViewController, UITableViewDataSource, UITable
     
     func deleteHandlerAction(action: UITableViewRowAction, indexPath: IndexPath) -> Void {
         self.eventTable.beginUpdates()
-        if((Session.sharedInstance.getStatus() == "Responsible") || (Session.sharedInstance.getStatus() == "Administration") || (Session.sharedInstance.getStatus() == "Teacher")){
+        if((Session.sharedInstance.getStatus() == "Manager") || (Session.sharedInstance.getStatus() == "Administration") || (Session.sharedInstance.getStatus() == "Teacher")){
             self.eventFetch.deleteEvent(withEvent: self.eventFetch.getEvent().object(at: indexPath))
         }
         self.eventTable.endUpdates()
@@ -50,7 +50,7 @@ class EventTableViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-    if((Session.sharedInstance.getStatus() == "Responsible") || (Session.sharedInstance.getStatus() == "Administration") || (Session.sharedInstance.getStatus() == "Teacher")){
+    if((Session.sharedInstance.getStatus() == "Manager") || (Session.sharedInstance.getStatus() == "Administration") || (Session.sharedInstance.getStatus() == "Teacher")){
             let delete = UITableViewRowAction(style:.default, title: "Delete", handler: self.deleteHandlerAction)
             delete.backgroundColor = UIColor.red
             let add = UITableViewRowAction(style:.default, title: "Add Calendar", handler: self.AddHandlerAction)
