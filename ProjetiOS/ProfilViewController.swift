@@ -62,47 +62,72 @@ class ProfilViewController: UIViewController, UIImagePickerControllerDelegate, U
         // Dispose of any resources that can be recreated.
     }
     
-    func Alert1() {
-        let alertController = UIAlertController(title: "Password Error", message:
-            "Your passwords are different", preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Ok chef", style: UIAlertActionStyle.default,handler: nil))
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
-        self.present(alertController, animated: true, completion: nil)
+        if identifier == "update" {
+            
+            if (((loginField.text?.isEmpty)! || (emailField.text?.isEmpty)!)) {
+                AlertManager.alert(view: self, WithTitle: "Error !", andMsg: "Login and email must be filled !")
+                return false
+            }
+            
+            if (user.getUsersByLogin(withLogin: loginField.text!).count > 0 && loginField.text! != Session.sharedInstance.login) {
+                AlertManager.alert(view: self, WithTitle: "Error !", andMsg: "Login already used !")
+                return false
+            }
+            
+            if(passwordField.text != confirmpasswordField.text) {
+                AlertManager.alert(view: self, WithTitle: "Error !", andMsg: "Passwords do not match !")
+                return false
+            }
+                
+            else {
+                return true
+            }
+            
+        }
+        
+        return true
     }
     
     @IBAction func modify(_ sender: Any) {
+        
         let login = self.loginField.text
         let email = self.emailField.text
         let password = self.passwordField.text
         let confirmpassword = self.confirmpasswordField.text
         let photo = self.userPicture.image
         
-        if(password == confirmpassword)
-        {
-            let information = user.getUsersByLogin(withLogin: self.instance.getLogin()!)
-            
-            if photo != nil {
-                
-                let imageData = UIImageJPEGRepresentation(photo!, 0.6)
-                information[0].photo = imageData! as NSData
-            }
-            
-            
-            information[0].login = login
-            information[0].email = email
-            information[0].password = password
-            
-            
-            Session.sharedInstance.setLogin(login: login!)
-            
-            self.performSegue(withIdentifier: "modifyOk", sender: self)
-            
-            CoreDataManager.save()
-            
-            
-        } else {
-            self.Alert1()
+        if (((login?.isEmpty)! || (email?.isEmpty)!)) {
+            return
         }
+        
+        if (user.getUsersByLogin(withLogin: loginField.text!).count > 0 && loginField.text! != Session.sharedInstance.login) {
+            return
+        }
+        
+        if(password != confirmpassword) {
+            return
+        }
+        
+        let information = user.getUsersByLogin(withLogin: self.instance.getLogin()!)
+            
+        if photo != nil {
+                
+            let imageData = UIImageJPEGRepresentation(photo!, 0.6)
+            information[0].photo = imageData! as NSData
+        }
+            
+            
+        information[0].login = login
+        information[0].email = email
+        if(password != ""){
+            information[0].password = password
+        }
+        
+        Session.sharedInstance.setLogin(login: login!)
+            
+        CoreDataManager.save()
         
     }
     

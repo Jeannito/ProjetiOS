@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import Foundation
 
-class ProfilInformationViewController: UIViewController {
+class ProfilInformationViewController: UIViewController, UIApplicationDelegate {
     
     @IBOutlet weak var userPicture: UIImageView!
     @IBOutlet weak var firstnameLabel: UILabel!
@@ -23,10 +23,7 @@ class ProfilInformationViewController: UIViewController {
     
     let instance = Session.sharedInstance
     var user : ModelUser = ModelUser()
-
-    @IBAction func deleteUser(_ sender: Any) {
-        user.deleteUser(withLogin: instance.getLogin()!)
-    }
+    
     
     
     override func viewDidLoad() {
@@ -37,6 +34,9 @@ class ProfilInformationViewController: UIViewController {
         loginLabel.text = information[0].login
         mailLabel.text = information[0].email
         statusLabel.text = information[0].status
+        promotionLabel.text = information[0].promotion
+        yearLabel.text = information[0].annee
+        
         if information[0].photo != nil{
             userPicture.image = UIImage(data: information[0].photo as! Data)
         } else {
@@ -50,8 +50,13 @@ class ProfilInformationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func deleteProfile(_ sender: Any) {
+        user.deleteUser(withLogin: loginLabel.text!)
+        Session.sharedInstance.endSession()
+        CoreDataManager.save()
+    }
     
-
+   
     
     /*
      // MARK: - Navigation

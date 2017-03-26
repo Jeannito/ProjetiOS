@@ -28,12 +28,14 @@
         <relationship name="est_compose" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="appartient" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="annee" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="login" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nom" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="prenom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="promotion" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="appartient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Promotion" inverseName="est_compose" inverseEntity="Promotion" syncable="YES"/>
         <relationship name="envoie" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Message" inverseName="est_envoye" inverseEntity="Message" syncable="YES"/>

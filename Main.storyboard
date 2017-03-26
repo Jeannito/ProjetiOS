@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -167,7 +167,7 @@
                                         <rect key="frame" x="0.0" y="56" width="768" height="142"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uj4-lV-h43" id="maM-x2-I55">
-                                            <rect key="frame" x="0.0" y="0.0" width="768" height="142"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="141"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DjU-S7-B4f">
@@ -393,7 +393,8 @@
                                     <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="deletUser:" destination="zJX-Ws-RmX" eventType="touchUpInside" id="jHS-lU-DP0"/>
+                                    <action selector="deleteProfile:" destination="zJX-Ws-RmX" eventType="touchUpInside" id="fJ8-aX-sUL"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="delete" id="PVQ-w2-2xL"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="firstName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGr-iA-kuz">
@@ -538,7 +539,7 @@
                                 </state>
                                 <connections>
                                     <action selector="modify:" destination="Spn-nE-2Db" eventType="touchUpInside" id="gYJ-ja-XnA"/>
-                                    <segue destination="roh-Dg-PiH" kind="show" id="OGL-qL-VgP"/>
+                                    <segue destination="roh-Dg-PiH" kind="show" identifier="update" id="OGL-qL-VgP"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="imY-CJ-Q9L">
@@ -702,7 +703,7 @@
                                         <rect key="frame" x="0.0" y="28" width="646" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0FO-DC-Ukx" id="sLm-Wt-cHV">
-                                            <rect key="frame" x="0.0" y="0.0" width="646" height="83"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="646" height="82"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="chx-7T-hTG">
@@ -808,7 +809,7 @@
                                         <rect key="frame" x="0.0" y="28" width="640" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UEW-pA-dzV" id="KYo-4o-6KG">
-                                            <rect key="frame" x="0.0" y="0.0" width="640" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="640" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>

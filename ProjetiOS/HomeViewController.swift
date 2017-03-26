@@ -54,12 +54,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell.messageLabel.text = message.text
         }
 
-        if user[0].photo != nil {
+        /*if user[0].photo != nil {
             var thesender = userFetched.getUsersByLogin(withLogin: message.sender!)
             cell.userPicture.image = UIImage(data: thesender[0].photo as! Data)
         } else {
             cell.userPicture.image = UIImage(named: "user")
-        }
+        }*/
  
         return cell
     }
