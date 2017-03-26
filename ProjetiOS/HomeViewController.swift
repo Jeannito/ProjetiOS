@@ -9,10 +9,10 @@
 import UIKit
 import CoreData
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UIPickerViewDelegate {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    @IBOutlet weak var groupPicker: UIPickerView!
     @IBOutlet weak var messagesTable: UITableView!
-    @IBOutlet weak var pickerGroup: UIPickerView!
     
     var groupPicked: String?
     let pickerData = ["All", "Student","Teacher","Manager", "Administration"]
@@ -36,7 +36,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         definesPresentationContext = true
         messagesTable.tableHeaderView = searchController.searchBar
         
-        groupPicked = pickerData[pickerGroup.selectedRow(inComponent: 0)]
+        groupPicked = pickerData[groupPicker.selectedRow(inComponent: 0)]
         
         
         
@@ -61,11 +61,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) -> String?
     {
-        groupPicked = pickerData[pickerGroup.selectedRow(inComponent: 0)]
+        groupPicked = pickerData[groupPicker.selectedRow(inComponent: 0)]
         return groupPicked
     }
-
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -175,10 +174,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func sendAction(_ sender: Any) {
         let messageText = self.MessageField.text
+        let group = self.groupPicked
         
         if(messageText != "")
         {
-            msgFetched.sendMessage(withMessage: messageText!)
+            msgFetched.sendMessage(withMessage: messageText!, withTarget: groupPicked!)
             
             
         } else {
@@ -190,14 +190,23 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     //search functions
     func filterContentForSearchText(searchText: String) {
+        
         let listMessages = msgFetched.getAllMessage()
+        
         var message: [String] = []
         for i in 0...listMessages.count-1 {
             message.append(listMessages[i].text!)
         }
-
+        
+        var login: [String] = []
+        for i in 0...listMessages.count-1 {
+            login.append(listMessages[i].sender!)
+        }
+        
         filteredMessages = listMessages.filter { message in
             return (message.text?.lowercased().contains(searchText.lowercased()))!
+            } + listMessages.filter { login in
+                return (login.sender?.lowercased().contains(searchText.lowercased()))!
         }
         messagesTable.reloadData()
     }

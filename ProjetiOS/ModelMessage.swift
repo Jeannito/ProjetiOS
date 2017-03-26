@@ -159,7 +159,7 @@ class ModelMessage{
         return messages
     }
     
-    func sendMessage(withMessage: String){
+    func sendMessage(withMessage: String, withTarget: String){
         let context = CoreDataManager.getContext()
         
         let message = Message(context: context)
@@ -175,6 +175,7 @@ class ModelMessage{
         message.status = instance.getStatus()
         message.sender = instance.getLogin()
         message.text = withMessage
+        message.target = withTarget
         
         CoreDataManager.save()
     }
