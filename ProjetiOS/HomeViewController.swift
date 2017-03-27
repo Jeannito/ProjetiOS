@@ -68,6 +68,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func signOut(_ sender: Any) {
         self.performSegue(withIdentifier: "deconnect", sender: self)
+        let usersDisc = userFetched.getUsersByLogin(withLogin: Session.sharedInstance.getLogin()!)
+        usersDisc[0].isConnected = false
         Session.sharedInstance.endSession()
     }
     
@@ -99,6 +101,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.dateLabel.text = message.date
         cell.loginLabel.text = message.sender
         cell.targetLabel.text = message.target
+        
+        if(user[0].isConnected != true){
+            cell.isConnectedImage.isHidden = true
+            cell.isNotConnectedImage.isHidden = false
+        } else {
+            cell.isConnectedImage.isHidden = true
+            cell.isNotConnectedImage.isHidden = false
+        }
         
         if message.img != nil{
             cell.imgMessage.image = UIImage(data: message.img as! Data)

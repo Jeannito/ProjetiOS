@@ -83,6 +83,14 @@ class MembersListViewController: UIViewController, UITableViewDataSource, UITabl
         cell.promotionLabel.text = user.promotion
         cell.yearLabel.text = user.annee
         
+        if(user.isConnected == true){
+            cell.isConnectedImage.isHidden = false
+            cell.isNotConnectedImage.isHidden = true
+        } else {
+            cell.isConnectedImage.isHidden = true
+            cell.isNotConnectedImage.isHidden = false
+        }
+        
         if user.photo != nil {
             cell.userPicture.image = UIImage(data: user.photo as! Data)
         } else {

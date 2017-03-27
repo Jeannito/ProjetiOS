@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -208,7 +208,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yv8-TZ-R35">
-                                                    <rect key="frame" x="259" y="8" width="146" height="21"/>
+                                                    <rect key="frame" x="270" y="8" width="146" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -232,11 +232,21 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="greenCircle" translatesAutoresizingMaskIntoConstraints="NO" id="obf-4J-ZB7">
+                                                    <rect key="frame" x="254" y="12" width="12" height="12"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="redCircle" translatesAutoresizingMaskIntoConstraints="NO" id="yC8-7A-jGC">
+                                                    <rect key="frame" x="254" y="12" width="12" height="12"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="dateLabel" destination="lbf-bJ-Osm" id="wPh-MZ-eLl"/>
                                             <outlet property="imgMessage" destination="42b-Oo-uic" id="nlx-Ja-0P1"/>
+                                            <outlet property="isConnectedImage" destination="obf-4J-ZB7" id="j2z-Ok-CyN"/>
+                                            <outlet property="isNotConnectedImage" destination="yC8-7A-jGC" id="EqT-26-v58"/>
                                             <outlet property="loginLabel" destination="yv8-TZ-R35" id="dOS-2H-loO"/>
                                             <outlet property="messageLabel" destination="Gwg-v5-jF2" id="zxE-jb-ILZ"/>
                                             <outlet property="targetLabel" destination="FHE-CS-IZp" id="1VJ-Jn-ub5"/>
@@ -885,13 +895,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjZ-zy-Os5">
-                                                    <rect key="frame" x="5" y="116" width="100" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pqu-UM-eIf">
                                                     <rect key="frame" x="122" y="85" width="33" height="23"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -901,13 +904,6 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Y" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5NN-Kf-M9Y">
                                                     <rect key="frame" x="150" y="85" width="33" height="23"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="right" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUw-QB-HKK">
-                                                    <rect key="frame" x="427" y="8" width="195" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                     <nil key="textColor"/>
@@ -924,11 +920,35 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="greenCircle" translatesAutoresizingMaskIntoConstraints="NO" id="Q3g-mr-06N">
+                                                    <rect key="frame" x="8" y="119" width="13" height="13"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="right" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUw-QB-HKK">
+                                                    <rect key="frame" x="443" y="6" width="195" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="redCircle" translatesAutoresizingMaskIntoConstraints="NO" id="EFf-Yu-QER">
+                                                    <rect key="frame" x="8" y="119" width="13" height="13"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjZ-zy-Os5">
+                                                    <rect key="frame" x="29" y="115" width="100" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="emailLabel" destination="NUw-QB-HKK" id="bb4-Rb-BBt"/>
                                             <outlet property="firstNameLabel" destination="hql-BM-gGs" id="3Ac-9t-xTi"/>
+                                            <outlet property="isConnectedImage" destination="Q3g-mr-06N" id="AUQ-TM-eXf"/>
+                                            <outlet property="isNotConnectedImage" destination="EFf-Yu-QER" id="5DA-af-XsR"/>
                                             <outlet property="lastNameLabel" destination="2XY-z4-Mzl" id="QOg-GR-2KX"/>
                                             <outlet property="loginLabel" destination="yjZ-zy-Os5" id="rGM-L9-cB4"/>
                                             <outlet property="promotionLabel" destination="Pqu-UM-eIf" id="Ej3-i4-e6Z"/>
@@ -1673,8 +1693,10 @@
         <image name="bizp7-gros_carre_blanc" width="891" height="528"/>
         <image name="calendar" width="32" height="32"/>
         <image name="folder" width="32" height="32"/>
+        <image name="greenCircle" width="64" height="64"/>
         <image name="loginBGCard" width="367" height="477"/>
         <image name="picture" width="32" height="32"/>
+        <image name="redCircle" width="64" height="64"/>
         <image name="user" width="256" height="256"/>
         <image name="users" width="32" height="32"/>
     </resources>

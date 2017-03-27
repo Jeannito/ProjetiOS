@@ -18,6 +18,9 @@ class UserTableViewCell: UITableViewCell {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var promotionLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var isConnectedImage: UIImageView!
+    @IBOutlet weak var isNotConnectedImage: UIImageView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -217,6 +217,7 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         user.status = status
         user.promotion = promotion
         user.annee = year
+        user.isConnected = false
         
         CoreDataManager.save()
          

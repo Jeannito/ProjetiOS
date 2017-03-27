@@ -16,6 +16,8 @@ class MessageTableViewCell: UITableViewCell {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var imgMessage: UIImageView!
     @IBOutlet weak var targetLabel: UILabel!
+    @IBOutlet weak var isConnectedImage: UIImageView!
+    @IBOutlet weak var isNotConnectedImage: UIImageView!
 
     @IBOutlet weak var dateLabel: UILabel!
     

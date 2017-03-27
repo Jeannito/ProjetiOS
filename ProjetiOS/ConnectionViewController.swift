@@ -67,6 +67,7 @@ class ConnectionViewController: UIViewController {
         else {
             Session.sharedInstance.setLogin(login: userInfo[0].login!)
             Session.sharedInstance.setStatus(status: userInfo[0].status!)
+            userInfo[0].isConnected = true
         }
         
     }
