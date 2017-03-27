@@ -26,19 +26,23 @@ public class Session{
     public static let sharedInstance = Session(login: "null", status: "null")
     
     //Setter of the class
+    //Set the login variable of the session
     func setLogin(login : String){
         self.login = login
     }
     
+    //Set the status variable of the session
     public func setStatus(status : String){
         self.status = status
     }
     
     //Getter of the class
+    //Get the login of user currently connected
     public func getLogin()-> String?{
         return self.login
     }
     
+    //Get the status of user currently connected
     public func getStatus()-> String?{
         return self.status
     }

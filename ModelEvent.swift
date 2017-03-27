@@ -94,8 +94,10 @@ class ModelEvent {
     func sendEvent(withTitle: String, withNote: String, withDateDebut: Date, withDateFin: Date){
         let context = CoreDataManager.getContext()
         
+        //Get context
         let event = Event(context: context)
         
+        //Send data in the database
         event.titre = withTitle
         event.note = withNote
         event.dateDebut = withDateDebut as NSDate?
