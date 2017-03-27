@@ -138,27 +138,31 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         //All conditions of sign up text field
         if identifier == "signUp" {
-            
+            //If some textfield is empty
             if ((firstnameField.text?.isEmpty)! || (lastnameField.text?.isEmpty)! || (loginField.text?.isEmpty)! || (emailField.text?.isEmpty)! || (passwordField.text?.isEmpty)! || (confirmpasswordField.text?.isEmpty)! || (promotionField.text?.isEmpty)! || (yearField.text?.isEmpty)!) {
                 AlertManager.alert(view: self, WithTitle: "Empty field !", andMsg: "All fields must be filled !")
                 return false
             }
-                
+            
+            //If login already exist
             if (users.getUsersByLogin(withLogin: loginField.text!).count > 0) {
                 AlertManager.alert(view: self, WithTitle: "Error !", andMsg: "Login already used !")
                 return false
             }
-                
+            
+            //If promotion isn't good
             if (promotionField.text != "IG" && promotionField.text != "GBA" && promotionField.text != "MI" && promotionField.text != "STE" && promotionField.text != "MAT" && promotionField.text != "MEA" && promotionField.text != "MSI" && promotionField.text != "EGC" && promotionField.text != "SE") {
                 AlertManager.alert(view: self, WithTitle: "Error !", andMsg: "Enter valid promotion !")
                 return false
             }
-                
+            
+            //If year isn't good
             if(yearField.text != "3" && yearField.text != "4" && yearField.text != "5") {
                 AlertManager.alert(view: self, WithTitle: "Error !", andMsg: "Enter valid year !")
                 return false
             }
-                
+            
+            //If the two password field doesn't match
             if(passwordField.text != confirmpasswordField.text) {
                 AlertManager.alert(view: self, WithTitle: "Error !", andMsg: "Passwords do not match !")
                 return false
@@ -189,6 +193,7 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         let year = self.yearField.text
         
         //Conditions about sign up
+        //The same than the segue
         if ((firstname?.isEmpty)! || (lastname?.isEmpty)! || (login?.isEmpty)! || (email?.isEmpty)! || (password?.isEmpty)! || (confirmpassword?.isEmpty)! || (promotion?.isEmpty)! || (year?.isEmpty)!) {
             return
         }
@@ -209,8 +214,9 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             return
         }
         
-        
+        //Get context
         let user = User(context: context)
+        
         if photo != nil {
                 
             let imageData = UIImageJPEGRepresentation(photo!, 0.6)

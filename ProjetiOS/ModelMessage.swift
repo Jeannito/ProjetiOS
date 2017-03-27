@@ -97,8 +97,10 @@ class ModelMessage{
     func sendMessage(withMessage: String, withTarget: String){
         let context = CoreDataManager.getContext()
         
+        //Get context
         let message = Message(context: context)
         
+        //Prepare date for send it to the database
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy EEE - hh:mm:ss a"
@@ -106,6 +108,7 @@ class ModelMessage{
         let resultString = String(result)
         let instance = Session.sharedInstance
         
+        //Save data in the database
         message.date = resultString
         message.status = instance.getStatus()
         message.sender = instance.getLogin()
