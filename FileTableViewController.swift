@@ -66,7 +66,7 @@ class FileTableViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = self.fileTable.dequeueReusableCell(withIdentifier: "linkCell", for: indexPath) as! FileViewCell
+        let cell = self.fileTable.dequeueReusableCell(withIdentifier: "linksCell", for: indexPath) as! FileViewCell
         
         let link: Link
         

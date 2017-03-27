@@ -87,5 +87,22 @@ class ModelLink {
         return (linkFetched.fetchedObjects!.count)
     }
     
+    //function sending a message to the database
+    func sendLink(withName: String, withLink: String){
+        let context = CoreDataManager.getContext()
+        
+        //Get context
+        let link = Link(context: context)
+        
+        
+        //Save data in the database
+        link.name = withName
+        link.link = withLink
+        
+        CoreDataManager.save()
+    }
+    
+    
+    
     
 }

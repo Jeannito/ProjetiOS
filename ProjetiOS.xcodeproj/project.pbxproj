@@ -64,10 +64,10 @@
 		2E7108951E846FCA002165FE /* ModelMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelMessage.swift; sourceTree = "<group>"; };
 		2E7108971E8474E5002165FE /* ModelUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
 		2EC225931E832673007ED651 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
-		2EFCF82E1E89A6A200E3F29E /* FileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileTableViewController.swift; sourceTree = "<group>"; };
-		2EFCF8301E89A6CE00E3F29E /* FileViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileViewCell.swift; sourceTree = "<group>"; };
-		2EFCF8321E89A6E600E3F29E /* SendFileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendFileViewController.swift; sourceTree = "<group>"; };
-		2EFCF8341E89A70B00E3F29E /* ModelLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelLink.swift; sourceTree = "<group>"; };
+		2EFCF82E1E89A6A200E3F29E /* FileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileTableViewController.swift; path = ../FileTableViewController.swift; sourceTree = "<group>"; };
+		2EFCF8301E89A6CE00E3F29E /* FileViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileViewCell.swift; path = ../FileViewCell.swift; sourceTree = "<group>"; };
+		2EFCF8321E89A6E600E3F29E /* SendFileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendFileViewController.swift; path = ../SendFileViewController.swift; sourceTree = "<group>"; };
+		2EFCF8341E89A70B00E3F29E /* ModelLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelLink.swift; path = ../ModelLink.swift; sourceTree = "<group>"; };
 		630E0F471E85D25D00B6F6BD /* InterfaceBuilderKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InterfaceBuilderKit.framework; path = Library/Frameworks/InterfaceBuilderKit.framework; sourceTree = DEVELOPER_DIR; };
 		630E0F491E86704C00B6F6BD /* PictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
 		630E0F4B1E86714200B6F6BD /* ModelPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelPicture.swift; sourceTree = "<group>"; };
@@ -141,10 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				A64965861E82911600341A1E /* Main.storyboard */,
-				2EFCF82E1E89A6A200E3F29E /* FileTableViewController.swift */,
-				2EFCF8301E89A6CE00E3F29E /* FileViewCell.swift */,
-				2EFCF8321E89A6E600E3F29E /* SendFileViewController.swift */,
-				2EFCF8341E89A70B00E3F29E /* ModelLink.swift */,
 				A66C12C91E51AD5F00C1DB4B /* ProjetiOS */,
 				A66C12E11E51AD5F00C1DB4B /* ProjetiOSTests */,
 				A66C12EC1E51AD5F00C1DB4B /* ProjetiOSUITests */,
@@ -166,6 +162,10 @@
 		A66C12C91E51AD5F00C1DB4B /* ProjetiOS */ = {
 			isa = PBXGroup;
 			children = (
+				2EFCF82E1E89A6A200E3F29E /* FileTableViewController.swift */,
+				2EFCF8301E89A6CE00E3F29E /* FileViewCell.swift */,
+				2EFCF8321E89A6E600E3F29E /* SendFileViewController.swift */,
+				2EFCF8341E89A70B00E3F29E /* ModelLink.swift */,
 				AF5B768F1E86D06B0001F496 /* AlertManager.swift */,
 				A66C12CA1E51AD5F00C1DB4B /* AppDelegate.swift */,
 				A66C12D41E51AD5F00C1DB4B /* Assets.xcassets */,
