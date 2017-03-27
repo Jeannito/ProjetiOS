@@ -100,18 +100,12 @@ class MembersListViewController: UIViewController, UITableViewDataSource, UITabl
         return cell
     }
     
-    // MARK: - NSFetchResultController delegate protocol
     
-    /// Start the update of a fetch result
-    ///
-    /// - Parameter controller: fetchresultcontroller
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         self.usersTable.beginUpdates()
     }
     
-    /// End the update of a fetch result
-    ///
-    /// - Parameter controller: fetchresultcontroller
+    
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         self.usersTable.endUpdates()
         self.usersTable.reloadData()

@@ -30,7 +30,7 @@ class ModelPicture {
             try imageFetched.performFetch()
         }
         catch let error as NSError{
-            fatalError("failed to get image\(error)")
+            print(error)
         }
     }
     
@@ -40,7 +40,7 @@ class ModelPicture {
             try imageFetched.performFetch()
         }
         catch let error as NSError{
-            fatalError("failed to get images\(error)")
+            print(error)
         }
         
     }

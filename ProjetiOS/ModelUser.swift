@@ -84,7 +84,7 @@ class ModelUser {
         CoreDataManager.context.delete(user[0])
     }
     
-    //delete event with the user in parameter
+    //delete user with the user in parameter
     func deleteUser(withUser: User){
         CoreDataManager.context.delete(withUser)
         CoreDataManager.save()

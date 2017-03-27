@@ -10,6 +10,10 @@
 		2E7108961E846FCB002165FE /* ModelMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7108951E846FCA002165FE /* ModelMessage.swift */; };
 		2E7108981E8474E5002165FE /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7108971E8474E5002165FE /* ModelUser.swift */; };
 		2EC225941E832673007ED651 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC225931E832673007ED651 /* UserTableViewCell.swift */; };
+		2EFCF82F1E89A6A200E3F29E /* FileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFCF82E1E89A6A200E3F29E /* FileTableViewController.swift */; };
+		2EFCF8311E89A6CE00E3F29E /* FileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFCF8301E89A6CE00E3F29E /* FileViewCell.swift */; };
+		2EFCF8331E89A6E600E3F29E /* SendFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFCF8321E89A6E600E3F29E /* SendFileViewController.swift */; };
+		2EFCF8351E89A70B00E3F29E /* ModelLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFCF8341E89A70B00E3F29E /* ModelLink.swift */; };
 		630E0F4A1E86704C00B6F6BD /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630E0F491E86704C00B6F6BD /* PictureViewController.swift */; };
 		630E0F4C1E86714200B6F6BD /* ModelPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630E0F4B1E86714200B6F6BD /* ModelPicture.swift */; };
 		630E0F4E1E86757900B6F6BD /* PictureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630E0F4D1E86757900B6F6BD /* PictureCollectionViewCell.swift */; };
@@ -60,6 +64,10 @@
 		2E7108951E846FCA002165FE /* ModelMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelMessage.swift; sourceTree = "<group>"; };
 		2E7108971E8474E5002165FE /* ModelUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
 		2EC225931E832673007ED651 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		2EFCF82E1E89A6A200E3F29E /* FileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileTableViewController.swift; sourceTree = "<group>"; };
+		2EFCF8301E89A6CE00E3F29E /* FileViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileViewCell.swift; sourceTree = "<group>"; };
+		2EFCF8321E89A6E600E3F29E /* SendFileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendFileViewController.swift; sourceTree = "<group>"; };
+		2EFCF8341E89A70B00E3F29E /* ModelLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelLink.swift; sourceTree = "<group>"; };
 		630E0F471E85D25D00B6F6BD /* InterfaceBuilderKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InterfaceBuilderKit.framework; path = Library/Frameworks/InterfaceBuilderKit.framework; sourceTree = DEVELOPER_DIR; };
 		630E0F491E86704C00B6F6BD /* PictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
 		630E0F4B1E86714200B6F6BD /* ModelPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelPicture.swift; sourceTree = "<group>"; };
@@ -133,6 +141,10 @@
 			isa = PBXGroup;
 			children = (
 				A64965861E82911600341A1E /* Main.storyboard */,
+				2EFCF82E1E89A6A200E3F29E /* FileTableViewController.swift */,
+				2EFCF8301E89A6CE00E3F29E /* FileViewCell.swift */,
+				2EFCF8321E89A6E600E3F29E /* SendFileViewController.swift */,
+				2EFCF8341E89A70B00E3F29E /* ModelLink.swift */,
 				A66C12C91E51AD5F00C1DB4B /* ProjetiOS */,
 				A66C12E11E51AD5F00C1DB4B /* ProjetiOSTests */,
 				A66C12EC1E51AD5F00C1DB4B /* ProjetiOSUITests */,
@@ -341,14 +353,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				63A2521A1E87B4680036E694 /* EventTableViewController.swift in Sources */,
+				2EFCF8351E89A70B00E3F29E /* ModelLink.swift in Sources */,
 				A6BE717C1E702163003AA803 /* Session.swift in Sources */,
 				63A2521C1E87C87A0036E694 /* SendEventViewController.swift in Sources */,
 				630E0F4E1E86757900B6F6BD /* PictureCollectionViewCell.swift in Sources */,
+				2EFCF8311E89A6CE00E3F29E /* FileViewCell.swift in Sources */,
 				2EC225941E832673007ED651 /* UserTableViewCell.swift in Sources */,
 				A64965891E8292D000341A1E /* ProfilInformationViewController.swift in Sources */,
 				63A2521E1E87E8250036E694 /* EventHelper.swift in Sources */,
 				A60CFD891E6D504900040607 /* CoreDataManager.swift in Sources */,
 				A6BE717A1E700246003AA803 /* ConnectionViewController.swift in Sources */,
+				2EFCF82F1E89A6A200E3F29E /* FileTableViewController.swift in Sources */,
 				2E7108961E846FCB002165FE /* ModelMessage.swift in Sources */,
 				630E0F4A1E86704C00B6F6BD /* PictureViewController.swift in Sources */,
 				AF5B76901E86D06B0001F496 /* AlertManager.swift in Sources */,
@@ -357,6 +372,7 @@
 				63A252141E87AD920036E694 /* EventViewCell.swift in Sources */,
 				AF70CA551E77EDF100DB7D6F /* HomeViewController.swift in Sources */,
 				630E0F4C1E86714200B6F6BD /* ModelPicture.swift in Sources */,
+				2EFCF8331E89A6E600E3F29E /* SendFileViewController.swift in Sources */,
 				AF0CE5471E813B8B003701C8 /* ProfilViewController.swift in Sources */,
 				AF70CA531E77ECDC00DB7D6F /* MessageTableViewCell.swift in Sources */,
 				A66C12D31E51AD5F00C1DB4B /* ProjetiOS.xcdatamodeld in Sources */,

@@ -1,22 +1,20 @@
 //
-//  EventViewCell.swift
+//  FileTableCell.swift
 //  ProjetiOS
 //
-//  Created by Jean Bruté de Rémur on 26/03/2017.
+//  Created by Bruté de Rémur Raphaël on 27/03/2017.
 //  Copyright © 2017 Jean BRUTE-DE-REMUR. All rights reserved.
 //
 
 import UIKit
 
-class EventViewCell: UITableViewCell {
+class FileViewCell: UITableViewCell {
     
     //Outlet declarations
-    @IBOutlet weak var titreEventLabel: UILabel!
-    @IBOutlet weak var dateDebutEvent: UILabel!
-    @IBOutlet weak var dateFinEvent: UILabel!
-    @IBOutlet weak var noteEventLabel: UILabel!
+    @IBOutlet weak var nameFileLabel: UILabel!
+    @IBOutlet weak var linkLabel: UITextView!
     
-
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
