@@ -13,6 +13,7 @@ import UIKit
 
 class ModelEvent {
     
+    //Core
     let context = CoreDataManager.getContext()
     let request : NSFetchRequest<Event> = Event.fetchRequest()
     
