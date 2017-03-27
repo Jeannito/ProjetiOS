@@ -116,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-961.71875" y="-463.47656249999994"/>
+            <point key="canvasLocation" x="-832" y="-342"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Csf-Dg-3Gr">
@@ -137,7 +137,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QO5-TR-zGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-380" y="397"/>
+            <point key="canvasLocation" x="-832" y="397"/>
         </scene>
         <!--Send-->
         <scene sceneID="m61-cR-Ioy">
@@ -425,7 +425,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-2918.75" y="713.671875"/>
+            <point key="canvasLocation" x="-2920" y="1103"/>
         </scene>
         <!--Send Photo View Controller-->
         <scene sceneID="FrP-UB-LWx">
@@ -482,7 +482,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="229-yY-m0H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2919.53125" y="1837.4999999999998"/>
+            <point key="canvasLocation" x="-2920" y="2136"/>
         </scene>
         <!--User-->
         <scene sceneID="MAy-Ap-yNd">
@@ -654,7 +654,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6RI-wG-5y0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-380.46875" y="1365.8203125"/>
+            <point key="canvasLocation" x="-1694" y="1103"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="L8c-UT-Kph">
@@ -825,7 +825,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ee-zs-Roh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-380.46875" y="2172.65625"/>
+            <point key="canvasLocation" x="-1695" y="2136"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="BGi-Av-0hJ">
@@ -931,7 +931,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J9V-Uw-2sX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2121.875" y="396.6796875"/>
+            <point key="canvasLocation" x="1348" y="-1045"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="daq-bW-Z2k">
@@ -1161,7 +1161,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="3337.5" y="1599.609375"/>
+            <point key="canvasLocation" x="2249" y="-342"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="qaV-yq-1vX">
@@ -1239,7 +1239,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2425" y="1600"/>
+            <point key="canvasLocation" x="1941" y="397"/>
         </scene>
         <!--Event Table View Controller-->
         <scene sceneID="QYv-ur-jNl">
@@ -1419,7 +1419,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b5y-2N-CtG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="864.84375" y="1599.609375"/>
+            <point key="canvasLocation" x="547" y="1417"/>
         </scene>
         <!--Send Event View Controller-->
         <scene sceneID="scd-f2-sI3">
@@ -1597,7 +1597,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sfq-c0-7BG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857.8125" y="2281.640625"/>
+            <point key="canvasLocation" x="-129" y="2136"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="9mR-a0-0Ad">
@@ -1696,7 +1696,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3a2-z9-d4b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1656.25" y="1599.609375"/>
+            <point key="canvasLocation" x="1273" y="967"/>
         </scene>
         <!--My School Book-->
         <scene sceneID="ZGP-Ky-te2">
@@ -1921,7 +1921,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aeI-mm-p5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="gfm-nw-q0Z"/>
             </objects>
-            <point key="canvasLocation" x="487.5" y="-463.47656249999994"/>
+            <point key="canvasLocation" x="-130" y="-1045"/>
         </scene>
     </scenes>
     <resources>
@@ -1941,8 +1941,8 @@
         <image name="users" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UIa-OD-NMS"/>
-        <segue reference="s79-hP-uPT"/>
-        <segue reference="tIS-7c-EEq"/>
+        <segue reference="pUu-zi-MQF"/>
+        <segue reference="Psh-ie-OwU"/>
+        <segue reference="wJy-xa-1GH"/>
     </inferredMetricsTieBreakers>
 </document>
