@@ -156,6 +156,11 @@ class MembersListViewController: UIViewController, UITableViewDataSource, UITabl
             years.append(listUsers[i].annee!)
         }
         
+        var statuses: [String] = []
+        for i in 0...listUsers.count-1 {
+            statuses.append(listUsers[i].status!)
+        }
+        
         filteredUsers = listUsers.filter { noms in
             return (noms.nom?.lowercased().contains(searchText.lowercased()))!
         } + listUsers.filter { prenoms in
@@ -164,6 +169,8 @@ class MembersListViewController: UIViewController, UITableViewDataSource, UITabl
                 return (promotions.promotion?.lowercased().contains(searchText.lowercased()))!
         } + listUsers.filter { years in
                 return (years.annee?.lowercased().contains(searchText.lowercased()))!
+        } + listUsers.filter { statuses in
+                return (statuses.status?.lowercased().contains(searchText.lowercased()))!
         }
         
         usersTable.reloadData()
