@@ -127,5 +127,9 @@ class SendPhotoViewController : UIViewController, UIImagePickerControllerDelegat
             //Save the context
             CoreDataManager.save()
         }
+        else {
+            AlertManager.alert(view: self, WithTitle: "Error !", andMsg: "Please select a photo !")
+            return
+        }
     }
 }
