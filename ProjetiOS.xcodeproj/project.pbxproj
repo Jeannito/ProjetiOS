@@ -272,7 +272,7 @@
 				TargetAttributes = {
 					A66C12C61E51AD5F00C1DB4B = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = F6MSPYNQNG;
+						DevelopmentTeam = G5T85D8635;
 						ProvisioningStyle = Automatic;
 					};
 					A66C12DD1E51AD5F00C1DB4B = {
@@ -511,10 +511,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = F6MSPYNQNG;
+				DEVELOPMENT_TEAM = G5T85D8635;
 				INFOPLIST_FILE = ProjetiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "TARU-BRUTEDEREMUR.ProjetiOS";
+				PRODUCT_BUNDLE_IDENTIFIER = MBS.ProjetiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -526,10 +526,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = F6MSPYNQNG;
+				DEVELOPMENT_TEAM = G5T85D8635;
 				INFOPLIST_FILE = ProjetiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "TARU-BRUTEDEREMUR.ProjetiOS";
+				PRODUCT_BUNDLE_IDENTIFIER = MBS.ProjetiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
