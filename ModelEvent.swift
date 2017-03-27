@@ -13,43 +13,45 @@ import UIKit
 
 class ModelEvent {
     
-    //Core
+    //CoreData
     let context = CoreDataManager.getContext()
     let request : NSFetchRequest<Event> = Event.fetchRequest()
     
+    //create var NSFetchedResultsController
     fileprivate lazy var eventFetched : NSFetchedResultsController<Event> = {
         self.request.sortDescriptors = [NSSortDescriptor(key:#keyPath(Event.titre),ascending:true)]
         let fetchResultController = NSFetchedResultsController(fetchRequest: self.request, managedObjectContext: CoreDataManager.getContext(), sectionNameKeyPath: nil, cacheName: nil)
         return fetchResultController
     }()
     
-    
+    //initilization of class
     init(){
         do {
             try eventFetched.performFetch()
         }
         catch let error as NSError{
-            fatalError("failed to get event\(error)")
+            print(error)
         }
     }
     
+    //function refreshing all events
     func refreshEvent(){
         do {
             try eventFetched.performFetch()
         }
         catch let error as NSError{
-            fatalError("failed to get event\(error)")
+            print(error)
         }
         
     }
     
-    
+    //getter of class
     func getEvent() -> NSFetchedResultsController<Event>  {
         return eventFetched
     }
     
     
-    
+    //function getting an event by his title
     func getEventByTitle(withTitle: String) -> [Event] {
         var event: [Event] = []
         let context = CoreDataManager.getContext()
@@ -58,11 +60,13 @@ class ModelEvent {
         do {
             try event = context.fetch(request)
         } catch let error as NSError {
-            fatalError("failed to get event by login=\(withTitle): \(error)")
+            print(error)
         }
         return event
     }
     
+    
+    //function sending all events of database
     func getAllEvent() -> [Event] {
         var event: [Event] = []
         let context = CoreDataManager.getContext()
@@ -75,6 +79,7 @@ class ModelEvent {
         return event
     }
     
+    //
     func deleteEvent(withEvent: Event){
         CoreDataManager.context.delete(withEvent)
         CoreDataManager.save()
