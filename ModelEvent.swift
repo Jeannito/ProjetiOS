@@ -34,7 +34,7 @@ class ModelEvent {
         }
     }
     
-    //function refreshing all events
+    //function refreshing/performing events fetched
     func refreshEvent(){
         do {
             try eventFetched.performFetch()
@@ -45,7 +45,7 @@ class ModelEvent {
         
     }
     
-    //getter of class
+    //getter of class returning all event
     func getEvent() -> NSFetchedResultsController<Event>  {
         return eventFetched
     }
@@ -79,16 +79,18 @@ class ModelEvent {
         return event
     }
     
-    //
+    //delete event with the event in parameter
     func deleteEvent(withEvent: Event){
         CoreDataManager.context.delete(withEvent)
         CoreDataManager.save()
     }
     
+    //function sending the number of event in the database
     func getNumberEvent() -> Int {
         return (eventFetched.fetchedObjects!.count)
     }
     
+    //function sending an event in the database
     func sendEvent(withTitle: String, withNote: String, withDateDebut: Date, withDateFin: Date){
         let context = CoreDataManager.getContext()
         

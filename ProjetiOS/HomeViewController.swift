@@ -26,7 +26,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.msgFetched.MessageSortedByTarget(withTarget: Session.sharedInstance.getStatus()!).delegate = self
+        self.msgFetched.MessageSortedByTarget(withTarget: Session.sharedInstance.getStatus()!, withLogin: Session.sharedInstance.getLogin()!).delegate = self
         self.msgFetched.refreshMsg()
         
         searchController.searchResultsUpdater = self
@@ -102,18 +102,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.loginLabel.text = message.sender
         cell.targetLabel.text = message.target
         
-        if(user.isEmpty){
-            cell.isConnectedImage.isHidden = true
-            cell.isNotConnectedImage.isHidden = true
-        } else {
-            if(user[0].isConnected == true){
-                cell.isConnectedImage.isHidden = false
-                cell.isNotConnectedImage.isHidden = true
-            } else {
-                cell.isConnectedImage.isHidden = true
-                cell.isNotConnectedImage.isHidden = false
-            }
-        }
+
         
         if message.img != nil{
             cell.imgMessage.image = UIImage(data: message.img as! Data)
@@ -132,6 +121,22 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         } else {
             cell.userPicture.image = UIImage(named: "user")
+        }
+        
+        if(user.isEmpty){
+            cell.isConnectedImage.isHidden = true
+            cell.isNotConnectedImage.isHidden = true
+        } else {
+            if(user[0].isConnected == true){
+                cell.isConnectedImage.isHidden = false
+                cell.isNotConnectedImage.isHidden = true
+            } else if(user[0].isConnected == false){
+                cell.isConnectedImage.isHidden = true
+                cell.isNotConnectedImage.isHidden = false
+            } else {
+                cell.isConnectedImage.isHidden = true
+                cell.isNotConnectedImage.isHidden = true
+            }
         }
         
         return cell
