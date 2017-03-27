@@ -28,7 +28,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.msgFetched.getMessages().delegate = self
+        self.msgFetched.MessageSortedByTarget(withTarget: Session.sharedInstance.getStatus()!).delegate = self
         self.msgFetched.refreshMsg()
         
         searchController.searchResultsUpdater = self
@@ -106,6 +106,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         cell.dateLabel.text = message.date
         cell.loginLabel.text = message.sender
+        cell.targetLabel.text = message.target
         
         if message.img != nil{
             cell.imgMessage.image = UIImage(data: message.img as! Data)
@@ -191,7 +192,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     //search functions
     func filterContentForSearchText(searchText: String) {
         
-        let listMessages = msgFetched.getAllMessage()
+        let listMessages = msgFetched.getMessageByTarget(withTarget: Session.sharedInstance.getStatus()!)
         
         var message: [String] = []
         for i in 0...listMessages.count-1 {
