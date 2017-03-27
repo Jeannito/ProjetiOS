@@ -69,58 +69,6 @@ class ModelMessage{
         return (msgFetched.fetchedObjects!.count)
     }
     
-    func getMessageForManager() -> [Message] {
-        var messages: [Message] = []
-        let context = CoreDataManager.getContext()
-        let request : NSFetchRequest<Message> = Message.fetchRequest()
-        request.predicate = NSPredicate(format: "target == Manager || target == All")
-        do {
-            try messages = context.fetch(request)
-        } catch let error as NSError {
-            fatalError("failed to get message by target= Manager : \(error)")
-        }
-        return messages
-    }
-    
-    func getMessageForTeacher() -> [Message] {
-        var messages: [Message] = []
-        let context = CoreDataManager.getContext()
-        let request : NSFetchRequest<Message> = Message.fetchRequest()
-        request.predicate = NSPredicate(format: "target == Teacher || target == All")
-        do {
-            try messages = context.fetch(request)
-        } catch let error as NSError {
-            fatalError("failed to get message by target= Teacher : \(error)")
-        }
-        return messages
-    }
-    
-    func getMessageForStudent() -> [Message] {
-        var messages: [Message] = []
-        let context = CoreDataManager.getContext()
-        let request : NSFetchRequest<Message> = Message.fetchRequest()
-        request.predicate = NSPredicate(format: "target == Student || target == All")
-        do {
-            try messages = context.fetch(request)
-        } catch let error as NSError {
-            fatalError("failed to get message by target= Student : \(error)")
-        }
-        return messages
-    }
-    
-    func getMessageForAdministration() -> [Message] {
-        var messages: [Message] = []
-        let context = CoreDataManager.getContext()
-        let request : NSFetchRequest<Message> = Message.fetchRequest()
-        request.predicate = NSPredicate(format: "target == Administration || target == All")
-        do {
-            try messages = context.fetch(request)
-        } catch let error as NSError {
-            fatalError("failed to get message by target= Administration : \(error)")
-        }
-        return messages
-    }
-    
     func getMessageByStatus(withStatus: String) -> [Message] {
         var messages: [Message] = []
         let context = CoreDataManager.getContext()
@@ -196,8 +144,9 @@ class ModelMessage{
         message.status = instance.getStatus()
         message.sender = instance.getLogin()
         message.text = withMessage
-        //message.target = withTarget
+        message.target = withTarget
         
         CoreDataManager.save()
     }
 }
+

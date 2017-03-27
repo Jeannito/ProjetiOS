@@ -27,7 +27,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgLogin" translatesAutoresizingMaskIntoConstraints="NO" id="PgJ-NB-1Qo">
-                                <rect key="frame" x="0.0" y="28" width="768" height="947"/>
+                                <rect key="frame" x="0.0" y="28" width="768" height="996"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBGCard" translatesAutoresizingMaskIntoConstraints="NO" id="8kp-mN-LVX">
                                 <rect key="frame" x="91" y="106" width="587" height="698"/>
