@@ -45,8 +45,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
-        self.saveContext()
-        
+        let users : ModelUser = ModelUser()
+        let user = users.getUsersByLogin(withLogin: Session.sharedInstance.getLogin()!)
+        user[0].isConnected = false
+        Session.sharedInstance.endSession()
+
         CoreDataManager.save()
     }
 
