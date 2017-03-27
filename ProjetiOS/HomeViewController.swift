@@ -98,7 +98,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         cell.dateLabel.text = message.date
         cell.loginLabel.text = message.sender
-        cell.targetLabel.text = message.target
+        //cell.targetLabel.text = message.target
         
         if message.img != nil{
             cell.imgMessage.image = UIImage(data: message.img as! Data)
