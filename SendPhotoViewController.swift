@@ -10,14 +10,17 @@ import Foundation
 import CoreData
 import UIKit
 
+//The class in popover for send a photo
 class SendPhotoViewController : UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
-    
+    //Varibales
     let picker = UIImagePickerController()
     var statusPicked: String?
     
+    //Outlet
     @IBOutlet weak var pictureView: UIImageView!
 
+    //Function to add 
     @IBAction func photoFromLibrary(_ sender: Any) {
         picker.allowsEditing = false
         picker.sourceType = .photoLibrary
