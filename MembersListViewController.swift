@@ -146,10 +146,24 @@ class MembersListViewController: UIViewController, UITableViewDataSource, UITabl
             prenoms.append(listUsers[i].prenom!)
         }
         
+        var promotions: [String] = []
+        for i in 0...listUsers.count-1 {
+            promotions.append(listUsers[i].promotion!)
+        }
+        
+        var years: [String] = []
+        for i in 0...listUsers.count-1 {
+            years.append(listUsers[i].annee!)
+        }
+        
         filteredUsers = listUsers.filter { noms in
             return (noms.nom?.lowercased().contains(searchText.lowercased()))!
         } + listUsers.filter { prenoms in
             return (prenoms.prenom?.lowercased().contains(searchText.lowercased()))!
+        } + listUsers.filter { promotions in
+                return (promotions.promotion?.lowercased().contains(searchText.lowercased()))!
+        } + listUsers.filter { years in
+                return (years.annee?.lowercased().contains(searchText.lowercased()))!
         }
         
         usersTable.reloadData()

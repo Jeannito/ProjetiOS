@@ -211,10 +211,17 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             login.append(listMessages[i].sender!)
         }
         
+        var targets: [String] = []
+        for i in 0...listMessages.count-1 {
+            targets.append(listMessages[i].sender!)
+        }
+        
         filteredMessages = listMessages.filter { message in
             return (message.text?.lowercased().contains(searchText.lowercased()))!
-            } + listMessages.filter { login in
+        } + listMessages.filter { login in
                 return (login.sender?.lowercased().contains(searchText.lowercased()))!
+        } + listMessages.filter { targets in
+            return (targets.target?.lowercased().contains(searchText.lowercased()))!
         }
         messagesTable.reloadData()
     }
