@@ -11,9 +11,10 @@ import CoreData
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    //outlets
+    //Outlet declaration
     @IBOutlet weak var groupPicker: UIPickerView!
     @IBOutlet weak var messagesTable: UITableView!
+    @IBOutlet weak var MessageField: UITextField!
     
     //picker result variable and data
     var groupPicked: String?
@@ -106,7 +107,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.loginLabel.text = message.sender
         cell.targetLabel.text = message.target
         
-        
         //check image
         if message.img != nil{
             cell.imgMessage.image = UIImage(data: message.img as! Data)
@@ -148,32 +148,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
-    
-    
-    
-    
-    
-    @IBAction func signOut(_ sender: Any) {
-        self.performSegue(withIdentifier: "deconnect", sender: self)
-        let usersDisc = userFetched.getUsersByLogin(withLogin: Session.sharedInstance.getLogin()!)
-        usersDisc[0].isConnected = false
-        Session.sharedInstance.endSession()
-    }
-    
-    
-    
-    // MARK: - NSFetchResultController delegate protocol
-    
-    /// Start the update of a fetch result
-    ///
-    /// - Parameter controller: fetchresultcontroller
+    //update page functions
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         self.messagesTable.beginUpdates()
     }
     
-    /// End the update of a fetch result
-    ///
-    /// - Parameter controller: fetchresultcontroller
+    
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         self.messagesTable.endUpdates()
         self.messagesTable.reloadData()
@@ -192,32 +172,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         default:
             break
         }
-    }
-    
-    func AlertEmpty() {
-        let alertController = UIAlertController(title: "Empty Field", message:
-            "You have to fill the message field... ^^", preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Ok chef", style: UIAlertActionStyle.default,handler: nil))
-        
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    @IBOutlet weak var MessageField: UITextField!
-    
-    @IBAction func sendAction(_ sender: Any) {
-        let messageText = self.MessageField.text
-        let group = self.groupPicked
-        
-        if(messageText != "")
-        {
-            msgFetched.sendMessage(withMessage: messageText!, withTarget: groupPicked!)
-            
-            
-        } else {
-            self.AlertEmpty()
-        }
-        self.viewDidLoad()
-        
     }
     
     //search functions
@@ -242,16 +196,40 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         filteredMessages = listMessages.filter { message in
             return (message.text?.lowercased().contains(searchText.lowercased()))!
-        } + listMessages.filter { login in
+            } + listMessages.filter { login in
                 return (login.sender?.lowercased().contains(searchText.lowercased()))!
-        } + listMessages.filter { targets in
-            return (targets.target?.lowercased().contains(searchText.lowercased()))!
+            } + listMessages.filter { targets in
+                return (targets.target?.lowercased().contains(searchText.lowercased()))!
         }
         messagesTable.reloadData()
     }
     
+    //Action - sign out
+    @IBAction func signOut(_ sender: Any) {
+        self.performSegue(withIdentifier: "deconnect", sender: self)
+        let usersDisc = userFetched.getUsersByLogin(withLogin: Session.sharedInstance.getLogin()!)
+        usersDisc[0].isConnected = false
+        Session.sharedInstance.endSession()
+    }
+    
+    //Action - send message
+    @IBAction func sendAction(_ sender: Any) {
+        let messageText = self.MessageField.text
+        let group = self.groupPicked
+        
+        if ((MessageField.text?.isEmpty)!) {
+            AlertManager.alert(view: self, WithTitle: "Error !", andMsg: "Empty message !")
+            return
+        }
+        
+        msgFetched.sendMessage(withMessage: messageText!, withTarget: groupPicked!)
+        
+        self.viewDidLoad()
+        
+    }
+    
 }
-
+//extension for search bar fonctionnaality
 extension HomeViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchText: searchController.searchBar.text!)
