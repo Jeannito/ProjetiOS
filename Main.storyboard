@@ -991,10 +991,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pqu-UM-eIf">
-                                                    <rect key="frame" x="122" y="85" width="38" height="23"/>
+                                                    <rect key="frame" x="122" y="85" width="56" height="23"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="23" id="HDC-Oz-fIb"/>
-                                                        <constraint firstAttribute="width" constant="38" id="QZW-8m-Oui"/>
+                                                        <constraint firstAttribute="width" constant="56" id="tre-oK-qdy"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                     <nil key="textColor"/>
@@ -1059,7 +1059,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Y" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5NN-Kf-M9Y">
-                                                    <rect key="frame" x="176" y="85" width="33" height="23"/>
+                                                    <rect key="frame" x="201" y="85" width="33" height="23"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="33" id="At5-8i-ArZ"/>
                                                         <constraint firstAttribute="height" constant="23" id="OzT-jv-Ikt"/>
@@ -1072,9 +1072,9 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="gbS-NB-8mR" secondAttribute="trailing" constant="14" id="1ec-D2-4fG"/>
                                                 <constraint firstItem="2XY-z4-Mzl" firstAttribute="leading" secondItem="rso-L9-nGK" secondAttribute="trailing" constant="17" id="28L-Pt-l2z"/>
-                                                <constraint firstItem="5NN-Kf-M9Y" firstAttribute="leading" secondItem="Pqu-UM-eIf" secondAttribute="trailing" constant="16" id="5Rb-hN-THF"/>
                                                 <constraint firstAttribute="trailing" secondItem="NUw-QB-HKK" secondAttribute="trailing" constant="22" id="5rH-8d-mFS"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="EMC-Ph-GAc" secondAttribute="trailing" constant="14" id="8y5-Fd-xQ0"/>
+                                                <constraint firstItem="5NN-Kf-M9Y" firstAttribute="leading" secondItem="Pqu-UM-eIf" secondAttribute="trailing" constant="23" id="9ay-0A-uLl"/>
                                                 <constraint firstItem="5NN-Kf-M9Y" firstAttribute="top" secondItem="2XY-z4-Mzl" secondAttribute="bottom" constant="16" id="9db-8V-Tog"/>
                                                 <constraint firstItem="yjZ-zy-Os5" firstAttribute="leading" secondItem="EFf-Yu-QER" secondAttribute="trailing" constant="8" id="GvD-Rz-gpL"/>
                                                 <constraint firstItem="EMC-Ph-GAc" firstAttribute="top" secondItem="gbS-NB-8mR" secondAttribute="bottom" constant="65" id="Mcf-Em-nPI"/>
