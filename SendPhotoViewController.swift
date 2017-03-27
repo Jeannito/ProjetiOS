@@ -20,7 +20,7 @@ class SendPhotoViewController : UIViewController, UIImagePickerControllerDelegat
     //Outlet
     @IBOutlet weak var pictureView: UIImageView!
 
-    //Function to add 
+    //Function to take a photo from library
     @IBAction func photoFromLibrary(_ sender: Any) {
         picker.allowsEditing = false
         picker.sourceType = .photoLibrary
@@ -28,8 +28,7 @@ class SendPhotoViewController : UIViewController, UIImagePickerControllerDelegat
         present(picker, animated: true, completion: nil)
     }
     
-    
-    
+    //Function to take a photo from camera
     @IBAction func takeAPhoto(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             picker.allowsEditing = false
@@ -74,6 +73,8 @@ class SendPhotoViewController : UIViewController, UIImagePickerControllerDelegat
             completion: nil)
     }
     
+    
+    //Picker function
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : AnyObject])
     {
@@ -88,12 +89,15 @@ class SendPhotoViewController : UIViewController, UIImagePickerControllerDelegat
         dismiss(animated: true, completion: nil)
     }
     
+    //Function sending a photo to the database and a message with the photo
     @IBAction func sendAPhoto(_ sender: Any) {
         if pictureView != nil{
             let context = CoreDataManager.getContext()
-        
+            
+            //Get the data context
             let image = Image(context: context)
-        
+            
+            //Prepare the date string
             let date = Date()
             let formatter = DateFormatter()
             formatter.dateFormat = "dd.MM.yyyy EEE - hh:mm:ss a"
@@ -101,15 +105,17 @@ class SendPhotoViewController : UIViewController, UIImagePickerControllerDelegat
             let resultString = String(result)
             let instance = Session.sharedInstance
         
+            //Prepare image before send it in the database
             image.date = resultString
             image.sender = instance.getLogin()
             let photo = self.pictureView.image
             let imageData = UIImageJPEGRepresentation(photo!, 0.6)
             image.img = imageData! as NSData
-        
+            
+            //Get the context
             let message = Message(context: context)
             
-            
+            //Sending the data in the database
             message.date = resultString
             message.status = instance.getStatus()
             message.sender = instance.getLogin()
@@ -118,7 +124,7 @@ class SendPhotoViewController : UIViewController, UIImagePickerControllerDelegat
             
             message.img = imageData! as NSData
             
-            
+            //Save the context
             CoreDataManager.save()
         }
     }

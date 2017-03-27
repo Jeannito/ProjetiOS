@@ -10,6 +10,7 @@ import UIKit
 
 class EventViewCell: UITableViewCell {
     
+    //Outlet declarations
     @IBOutlet weak var titreEventLabel: UILabel!
     @IBOutlet weak var dateDebutEvent: UILabel!
     @IBOutlet weak var dateFinEvent: UILabel!

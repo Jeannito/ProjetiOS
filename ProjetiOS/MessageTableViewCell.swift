@@ -10,7 +10,7 @@ import UIKit
 
 class MessageTableViewCell: UITableViewCell {
 
-
+    //Outlet declaration
     @IBOutlet weak var userPicture: UIImageView!
     @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!

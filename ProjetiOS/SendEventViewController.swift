@@ -12,9 +12,11 @@ import EventKit
 
 class SendEventViewController: UIViewController, UINavigationControllerDelegate{
     
+    //Declare variables
     var dateDebut : Date? = nil
     var dateFin : Date? = nil
     
+    //Outlets
     @IBOutlet weak var titleEventLabel: UITextField!
     @IBOutlet weak var dateDebutPicker: UIDatePicker!
     @IBOutlet weak var dateFinPicker: UIDatePicker!
@@ -35,8 +37,11 @@ class SendEventViewController: UIViewController, UINavigationControllerDelegate{
         // Dispose of any resources that can be recreated.
     }
     
+    
+    //Segue for the button add event
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
+        //A condition about the event textfield
         if identifier == "addEvent" {
             if (noteEvent.text.isEmpty || (titleEventLabel.text?.isEmpty)!) {
                 AlertManager.alert(view: self, WithTitle: "Fill all the field", andMsg: "You have to fill all the field before continue")
@@ -49,6 +54,7 @@ class SendEventViewController: UIViewController, UINavigationControllerDelegate{
         return true
     }
     
+    //The action getting the date from a picker
     @IBAction func dateDebutPickerAction(_ sender: Any) {
         
         let dateFormatter = DateFormatter()
@@ -58,6 +64,7 @@ class SendEventViewController: UIViewController, UINavigationControllerDelegate{
         
     }
     
+    //The action getting the date from a picker
     @IBAction func dateFinPickerAction(_ sender: Any) {
         
         let dateFormatter = DateFormatter()
@@ -67,7 +74,7 @@ class SendEventViewController: UIViewController, UINavigationControllerDelegate{
     }
     
     
-    
+    //The action sending an event in the database
     @IBAction func sendEvent(_ sender: Any){
         if(dateDebut == nil){
             self.dateDebut = Date()

@@ -10,8 +10,10 @@ import UIKit
 
 class PictureCollectionViewCell: UICollectionViewCell {
     
+    //Cell outlet
     @IBOutlet weak var picture: UIImageView!
     
+    //Prepares the receiver for service after it has been loaded from an Interface Builder archive, or nib file.
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
