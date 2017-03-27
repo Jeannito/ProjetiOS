@@ -102,12 +102,17 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.loginLabel.text = message.sender
         cell.targetLabel.text = message.target
         
-        if(user[0].isConnected != true){
+        if(user.isEmpty){
             cell.isConnectedImage.isHidden = true
-            cell.isNotConnectedImage.isHidden = false
+            cell.isNotConnectedImage.isHidden = true
         } else {
-            cell.isConnectedImage.isHidden = true
-            cell.isNotConnectedImage.isHidden = false
+            if(user[0].isConnected == true){
+                cell.isConnectedImage.isHidden = false
+                cell.isNotConnectedImage.isHidden = true
+            } else {
+                cell.isConnectedImage.isHidden = true
+                cell.isNotConnectedImage.isHidden = false
+            }
         }
         
         if message.img != nil{
