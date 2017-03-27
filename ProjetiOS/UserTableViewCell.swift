@@ -10,6 +10,7 @@ import UIKit
 
 class UserTableViewCell: UITableViewCell {
     
+    //Variables in outlet
     @IBOutlet weak var userPicture: UIImageView!
     @IBOutlet weak var firstNameLabel: UILabel!
     @IBOutlet weak var lastNameLabel: UILabel!

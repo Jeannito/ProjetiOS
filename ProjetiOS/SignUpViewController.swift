@@ -11,9 +11,10 @@ import Foundation
 import CoreData
 
 class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate{
-
+    //CoreData
     let context = CoreDataManager.getContext()
     
+    //Variables in outlet
     @IBOutlet weak var firstnameField: UITextField!
     @IBOutlet weak var lastnameField: UITextField!
     @IBOutlet weak var loginField: UITextField!
@@ -25,6 +26,7 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBOutlet weak var promotionField: UITextField!
     @IBOutlet weak var yearField: UITextField!
     
+    //Variables declaration
     var statusPicked: String?
     let pickerData = ["Student","Teacher","Manager", "Administration"]
     
@@ -33,13 +35,15 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     let instance = Session.sharedInstance
     var users : ModelUser = ModelUser()
     
+    //Action for getting pic from Library
     @IBAction func photoFromLibrary(_ sender: Any) {
         picker.allowsEditing = false
         picker.sourceType = .photoLibrary
         picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
         present(picker, animated: true, completion: nil)
     }
-        
+    
+    //Action for take pic with camera
     @IBAction func takeAPhoto(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             picker.allowsEditing = false
@@ -129,8 +133,10 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         present(picker, animated: true, completion: nil)
     }
     
+    //The segue for signUp
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
+        //All conditions of sign up text field
         if identifier == "signUp" {
             
             if ((firstnameField.text?.isEmpty)! || (lastnameField.text?.isEmpty)! || (loginField.text?.isEmpty)! || (emailField.text?.isEmpty)! || (passwordField.text?.isEmpty)! || (confirmpasswordField.text?.isEmpty)! || (promotionField.text?.isEmpty)! || (yearField.text?.isEmpty)!) {
@@ -167,7 +173,8 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         return true
     }
     
-    //Buttons
+    //Action sign up for register a user in the database
+    //Sorry we know that we have to do it in the model but that's too late!
     @IBAction func signup(_ sender: Any) {
         
         let firstname = self.firstnameField.text
@@ -181,6 +188,7 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         let promotion = self.promotionField.text
         let year = self.yearField.text
         
+        //Conditions about sign up
         if ((firstname?.isEmpty)! || (lastname?.isEmpty)! || (login?.isEmpty)! || (email?.isEmpty)! || (password?.isEmpty)! || (confirmpassword?.isEmpty)! || (promotion?.isEmpty)! || (year?.isEmpty)!) {
             return
         }
@@ -208,7 +216,8 @@ class SignUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             let imageData = UIImageJPEGRepresentation(photo!, 0.6)
             user.photo = imageData! as NSData
         }
-            
+        
+        //Registering in the database
         user.prenom = firstname
         user.nom = lastname
         user.login = login
