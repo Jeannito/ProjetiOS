@@ -1426,14 +1426,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgLogin" translatesAutoresizingMaskIntoConstraints="NO" id="Lh8-WI-cGc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgLogin" translatesAutoresizingMaskIntoConstraints="NO" id="Lh8-WI-cGc">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zo3-LB-cAq">
-                                <rect key="frame" x="62" y="140" width="644" height="812"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.90000000000000002" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zo3-LB-cAq">
+                                <rect key="frame" x="62" y="80" width="644" height="872"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="872" id="muM-zs-id7"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ALL-LY-Kas">
                                     <size key="itemSize" width="100" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -1448,12 +1449,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6rc-9u-JjY">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6rc-9u-JjY">
                                                     <rect key="frame" x="10" y="10" width="80" height="80"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="f4J-BN-ffl"/>
+                                                        <constraint firstAttribute="height" constant="80" id="fQH-x2-ASp"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="6rc-9u-JjY" firstAttribute="top" secondItem="TdF-rK-W9l" secondAttribute="topMargin" constant="2" id="FY4-Ue-09s"/>
+                                            <constraint firstItem="6rc-9u-JjY" firstAttribute="leading" secondItem="TdF-rK-W9l" secondAttribute="leadingMargin" constant="2" id="ayv-6P-pBy"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="picture" destination="6rc-9u-JjY" id="JKd-zc-SK4"/>
                                         </connections>
@@ -1464,9 +1472,8 @@
                                     <outlet property="delegate" destination="sp5-9R-3Yi" id="dmI-gU-yMN"/>
                                 </connections>
                             </collectionView>
-                            <navigationBar alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i2R-tV-FLf">
+                            <navigationBar alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i2R-tV-FLf">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.38823529410000002" green="0.64705882349999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1484,6 +1491,18 @@
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lh8-WI-cGc" firstAttribute="top" secondItem="0Kq-14-2Zx" secondAttribute="top" id="D85-5G-7IP"/>
+                            <constraint firstItem="i2R-tV-FLf" firstAttribute="leading" secondItem="0Kq-14-2Zx" secondAttribute="leading" id="GFM-qZ-YIr"/>
+                            <constraint firstItem="i2R-tV-FLf" firstAttribute="top" secondItem="0Kq-14-2Zx" secondAttribute="top" id="I53-Rk-G2A"/>
+                            <constraint firstItem="zo3-LB-cAq" firstAttribute="top" secondItem="0Kq-14-2Zx" secondAttribute="topMargin" constant="80" id="NOc-N4-5fQ"/>
+                            <constraint firstItem="Lh8-WI-cGc" firstAttribute="leading" secondItem="0Kq-14-2Zx" secondAttribute="leading" id="SO3-Jh-bdt"/>
+                            <constraint firstAttribute="trailing" secondItem="i2R-tV-FLf" secondAttribute="trailing" id="X6f-8k-dy5"/>
+                            <constraint firstItem="ggg-M0-hk7" firstAttribute="top" secondItem="Lh8-WI-cGc" secondAttribute="bottom" id="X8Z-1o-KHK"/>
+                            <constraint firstItem="zo3-LB-cAq" firstAttribute="leading" secondItem="0Kq-14-2Zx" secondAttribute="leadingMargin" constant="42" id="fj6-8k-gzk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zo3-LB-cAq" secondAttribute="trailing" constant="42" id="uMy-Go-jM8"/>
+                            <constraint firstAttribute="trailing" secondItem="Lh8-WI-cGc" secondAttribute="trailing" id="xSm-nV-l0h"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My School Book" id="YPf-JB-BhZ"/>
                     <connections>
@@ -1735,8 +1754,8 @@
         <image name="users" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="c4g-wS-m76"/>
-        <segue reference="tIS-7c-EEq"/>
+        <segue reference="pUu-zi-MQF"/>
         <segue reference="s79-hP-uPT"/>
+        <segue reference="tIS-7c-EEq"/>
     </inferredMetricsTieBreakers>
 </document>
