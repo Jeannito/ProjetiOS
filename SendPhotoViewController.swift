@@ -20,7 +20,7 @@ class SendPhotoViewController : UIViewController, UIImagePickerControllerDelegat
     //Outlet
     @IBOutlet weak var pictureView: UIImageView!
 
-    //Function to add 
+    //Function to take a photo from library
     @IBAction func photoFromLibrary(_ sender: Any) {
         picker.allowsEditing = false
         picker.sourceType = .photoLibrary
@@ -28,8 +28,7 @@ class SendPhotoViewController : UIViewController, UIImagePickerControllerDelegat
         present(picker, animated: true, completion: nil)
     }
     
-    
-    
+    //Function to take a photo from camera
     @IBAction func takeAPhoto(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             picker.allowsEditing = false
@@ -74,6 +73,8 @@ class SendPhotoViewController : UIViewController, UIImagePickerControllerDelegat
             completion: nil)
     }
     
+    
+    //Picker function
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : AnyObject])
     {
@@ -88,6 +89,7 @@ class SendPhotoViewController : UIViewController, UIImagePickerControllerDelegat
         dismiss(animated: true, completion: nil)
     }
     
+    //Function sending a photo to the database and a message with the photo
     @IBAction func sendAPhoto(_ sender: Any) {
         if pictureView != nil{
             let context = CoreDataManager.getContext()

@@ -12,10 +12,13 @@ import CoreData
 
 class PictureViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, NSFetchedResultsControllerDelegate{
 
+    //Outlet
     @IBOutlet weak var pictureTable: UICollectionView!
     
+    //Variable
     var imgFetched : ModelPicture = ModelPicture()
     
+    //Loaded info
     override func viewDidLoad() {
         super.viewDidLoad()
         self.imgFetched.getImage().delegate = self
@@ -29,6 +32,7 @@ class PictureViewController: UIViewController, UICollectionViewDataSource, UICol
         // Dispose of any resources that can be recreated.
     }
 
+    //Function of collection view
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.imgFetched.getNumberImage()
     }

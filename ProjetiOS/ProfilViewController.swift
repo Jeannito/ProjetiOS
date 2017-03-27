@@ -12,19 +12,23 @@ import Foundation
 
 class ProfilViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    //CoreData
     let context = CoreDataManager.getContext()
     
+    //Outlet
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmpasswordField: UITextField!
     @IBOutlet weak var userPicture: UIImageView!
     
+    //Varibales
     let instance = Session.sharedInstance
     var user : ModelUser = ModelUser()
     
     let picker = UIImagePickerController()
     
+    //Function to take a photo from library
     @IBAction func photoFromLibrary(_ sender: Any) {
         picker.allowsEditing = false
         picker.sourceType = .photoLibrary
@@ -32,6 +36,7 @@ class ProfilViewController: UIViewController, UIImagePickerControllerDelegate, U
         present(picker, animated: true, completion: nil)
     }
     
+    //Function to take a photo from camera
     @IBAction func takeAPhoto(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             picker.allowsEditing = false
@@ -45,7 +50,7 @@ class ProfilViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     
-    
+    //loaded info
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
@@ -62,8 +67,10 @@ class ProfilViewController: UIViewController, UIImagePickerControllerDelegate, U
         // Dispose of any resources that can be recreated.
     }
     
+    //The segue for the modify button
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
+        //Some conditions about the update textfield
         if identifier == "update" {
             
             if (((loginField.text?.isEmpty)! || (emailField.text?.isEmpty)!)) {
@@ -90,6 +97,8 @@ class ProfilViewController: UIViewController, UIImagePickerControllerDelegate, U
         return true
     }
     
+    //The action of the modify button
+    //We know that the bad thing to do it here but we have no more time to do it, sorry...
     @IBAction func modify(_ sender: Any) {
         
         let login = self.loginField.text
@@ -98,6 +107,7 @@ class ProfilViewController: UIViewController, UIImagePickerControllerDelegate, U
         let confirmpassword = self.confirmpasswordField.text
         let photo = self.userPicture.image
         
+        //Some conditions about modify
         if (((login?.isEmpty)! || (email?.isEmpty)!)) {
             return
         }
@@ -118,7 +128,7 @@ class ProfilViewController: UIViewController, UIImagePickerControllerDelegate, U
             information[0].photo = imageData! as NSData
         }
             
-            
+        //Add user information in the database
         information[0].login = login
         information[0].email = email
         if(password != ""){
@@ -136,7 +146,7 @@ class ProfilViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
 
-    
+    //ImagePicker functions
     func noCamera(){
         let alertVC = UIAlertController(
             title: "No Camera",
@@ -154,7 +164,7 @@ class ProfilViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
 
     
-    //MARK: - Delegates
+    //Picker function
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : AnyObject])
     {
@@ -168,14 +178,4 @@ class ProfilViewController: UIViewController, UIImagePickerControllerDelegate, U
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
