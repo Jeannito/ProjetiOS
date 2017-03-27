@@ -11,19 +11,14 @@ import UIKit
 
 class AlertManager {
     
+    //class that defines the model for the alerts
     class func alert(view: UIViewController, WithTitle title: String, andMsg msg: String = "") {
+        
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Ok", style: .default)
-        alert.addAction(cancelAction)
+        let ok = UIAlertAction(title: "Ok", style: .default)
+        
+        alert.addAction(ok)
         view.present(alert, animated: true)
     }
-    
-    /// When an error is caught
-    ///
-    /// - Parameter error: NSError caught
-    class func alert(view: UIViewController, error: NSError) {
-        self.alert(view: view, WithTitle: "\(error)", andMsg: "\(error.userInfo)")
-    }
-    
     
 }

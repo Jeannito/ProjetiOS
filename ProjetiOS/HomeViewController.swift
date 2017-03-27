@@ -11,32 +11,45 @@ import CoreData
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    //outlets
     @IBOutlet weak var groupPicker: UIPickerView!
     @IBOutlet weak var messagesTable: UITableView!
     
+    //picker result variable and data
     var groupPicked: String?
     let pickerData = ["All", "Student","Teacher","Manager", "Administration"]
     
+    //variables - user and message info retrieved from model
     var userFetched : ModelUser = ModelUser()
     var msgFetched : ModelMessage = ModelMessage()
     
+    //search bar controller declaration
     let searchController = UISearchController(searchResultsController: nil)
     
+    //variable declaration for storing the search results
     var filteredMessages = [Message]()
     
+    //load information
     override func viewDidLoad() {
         super.viewDidLoad()
         self.msgFetched.MessageSortedByTarget(withTarget: Session.sharedInstance.getStatus()!, withLogin: Session.sharedInstance.getLogin()!).delegate = self
         self.msgFetched.refreshMsg()
         
+        //search bar settings
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         messagesTable.tableHeaderView = searchController.searchBar
         
+        //default value for picker
         groupPicked = pickerData[groupPicker.selectedRow(inComponent: 0)]
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     //PickerView functions
@@ -61,20 +74,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return groupPicked
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func signOut(_ sender: Any) {
-        self.performSegue(withIdentifier: "deconnect", sender: self)
-        let usersDisc = userFetched.getUsersByLogin(withLogin: Session.sharedInstance.getLogin()!)
-        usersDisc[0].isConnected = false
-        Session.sharedInstance.endSession()
-    }
-    
+    //Table view functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        //if search bar is active
         if (searchController.isActive && searchController.searchBar.text != "") {
             return self.filteredMessages.count
         } else {
@@ -98,12 +101,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             message = self.msgFetched.getMessages().object(at: indexPath)
         }
         
+        //load info in cell
         cell.dateLabel.text = message.date
         cell.loginLabel.text = message.sender
         cell.targetLabel.text = message.target
         
-
         
+        //check image
         if message.img != nil{
             cell.imgMessage.image = UIImage(data: message.img as! Data)
             cell.messageLabel.text = ""
@@ -112,6 +116,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.messageLabel.text = message.text
         }
         
+        //checkphoto
         if user[0].photo != nil {
             var thesender = userFetched.getUsersByLogin(withLogin: message.sender!)
             if(thesender.isEmpty){
@@ -123,7 +128,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.userPicture.image = UIImage(named: "user")
         }
         
-        if(user.isEmpty){
+        //functionnality not working
+        /*if(user.isEmpty){
             cell.isConnectedImage.isHidden = true
             cell.isNotConnectedImage.isHidden = true
         } else {
@@ -137,10 +143,23 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 cell.isConnectedImage.isHidden = true
                 cell.isNotConnectedImage.isHidden = true
             }
-        }
+        }*/
         
         return cell
     }
+    
+    
+    
+    
+    
+    
+    @IBAction func signOut(_ sender: Any) {
+        self.performSegue(withIdentifier: "deconnect", sender: self)
+        let usersDisc = userFetched.getUsersByLogin(withLogin: Session.sharedInstance.getLogin()!)
+        usersDisc[0].isConnected = false
+        Session.sharedInstance.endSession()
+    }
+    
     
     
     // MARK: - NSFetchResultController delegate protocol
