@@ -11,6 +11,7 @@ import CoreData
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    //Outlet declaration
     @IBOutlet weak var groupPicker: UIPickerView!
     @IBOutlet weak var messagesTable: UITableView!
     
